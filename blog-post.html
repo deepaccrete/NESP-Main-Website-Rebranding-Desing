@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nigeria SE4ALL Mapathon: mapping for improved access to electricity · Blog · Nigeria SE4ALL</title>
+    <meta name="description" content="How the Nigeria SE4ALL Mapathon trains students in GIS and OpenStreetMap and has mapped over 75,000 buildings in off-grid areas.">
+    <link rel="icon" href="assets/img/rea-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+
+<body class="page-post">
+
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="hdr" id="hdr">
+        <div class="wrap">
+            <a class="brand" href="index.html" aria-label="Nigeria SE4ALL home">
+                <div class="mark"><img src="assets/img/rea-mark.png" alt="Rural Electrification Agency"></div>
+                <div class="div"></div>
+                <div>
+                    <div class="brand-name">Nigeria SE4ALL</div>
+                    <div class="brand-sub">Electrification Data Platform · Rural Electrification Agency</div>
+                </div>
+            </a>
+            <nav class="main" aria-label="Main">
+                <div class="dd" id="dd">
+                    <button class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">Explore
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6" /></svg></button>
+                    <div class="dd-menu" id="dd-menu" role="menu">
+                        <a role="menuitem" href="mini-grids.html"><span class="dd-ic mg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.2 2.2M16.2 16.2l2.2 2.2M5.6 18.4l2.2-2.2M16.2 7.8l2.2-2.2" /></svg></span><span><b>Mini-grids</b><small>Off-grid and interconnected site locators</small></span></a>
+                        <a role="menuitem" href="power-sector.html"><span class="dd-ic ps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M6 20V8l6-4 6 4v12M10 12h4M10 16h4" /></svg></span><span><b>Power sector</b><small>DisCo coverage, substations, MV and HV grid</small></span></a>
+                        <a role="menuitem" href="solar-home-systems.html"><span class="dd-ic shs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9H3z" /><path d="M8 20v-5h8v5M6 13h12" /></svg></span><span><b>Solar home systems</b><small>Distribution planning and customer base</small></span></a>
+                        <a class="dd-foot" href="index.html#tools">Open the full map <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </div>
+                </div>
+                <a href="index.html#data">Data</a><a href="blog.html" class="on">Blog</a><a href="about.html">About</a>
+            </nav>
+            <div class="hdr-right">
+                <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></button>
+                <a class="partner" href="https://power.gov.ng" target="_blank" rel="noopener" aria-label="Federal Ministry of Power">
+                    <span class="pmark"><img src="assets/img/fmp-mark.png" alt="" width="36" height="36"></span>
+                    <span class="ptxt"><b>Federal Ministry</b><small>of Power</small></span>
+                </a>
+                <a class="btn btn-primary" href="index.html#tools">Open the map</a>
+                <button class="icon-btn burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+            </div>
+        </div>
+    </header>
+    <div class="mnav" id="mnav" hidden>
+        <div class="mnav-group">
+            <div class="mnav-h">Explore</div>
+            <a href="mini-grids.html">Mini-grids</a><a href="power-sector.html">Power sector</a><a href="solar-home-systems.html">Solar home systems</a>
+        </div>
+        <a href="index.html#data">Data</a><a href="blog.html" class="on">Blog</a><a href="about.html">About</a>
+        <a class="btn btn-primary" href="index.html#tools" style="margin-top:12px;justify-content:center">Open the map</a>
+    </div>
+
+    <main id="main">
+
+        <section class="phero simple article-hero">
+            <div class="wrap" style="padding-bottom:110px">
+                <div class="phero-copy">
+                    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><a href="blog.html">Blog</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page">Mapathon</span></nav>
+                    <span class="chip"><i></i>Mini-grids</span>
+                    <h1>Nigeria SE4ALL Mapathon: mapping for improved access to electricity</h1>
+                    <div class="meta">
+                        <span><span class="av" aria-hidden="true">OA</span>Omowonuola Akintola</span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><time datetime="2022-08-02">2 Aug 2022</time></span>
+                        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 min read</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="wrap article-cover"><img src="assets/img/blog-mapathon.jpg" alt="Participants gathered around laptops at the first physical Nigeria SE4ALL mapathon in Abuja"></div>
+        <div class="wrap article-grid">
+            <article class="article">
+                <p class="lede">The Nigeria SE4ALL Mapathon is a series of map hackathons run by the Nigerian Energy Support Programme (NESP) — a technical assistance programme co-funded by the European Union (EU) and the German Federal Ministry for Economic Cooperation and Development (BMZ), and implemented by GIZ in collaboration with the Federal Ministry of Power (FMP).</p>
+                <p>Because of the pandemic, the first mapathon was held remotely on 7 July 2020. Since then, 12 remote mapathons have been held, followed by the first physical mapathon in Abuja on 7 July 2022 — celebrating the two-year anniversary of the first event and the relaunch of the Nigeria SE4ALL Platform V3.0 (<a href="#">watch the event highlight video</a>). In total, the events have attracted over 280 participants, both students and professionals, from all over Nigeria.</p>
+                <div class="stat4" data-reveal>
+                    <div><b>280+</b><span>participants, students and professionals</span></div>
+                    <div><b>12</b><span>remote mapathons since July 2020</span></div>
+                    <div><b>75,000+</b><span>buildings mapped in Kogi, Yobe and Imo</span></div>
+                    <div><b>400+</b><span>mappers in the community Slack</span></div>
+                </div>
+                <h2 id="objectives">Objectives</h2>
+                <p>The overall objectives of our mapathon events are:</p>
+                <ol class="obj">
+                    <li><span>Providing training for participants, especially students, on mapping and GIS topics — introducing them to Geographic Information Systems (GIS) and geospatial tools such as Java OpenStreetMap (JOSM) for contributing to OpenStreetMap (OSM).</span></li>
+                    <li><span>Promoting the activities of the Nigeria SE4ALL initiative by introducing participants to the newly launched platform, its functionalities and its data-gathering efforts.</span></li>
+                    <li><span>Building a strong mapping community in Nigeria through the mapathon Slack workspace, now with over 400 mappers.</span></li>
+                </ol>
+                <h2 id="event">What happens at a mapathon</h2>
+                <p>During the four-hour event, participants introduce themselves and learn from industry experts in special sessions — for example, a mobile mapping demo introducing the device used to collect data on grid availability, and a women’s panel celebrating International Women’s Day, where participants heard personal stories from women in the geospatial industry.</p>
+                <figure><img src="assets/img/post-iwd-poster.jpg" alt="Poster: #IWD 2021 — Our journey in GIS, a panel discussion with female young professionals and a student, 11 March 2021" loading="lazy"><figcaption>Poster for the International Women’s Day 2021 panel discussion.</figcaption></figure>
+                <p>During the mapping session, new mappers are taken through a step-by-step tutorial while experienced mappers go straight to the mapping tasks. After the event, all participants receive an e-certificate of participation, and the top mapper — with the highest number of buildings mapped — receives an e-certificate of mapping champion.</p>
+                <figure><img src="assets/img/post-remote-mapathon-poster.jpg" alt="Poster: 12th Nigeria SE4ALL remote mapathon featuring an inside look at mobile mapping, 18 May 2022" loading="lazy"><figcaption>Poster for the 12th remote mapathon, featuring mobile mapping.</figcaption></figure>
+                <h2 id="results">Results and feedback</h2>
+                <p>As a direct result of the mapathons, over 75,000 buildings have been mapped in off-grid areas of Kogi, Yobe and Imo using OSM, contributing to the base data that supports electrification planning. The event has also improved along the way, thanks to feedback and suggestions from past participants:</p>
+                <div class="quotes" data-reveal>
+                    <blockquote>The mapathon went beyond my expectation — the introduction was on point and very informative as well.<cite>Past participant</cite></blockquote>
+                    <blockquote>The experience was awesome and I would like to take part in subsequent events to increase my knowledge and expertise on the subject matter.<cite>Past participant</cite></blockquote>
+                    <blockquote>Everything about the project is awesome.<cite>Past participant</cite></blockquote>
+                    <blockquote>Definitely recommend.<cite>Past participant</cite></blockquote>
+                </div>
+                <h2 id="why">Why it matters</h2>
+                <p>The mapathon is critical to NESP’s goal of generating the most accurate data to empower electrification planning in Nigeria. Remotely mapping a location provides initial data on the number of buildings — and therefore households — and supports decisions on energy projects, such as estimating the number of potential customers and approximating energy demand to size the power assets to install.</p>
+                <p>This data also supports on-site data gathering on large users (businesses and community facilities), with the aim of publishing it on the Nigeria SE4ALL webmap to improve decision-making for developers and relevant agencies. Check out the Mapathon YouTube page for the highlight video of the physical mapathon and some of the <a href="#">previous events</a>.</p>
+                <div class="about-box">
+                    <h3>About the Nigerian Energy Support Programme</h3>
+                    <p>The Nigerian Energy Support Programme (NESP) is a technical assistance programme co-funded by the European Union and the German Federal Ministry for Economic Cooperation and Development (BMZ), and jointly implemented by the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH in collaboration with the Federal Ministry of Power (FMP).</p>
+                    <p style="margin:0">Follow us on X (Twitter) at <b>@nigeriase4all</b> and <b>@nesp_nigeria</b> to connect with us or share your feedback.</p>
+                </div>
+            </article>
+            <aside class="aside">
+                <div class="box"><h4>Share</h4>
+                    <div class="share">
+                        <a href="#" aria-label="Share on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 9h4v11H4zM6 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h4v1.6c.6-1 1.9-1.8 3.6-1.8 3 0 3.4 2 3.4 4.6V20h-4v-5.6c0-1.3 0-2.6-1.7-2.6s-2 1.2-2 2.5V20h-4z"/></svg></a>
+                        <a href="#" aria-label="Share on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.2V10H7v4h3v7h4v-7h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+                        <a href="#" aria-label="Share on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+                        <a href="#" aria-label="Share by email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+                        <button type="button" data-copy aria-label="Copy link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></button>
+                        <span class="copied" role="status">Link copied</span>
+                    </div>
+                </div>
+                <div class="box"><h4>In this post</h4>
+                    <nav class="toc" data-spy aria-label="In this post"><a href="#objectives">Objectives</a><a href="#event">What happens at a mapathon</a><a href="#results">Results and feedback</a><a href="#why">Why it matters</a></nav>
+                </div>
+                <div class="box"><h4>Tags</h4><div style="display:flex;gap:6px;flex-wrap:wrap"><a class="chip" href="blog.html#mg"><i></i>Mini-grids</a><span class="chip">Mapathon</span><span class="chip">OpenStreetMap</span></div></div>
+                <div class="box"><h4>Related posts</h4><a class="mini-post" href="#"><img src="assets/img/blog-offgrid-explorer.jpg" alt=""><span><b>Exploring mini-grid potential and selecting potential sites for off-grid mini-grids in Nigeria</b><small>16 Aug 2022</small></span></a><a class="mini-post" href="#"><img src="assets/img/blog-interconnected.jpg" alt=""><span><b>Exploring the potential for interconnected mini-grids with the Nigeria SE4ALL web map</b><small>4 Jul 2022</small></span></a><a class="mini-post" href="#"><img src="assets/img/blog-gis-rest-of-us.jpg" alt=""><span><b>GIS for the rest of us</b><small>27 Jun 2022</small></span></a></div>
+            </aside>
+        </div>
+        <section class="sec" style="padding-top:72px">
+            <div class="wrap">
+                <div class="sec-head"><div><h2>More from the blog</h2></div><a class="link" href="blog.html">View the blog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+                <div class="posts three" data-reveal>
+                    <a class="post" href="#">
+                    <div class="img"><img src="assets/img/blog-offgrid-survey.jpg" alt="" class="contain" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm shs"><i></i>Solar home systems</span><span class="chip sm "><i></i>Mini-grids</span><span class="chip sm ps"><i></i>Power sector</span></div>
+                        <h3>The Nigeria SE4ALL off-grid settlements survey</h3>
+                        <span class="by"><span>Emmanuel Jolaiya</span><time datetime="2022-10-26">26 Oct 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#">
+                    <div class="img"><img src="assets/img/blog-mobile-mapping.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm ps"><i></i>Power sector</span></div>
+                        <h3>Innovative geospatial data collection on electrical infrastructure with mobile mapping technology</h3>
+                        <span class="by"><span>Philip Ifeanyi Egboka</span><time datetime="2022-08-18">18 Aug 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#">
+                    <div class="img"><img src="assets/img/blog-offgrid-explorer.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span></div>
+                        <h3>Exploring mini-grid potential and selecting potential sites for off-grid mini-grids in Nigeria</h3>
+                        <span class="by"><span>Emmanuel Jolaiya</span><time datetime="2022-08-16">16 Aug 2022</time></span>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="support-band" aria-label="Funding and implementation partners">
+        <div class="wrap">
+            <div class="grp"><span class="lbl">With financial support of</span>
+                <img src="assets/img/logo-eu.png" alt="European Union">
+                <img src="assets/img/logo-german-cooperation.png" alt="German Cooperation — Deutsche Zusammenarbeit">
+            </div>
+            <div class="grp"><span class="lbl">Implemented by</span>
+                <img class="giz" src="assets/img/logo-giz.png" alt="Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="ghost-word" aria-hidden="true">SE4ALL</div>
+        <svg class="ghost-arms" viewBox="0 0 200 220" aria-hidden="true" fill="none" stroke="#D3DED6" stroke-width="2.5" stroke-linejoin="round">
+            <path d="M100 40c-18 0-32 10-40 26l-6 42c-2 26 18 48 46 60 28-12 48-34 46-60l-6-42c-8-16-22-26-40-26z" />
+            <path d="M100 48l-22 40 22 22 22-22z" stroke-width="2" />
+            <path d="M100 110v48" stroke-width="2" />
+            <path d="M100 8c-10 6-16 14-14 24 6-2 10-6 14-12 4 6 8 10 14 12 2-10-4-18-14-24z" />
+            <path d="M52 100c-14-2-24 6-30 20 8-4 14-2 20 2-6 8-6 18 0 26 8-6 10-16 8-26 6 0 10-6 2-22z" />
+            <path d="M148 100c14-2 24 6 30 20-8-4-14-2-20 2 6 8 6 18 0 26-8-6-10-16-8-26-6 0-10-6-2-22z" />
+            <path d="M30 188c20-8 40 4 70 4s50-12 70-4" stroke-width="2" />
+        </svg>
+        <div class="wrap">
+            <div class="ftop">
+                <div class="fcontact">
+                    <img class="flogo" src="assets/img/rea-logo.png" alt="Rural Electrification Agency — Energy, Empowerment, Efficiency">
+                    <div style="font-weight:700;margin-top:18px">Nigeria SE4ALL</div>
+                    <p>Rural Electrification Agency<br>Abuja, Nigeria<br>[contact@rea.gov.ng]</p>
+                    <div class="socials"><a href="#" aria-label="X">X</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a></div>
+                    <div class="sm"><a href="https://rea.gov.ng" style="color:var(--green);font-weight:600">rea.gov.ng</a> &nbsp;·&nbsp; <a href="https://power.gov.ng" style="color:var(--green);font-weight:600">power.gov.ng</a></div>
+                </div>
+                <div class="fcol"><h4>Platform</h4><a href="index.html#tools">Maps</a><a href="index.html#data">Data downloads</a></div>
+                <div class="fcol"><h4>Explore</h4><a href="mini-grids.html">Mini-grids</a><a href="power-sector.html">Power sector</a><a href="solar-home-systems.html">Solar home systems</a></div>
+                <div class="fcol"><h4>Resources</h4><a href="index.html#learn">Training platform</a><a href="blog.html">Blog</a></div>
+                <div class="fcol"><h4>About</h4><a href="about.html">Nigeria SE4ALL</a><a href="about.html#stakeholders">Rural Electrification Agency</a><a href="about.html#fmp">Federal Ministry of Power</a><a href="accreditation.html">Accreditation</a><a href="#">Contact</a></div>
+            </div>
+            <div class="fbot">
+                <span>© <span id="yr"></span> Rural Electrification Agency. All rights reserved.</span>
+                <span><a href="accreditation.html">Accreditation</a><a href="#">Terms of service</a><a href="accreditation.html#licences">Data licence</a><a href="#">Privacy</a><a href="#">Accessibility</a></span>
+            </div>
+        </div>
+    </footer>
+    <div class="sticky-cta"><a class="btn btn-primary" href="index.html#tools">Open the map</a></div>
+
+    <script src="assets/js/site.js"></script>
+</body>
+
+</html>

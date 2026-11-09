@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog · Nigeria SE4ALL · Rural Electrification Agency</title>
+    <meta name="description" content="Methods, walkthroughs and field notes from the Nigeria SE4ALL team.">
+    <link rel="icon" href="assets/img/rea-mark.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+
+<body class="page-blog">
+
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="hdr" id="hdr">
+        <div class="wrap">
+            <a class="brand" href="index.html" aria-label="Nigeria SE4ALL home">
+                <div class="mark"><img src="assets/img/rea-mark.png" alt="Rural Electrification Agency"></div>
+                <div class="div"></div>
+                <div>
+                    <div class="brand-name">Nigeria SE4ALL</div>
+                    <div class="brand-sub">Electrification Data Platform · Rural Electrification Agency</div>
+                </div>
+            </a>
+            <nav class="main" aria-label="Main">
+                <div class="dd" id="dd">
+                    <button class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">Explore
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6" /></svg></button>
+                    <div class="dd-menu" id="dd-menu" role="menu">
+                        <a role="menuitem" href="mini-grids.html"><span class="dd-ic mg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.2 2.2M16.2 16.2l2.2 2.2M5.6 18.4l2.2-2.2M16.2 7.8l2.2-2.2" /></svg></span><span><b>Mini-grids</b><small>Off-grid and interconnected site locators</small></span></a>
+                        <a role="menuitem" href="power-sector.html"><span class="dd-ic ps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h16M6 20V8l6-4 6 4v12M10 12h4M10 16h4" /></svg></span><span><b>Power sector</b><small>DisCo coverage, substations, MV and HV grid</small></span></a>
+                        <a role="menuitem" href="solar-home-systems.html"><span class="dd-ic shs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9H3z" /><path d="M8 20v-5h8v5M6 13h12" /></svg></span><span><b>Solar home systems</b><small>Distribution planning and customer base</small></span></a>
+                        <a class="dd-foot" href="index.html#tools">Open the full map <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    </div>
+                </div>
+                <a href="index.html#data">Data</a><a href="blog.html" class="on">Blog</a><a href="about.html">About</a>
+            </nav>
+            <div class="hdr-right">
+                <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></button>
+                <a class="partner" href="https://power.gov.ng" target="_blank" rel="noopener" aria-label="Federal Ministry of Power">
+                    <span class="pmark"><img src="assets/img/fmp-mark.png" alt="" width="36" height="36"></span>
+                    <span class="ptxt"><b>Federal Ministry</b><small>of Power</small></span>
+                </a>
+                <a class="btn btn-primary" href="index.html#tools">Open the map</a>
+                <button class="icon-btn burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+            </div>
+        </div>
+    </header>
+    <div class="mnav" id="mnav" hidden>
+        <div class="mnav-group">
+            <div class="mnav-h">Explore</div>
+            <a href="mini-grids.html">Mini-grids</a><a href="power-sector.html">Power sector</a><a href="solar-home-systems.html">Solar home systems</a>
+        </div>
+        <a href="index.html#data">Data</a><a href="blog.html" class="on">Blog</a><a href="about.html">About</a>
+        <a class="btn btn-primary" href="index.html#tools" style="margin-top:12px;justify-content:center">Open the map</a>
+    </div>
+
+    <main id="main">
+
+        <section class="phero simple compact">
+            <div class="wrap">
+                <div class="phero-copy">
+                    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page">Blog</span></nav>
+                    <div class="eyebrow">Blog</div>
+                    <h1>Methods, walkthroughs and <em>field notes</em></h1>
+                    <p class="lead">News and stories from the team behind the Nigeria SE4ALL data — how we collect it, how to use the webmaps, and what we learn in the field.</p>
+                </div>
+            </div>
+        </section>
+        <section class="sec field" style="padding-top:64px">
+            <div class="wrap">
+                <a class="feature" href="#">
+                    <div class="img"><img src="assets/img/blog-offgrid-survey.jpg" alt="Infographic: off-grid settlements surveyed across Nigeria"></div>
+                    <div class="b"><span class="chip"><i></i>Latest post</span>
+                        <h3>The Nigeria SE4ALL off-grid settlements survey</h3>
+                        <p>This blog post introduces the methodology behind the off-grid settlements survey to collect information about large energy consumers.</p>
+                        <div class="tags" style="display:flex;gap:6px;flex-wrap:wrap"><span class="chip sm shs"><i></i>Solar home systems</span><span class="chip sm "><i></i>Mini-grids</span><span class="chip sm ps"><i></i>Power sector</span></div>
+                        <span class="by">Emmanuel Jolaiya · <time datetime="2022-10-26">26 Oct 2022</time></span>
+                        <span class="link">Read the post <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+                    </div>
+                </a>
+                <div class="filters" role="group" aria-label="Filter posts by topic">
+                    <button data-f="all" aria-pressed="true">All posts</button>
+                    <button data-f="mg" aria-pressed="false"><i></i>Mini-grids</button>
+                    <button data-f="ps" class="ps" aria-pressed="false"><i></i>Power sector</button>
+                    <button data-f="shs" class="shs" aria-pressed="false"><i></i>Solar home systems</button>
+                    <span class="count" aria-live="polite">9 posts</span>
+                </div>
+                <div class="posts three">
+                    <a class="post" href="#" data-cat="ps">
+                    <div class="img"><img src="assets/img/blog-mobile-mapping.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm ps"><i></i>Power sector</span></div>
+                        <h3>Innovative geospatial data collection on electrical infrastructure with mobile mapping technology</h3><p class="ex">Introducing the geospatial data collection methodology based on vehicle-mounted mobile mapping technology using the Trimble MX7 device.</p>
+                        <span class="by"><span>Philip Ifeanyi Egboka</span><time datetime="2022-08-18">18 Aug 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="ps">
+                    <div class="img"><img src="assets/img/blog-power-analytics.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm ps"><i></i>Power sector</span></div>
+                        <h3>Power sector analytics explorer</h3><p class="ex">A detailed walkthrough of the Power sector analytics webmap by Nigeria SE4ALL.</p>
+                        <span class="by"><span>Emmanuel Jolaiya</span><time datetime="2022-08-16">16 Aug 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="mg">
+                    <div class="img"><img src="assets/img/blog-offgrid-explorer.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span></div>
+                        <h3>Exploring mini-grid potential and selecting potential sites for off-grid mini-grids in Nigeria</h3><p class="ex">A detailed walkthrough of the Off-grid mini-grid explorer webmap on the Nigeria SE4ALL platform.</p>
+                        <span class="by"><span>Emmanuel Jolaiya</span><time datetime="2022-08-16">16 Aug 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="blog-post.html" data-cat="mg">
+                    <div class="img"><img src="assets/img/blog-mapathon.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span></div>
+                        <h3>Nigeria SE4ALL Mapathon: mapping for improved access to electricity</h3><p class="ex">The Nigeria SE4ALL Mapathon is a series of map hackathons where students learn to digitise buildings and other assets and contribute to the open data community.</p>
+                        <span class="by"><span>Omowonuola Akintola</span><time datetime="2022-08-02">2 Aug 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="mg">
+                    <div class="img"><img src="assets/img/blog-interconnected.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span></div>
+                        <h3>Exploring the potential for interconnected mini-grids with the Nigeria SE4ALL web map</h3><p class="ex">A detailed walkthrough of the Interconnected mini-grid explorer web map by Nigeria Sustainable Energy for All (SE4ALL).</p>
+                        <span class="by"><span>Frankie Eckersley-Carr</span><time datetime="2022-07-04">4 Jul 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="shs">
+                    <div class="img"><img src="assets/img/blog-shs-potential.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm shs"><i></i>Solar home systems</span></div>
+                        <h3>Assessing solar home system potential through access to marketplaces with the Nigeria SE4ALL web map</h3><p class="ex">A detailed walkthrough of the solar home system explorer webmap by Nigeria Sustainable Energy for All (SE4ALL).</p>
+                        <span class="by"><span>Frankie Eckersley-Carr</span><time datetime="2022-07-04">4 Jul 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="mg ps shs">
+                    <div class="img"><img src="assets/img/blog-cdms-training.jpg" alt="" class="contain" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span><span class="chip sm ps"><i></i>Power sector</span><span class="chip sm shs"><i></i>Solar home systems</span></div>
+                        <h3>Training available on the Central Data Management System (CDMS) of the Nigeria SE4ALL platform</h3><p class="ex">Explore the training curriculum we developed for the Federal Ministry of Power in 2021 on the SE4ALL online platform.</p>
+                        <span class="by"><span>Philip Ifeanyi Egboka</span><time datetime="2022-07-04">4 Jul 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="mg ps shs">
+                    <div class="img"><img src="assets/img/blog-gis-rest-of-us.jpg" alt="" class="contain" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span><span class="chip sm ps"><i></i>Power sector</span><span class="chip sm shs"><i></i>Solar home systems</span></div>
+                        <h3>GIS for the rest of us</h3><p class="ex">Designed to get new users, whatever their background, up and running quickly. It takes you step by step through the fundamentals you need to get started with GIS.</p>
+                        <span class="by"><span>Emmanuel Jolaiya</span><time datetime="2022-06-27">27 Jun 2022</time></span>
+                    </div>
+                </a>
+                    <a class="post" href="#" data-cat="mg ps shs">
+                    <div class="img"><img src="assets/img/blog-platform-v2.jpg" alt="" loading="lazy"></div>
+                    <div class="b"><div class="tags"><span class="chip sm "><i></i>Mini-grids</span><span class="chip sm ps"><i></i>Power sector</span><span class="chip sm shs"><i></i>Solar home systems</span></div>
+                        <h3>Introducing the Nigeria SE4ALL platform V2</h3><p class="ex">FMP and NESP worked extensively over the last year to develop a user-centric ecosystem. The new platform will greatly assist interested parties in improving analysis and decision-making.</p>
+                        <span class="by"><span>Emmanuel Jolaiya</span><time datetime="2022-06-10">10 Jun 2022</time></span>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec" id="resources">
+            <div class="wrap">
+                <div class="courses">
+                    <div>
+                        <span class="eyebrow">Resources and tools</span>
+                        <h2>Build your skills on the Learning Platform</h2>
+                        <p class="sub">Capacity building and courses on the Nigeria SE4ALL Learning Management Platform — free, self-paced, with a certificate when you finish.</p>
+                        <div class="acts"><a class="btn btn-leaf" href="index.html#learn">Open learning platform <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+                    </div>
+                    <div class="course-list" data-reveal>
+                        <a class="course" href="index.html#learn">
+                            <span class="thumb"><img src="assets/img/fmp-crest.png" alt=""></span>
+                            <span><b>Mapathon introduction</b>
+                                <p>An introduction to the basics of OpenStreetMap so you can gather and use ground-truth data.</p>
+                                <span class="meta"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>Video course</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free</span></span>
+                            </span>
+                        </a>
+                        <a class="course" href="blog.html">
+                            <span class="thumb"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></span>
+                            <span><b>GIS for the rest of us</b>
+                                <p>A step-by-step guide to the GIS fundamentals you need to work with the platform's datasets.</p>
+                                <span class="meta"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4"/></svg>Guide</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Beginner</span></span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="support-band" aria-label="Funding and implementation partners">
+        <div class="wrap">
+            <div class="grp"><span class="lbl">With financial support of</span>
+                <img src="assets/img/logo-eu.png" alt="European Union">
+                <img src="assets/img/logo-german-cooperation.png" alt="German Cooperation — Deutsche Zusammenarbeit">
+            </div>
+            <div class="grp"><span class="lbl">Implemented by</span>
+                <img class="giz" src="assets/img/logo-giz.png" alt="Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="ghost-word" aria-hidden="true">SE4ALL</div>
+        <svg class="ghost-arms" viewBox="0 0 200 220" aria-hidden="true" fill="none" stroke="#D3DED6" stroke-width="2.5" stroke-linejoin="round">
+            <path d="M100 40c-18 0-32 10-40 26l-6 42c-2 26 18 48 46 60 28-12 48-34 46-60l-6-42c-8-16-22-26-40-26z" />
+            <path d="M100 48l-22 40 22 22 22-22z" stroke-width="2" />
+            <path d="M100 110v48" stroke-width="2" />
+            <path d="M100 8c-10 6-16 14-14 24 6-2 10-6 14-12 4 6 8 10 14 12 2-10-4-18-14-24z" />
+            <path d="M52 100c-14-2-24 6-30 20 8-4 14-2 20 2-6 8-6 18 0 26 8-6 10-16 8-26 6 0 10-6 2-22z" />
+            <path d="M148 100c14-2 24 6 30 20-8-4-14-2-20 2 6 8 6 18 0 26-8-6-10-16-8-26-6 0-10-6-2-22z" />
+            <path d="M30 188c20-8 40 4 70 4s50-12 70-4" stroke-width="2" />
+        </svg>
+        <div class="wrap">
+            <div class="ftop">
+                <div class="fcontact">
+                    <img class="flogo" src="assets/img/rea-logo.png" alt="Rural Electrification Agency — Energy, Empowerment, Efficiency">
+                    <div style="font-weight:700;margin-top:18px">Nigeria SE4ALL</div>
+                    <p>Rural Electrification Agency<br>Abuja, Nigeria<br>[contact@rea.gov.ng]</p>
+                    <div class="socials"><a href="#" aria-label="X">X</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a></div>
+                    <div class="sm"><a href="https://rea.gov.ng" style="color:var(--green);font-weight:600">rea.gov.ng</a> &nbsp;·&nbsp; <a href="https://power.gov.ng" style="color:var(--green);font-weight:600">power.gov.ng</a></div>
+                </div>
+                <div class="fcol"><h4>Platform</h4><a href="index.html#tools">Maps</a><a href="index.html#data">Data downloads</a></div>
+                <div class="fcol"><h4>Explore</h4><a href="mini-grids.html">Mini-grids</a><a href="power-sector.html">Power sector</a><a href="solar-home-systems.html">Solar home systems</a></div>
+                <div class="fcol"><h4>Resources</h4><a href="index.html#learn">Training platform</a><a href="blog.html">Blog</a></div>
+                <div class="fcol"><h4>About</h4><a href="about.html">Nigeria SE4ALL</a><a href="about.html#stakeholders">Rural Electrification Agency</a><a href="about.html#fmp">Federal Ministry of Power</a><a href="accreditation.html">Accreditation</a><a href="#">Contact</a></div>
+            </div>
+            <div class="fbot">
+                <span>© <span id="yr"></span> Rural Electrification Agency. All rights reserved.</span>
+                <span><a href="accreditation.html">Accreditation</a><a href="#">Terms of service</a><a href="accreditation.html#licences">Data licence</a><a href="#">Privacy</a><a href="#">Accessibility</a></span>
+            </div>
+        </div>
+    </footer>
+    <div class="sticky-cta"><a class="btn btn-primary" href="index.html#tools">Open the map</a></div>
+
+    <script src="assets/js/site.js"></script>
+</body>
+
+</html>
