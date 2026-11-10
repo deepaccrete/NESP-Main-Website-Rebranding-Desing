@@ -3028,3 +3028,76 @@ a.frame-wrap:hover .frame { box-shadow: 0 34px 90px rgba(0,0,0,.42), 0 0 0 2px v
 .plogo.real img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; min-height: 0; object-fit: contain; display: block }
 .support .plogo { width: 156px; height: 76px }
 .support .plogo.real { padding: 8px 12px; background: #fff }
+
+/* ---------- homepage: testimonials ---------- */
+.tm { position: relative; overflow: hidden; color: #fff; isolation: isolate;
+      background: radial-gradient(900px 600px at 0% 0%, rgba(163, 211, 118, .16), transparent 60%), radial-gradient(800px 600px at 100% 100%, rgba(30, 78, 121, .35), transparent 60%), linear-gradient(160deg, #065F46 0%, #043D2E 60%, #032A20 100%) }
+.tm::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px); background-size: 26px 26px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%); mask-image: linear-gradient(180deg, #000, transparent 85%) }
+.tm-glow { position: absolute; width: 520px; height: 520px; right: 8%; top: 18%; border-radius: 50%; background: radial-gradient(circle, rgba(163, 211, 118, .22), transparent 65%); filter: blur(30px); z-index: -1; animation: tmFloat 14s ease-in-out infinite alternate }
+@keyframes tmFloat { to { transform: translate(-60px, 40px) scale(1.1) } }
+.tm-head { max-width: 760px; margin-bottom: 52px }
+.tm-head .eyebrow { opacity: 1; animation: none; margin-bottom: 18px }
+.tm-head h2 { color: #fff; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -.02em }
+.tm-head h2 em { font-style: normal; color: var(--leaf) }
+.tm-head .sub { color: rgba(255, 255, 255, .78); margin-top: 14px }
+.tm-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 48px; align-items: center }
+.tm-card { position: relative; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); border-radius: 24px; padding: 54px 52px 34px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 30px 80px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .12) }
+.tm-mark { position: absolute; top: -26px; left: 46px; width: 74px; height: 56px; color: var(--leaf); filter: drop-shadow(0 10px 24px rgba(163, 211, 118, .35)) }
+.tm-slides { display: grid }
+.tm-slide { grid-area: 1 / 1; margin: 0; opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .2, 1); pointer-events: none; display: flex; flex-direction: column }
+.tm-slide.on { opacity: 1; transform: none; pointer-events: auto }
+.tm-tag { align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--leaf); background: rgba(163, 211, 118, .12); border: 1px solid rgba(163, 211, 118, .3); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px }
+.tm-slide blockquote { margin: 0; font-size: clamp(22px, 2.15vw, 30px); line-height: 1.38; font-weight: 500; letter-spacing: -.01em; color: #fff; text-wrap: pretty; flex: 1 }
+.tm-slide figcaption { display: flex; align-items: center; gap: 14px; margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .14) }
+.tm-av { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--leaf), #6FAE3F); color: var(--night); display: grid; place-items: center; flex: none; overflow: hidden }
+.tm-av svg { width: 24px; height: 24px }
+.tm-av img { width: 100%; height: 100%; object-fit: cover }
+.tm-slide figcaption b { display: block; font-size: 16px }
+.tm-slide figcaption small { font-size: 14px; color: rgba(255, 255, 255, .65) }
+.tm-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 28px }
+.tm-dots { display: flex; gap: 8px }
+.tm-dot { width: 34px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; align-items: center }
+.tm-dot i { display: block; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .22); overflow: hidden; position: relative }
+.tm-dot i::after { content: ""; position: absolute; inset: 0; background: var(--leaf); transform: scaleX(0); transform-origin: left }
+.tm-dot.on i::after { animation: tmProg 7s linear forwards }
+.tm-card.paused .tm-dot.on i::after { animation-play-state: paused }
+@media (prefers-reduced-motion: reduce) { .tm-dot.on i::after { animation: none; transform: none } .tm-glow { animation: none } }
+@keyframes tmProg { to { transform: scaleX(1) } }
+.tm-dot:focus-visible { outline: 2px solid var(--leaf); outline-offset: 2px; border-radius: 4px }
+.tm-arrows { display: flex; gap: 8px }
+.tm-arrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); background: rgba(255, 255, 255, .04); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background .2s, border-color .2s, transform .2s }
+.tm-arrows button:hover { background: var(--leaf); border-color: var(--leaf); color: var(--night); transform: translateY(-2px) }
+.tm-visual { position: relative; padding: 0 0 0 10px }
+.tm-photo { margin: 0; border-radius: 22px; overflow: hidden; aspect-ratio: 4/3.4; box-shadow: 0 30px 70px rgba(0, 0, 0, .35); position: relative }
+.tm-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4, 61, 46, 0) 45%, rgba(4, 61, 46, .75)) }
+.tm-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease }
+.tm-visual:hover .tm-photo img { transform: scale(1.04) }
+.tm-bubble { position: absolute; top: 26px; right: -14px; background: #fff; color: var(--ink); font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 16px 16px 4px 16px; box-shadow: 0 16px 40px rgba(0, 0, 0, .3); animation: tmBob 4s ease-in-out infinite alternate }
+.tm-bubble small { display: block; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px }
+@keyframes tmBob { to { transform: translateY(-8px) } }
+.tm-stats { position: absolute; left: -26px; right: 24px; bottom: -30px; display: grid; grid-template-columns: repeat(3, 1fr); background: #fff; color: var(--ink); border-radius: 16px; box-shadow: 0 22px 50px rgba(0, 0, 0, .3); overflow: hidden }
+.tm-stats div { padding: 16px 18px; border-left: 1px solid var(--line) }
+.tm-stats div:first-child { border-left: 0 }
+.tm-stats b { display: block; font-size: 24px; line-height: 1.1; font-weight: 700; color: var(--green); letter-spacing: -.02em }
+.tm-stats span { font-size: 12.5px; color: var(--ink-2); line-height: 1.3; display: block; margin-top: 3px }
+.tm-foot { margin-top: 84px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, .14); display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap }
+.tm-foot span { font-size: 18px; color: rgba(255, 255, 255, .85); font-weight: 500 }
+@media (max-width:1100px) {
+    .tm-grid { grid-template-columns: 1fr; gap: 64px }
+    .tm-visual { max-width: 640px; padding: 0 }
+    .tm-stats { left: 16px; right: 16px }
+}
+@media (max-width:640px) {
+    .tm-card { padding: 44px 22px 24px; border-radius: 18px }
+    .tm-mark { left: 22px; width: 58px; height: 44px; top: -20px }
+    .tm-slide blockquote { font-size: 21px }
+    .tm-photo { aspect-ratio: 4/3 }
+    .tm-bubble { right: 10px; top: 14px; font-size: 13px; padding: 9px 13px }
+    .tm-stats { position: relative; left: 0; right: 0; bottom: 0; margin-top: -40px; margin-left: 12px; margin-right: 12px }
+    .tm-stats div { padding: 12px 10px }
+    .tm-stats b { font-size: 19px }
+    .tm-stats span { font-size: 11.5px }
+    .tm-foot { margin-top: 44px; flex-direction: column; align-items: flex-start }
+    .tm-foot span { font-size: 16px }
+    .tm-grid { gap: 44px }
+}
