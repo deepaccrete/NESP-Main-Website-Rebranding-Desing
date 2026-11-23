@@ -1,0 +1,9 @@
+.DS_Store
+_backup/
+.impeccable/config.local.json
+.claude/settings.local.json
+.agent/
+.agents/
+.codex/
+.gemini/
+.opencode/

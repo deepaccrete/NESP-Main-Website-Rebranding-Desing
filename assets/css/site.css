@@ -68,8 +68,25 @@ button {
 }
 
 :focus-visible {
-    outline: 3px solid var(--leaf);
+    outline: 3px solid var(--green);
     outline-offset: 3px
+}
+
+/* Focus rings: Forest Green on light surfaces (WCAG 2.2 AA needs 3:1;
+   leaf-on-white is ~1.6:1). Leaf only on the dark hero/CTA bands, where
+   the ring sits against dark green. */
+.hero :focus-visible,
+.phero :focus-visible,
+.learn-cta :focus-visible,
+.courses :focus-visible,
+.osip :focus-visible {
+    outline-color: var(--leaf)
+}
+
+/* …except controls inside white cards that sit on those dark bands
+   (e.g. the OSIP "how can we help" rows), where the ring is on white. */
+.osip .os-card :focus-visible {
+    outline-color: var(--green)
 }
 
 .wrap {
@@ -262,7 +279,7 @@ h3 {
 
 .partner .ptxt small {
     display: block;
-    font-size: 11px;
+    font-size: 12px;
     opacity: .75;
     line-height: 1.2;
     white-space: nowrap
@@ -299,7 +316,7 @@ h3 {
 }
 
 .brand-sub {
-    font-size: 11.5px;
+    font-size: 12px;
     opacity: .75;
     line-height: 1.2;
     white-space: nowrap
@@ -1170,7 +1187,7 @@ td .btn {
     border: 1.5px solid var(--ink-2);
     display: grid;
     place-items: center;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--ink-2)
 }
@@ -1449,7 +1466,7 @@ td .btn {
     padding: 30px 32px
 }
 
-.learn-highlights h4 {
+.learn-highlights h3 {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: .12em;
@@ -1594,9 +1611,9 @@ td .btn {
     border-radius: 10px;
     display: grid;
     place-items: center;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    color: #7A8A80;
+    color: #56665D;
     text-align: center;
     padding: 8px;
     line-height: 1.2;
@@ -2268,7 +2285,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
     height: 18px;
     border-radius: 6px;
     background: #fff;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--ink-2);
     display: flex;
     align-items: center;
@@ -2422,13 +2439,13 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
     border-radius: 999px
 }
 .cc-badge b {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     border: 1.5px solid currentColor;
     display: grid;
     place-items: center;
-    font-size: 8.5px;
+    font-size: 11px;
     letter-spacing: -.02em
 }
 
@@ -2457,7 +2474,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
     pointer-events: none
 }
 .courses > * { position: relative; z-index: 1 }
-.courses .eyebrow { opacity: 1; animation: none; margin-bottom: 18px }
+.courses .eyebrow { opacity: 1; animation: none; margin-bottom: 18px; color: var(--leaf-soft) }
 .courses h2 { color: #fff }
 .courses p.sub { color: rgba(255, 255, 255, .8) }
 .courses .acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px }
@@ -2508,7 +2525,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
 .post .ex { font-size: 14.5px; color: var(--ink-2); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
 .post .tags { display: flex; gap: 6px; flex-wrap: wrap }
 .post .by { display: flex; justify-content: space-between; gap: 10px; padding-top: 12px; border-top: 1px solid var(--line) }
-.chip.sm { font-size: 11.5px; padding: 4px 9px }
+.chip.sm { font-size: 12px; padding: 4px 9px }
 
 /* featured post */
 .feature {
@@ -2525,7 +2542,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
 .feature .img { position: relative; min-height: 340px; background: #fff }
 .feature .img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 18px }
 .feature .b { padding: 44px; display: flex; flex-direction: column; gap: 14px; justify-content: center }
-.feature h3 { font-size: 28px; font-weight: 600; line-height: 1.2 }
+.feature h2 { font-size: 28px; font-weight: 600; line-height: 1.2; letter-spacing: -.01em; margin-bottom: 0 }
 .feature p { color: var(--ink-2) }
 .feature .by { font-size: 14px; color: var(--ink-2) }
 
@@ -2631,7 +2648,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
 .ov:hover { transform: translateY(-5px) }
 .ov .oi { width: 44px; height: 44px; border-radius: 12px; background: var(--field); color: var(--green); display: grid; place-items: center }
 .ov .oi svg { width: 22px; height: 22px }
-.ov h3 { font-size: 18px; font-weight: 600 }
+.ov h2 { font-size: 18px; font-weight: 600; letter-spacing: 0; line-height: 1.3 }
 .ov p { font-size: 14.5px; color: var(--ink-2); flex: 1 }
 .split { display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start }
 .split .side { position: sticky; top: 140px }
@@ -2693,7 +2710,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
     font-size: 15px;
     flex: none
 }
-.tg-card h4 { font-size: 19px; font-weight: 600 }
+.tg-card h3 { font-size: 19px; font-weight: 600 }
 .tg-card small { display: block; color: var(--ink-2); font-size: 14px; font-weight: 400 }
 .tg-card .chev { margin-left: auto; transition: transform .2s; color: var(--ink-2) }
 .tg-card[open] .chev { transform: rotate(180deg) }
@@ -2938,7 +2955,7 @@ nav.main a.on, .dd.on .dd-btn { border-color: currentColor; opacity: 1 }
     .course { grid-template-columns: 64px 1fr; gap: 14px }
     .course .thumb { width: 64px; height: 64px }
     .feature .b { padding: 26px 22px }
-    .feature h3 { font-size: 22px }
+    .feature h2 { font-size: 22px }
     .gauge-card { grid-template-columns: 1fr; gap: 18px; padding: 24px 22px }
     .gauge-card svg { max-width: 220px; margin: 0 auto }
     .chart-card { padding: 20px 14px 14px }
@@ -3023,7 +3040,7 @@ a.frame-wrap:hover .frame { box-shadow: 0 34px 90px rgba(0,0,0,.42), 0 0 0 2px v
 .post .img img.contain { object-fit: contain; background: #fff; padding: 10px }
 .post:hover .img img { transform: scale(1.04) }
 .post.report .img img { object-position: center 30% }
-.post.report .img::after { content: "PDF"; position: absolute; right: 12px; top: 12px; background: var(--night); color: var(--leaf); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; padding: 5px 9px; border-radius: 6px }
+.post.report .img::after { content: "PDF"; position: absolute; right: 12px; top: 12px; background: var(--night); color: var(--leaf); font-size: 12px; font-weight: 700; letter-spacing: .06em; padding: 5px 9px; border-radius: 6px }
 .plogo.real { overflow: hidden; grid-template-columns: 100%; grid-template-rows: 100%; place-items: center }
 .plogo.real img { width: 100%; height: 100%; max-width: 100%; max-height: 100%; min-height: 0; object-fit: contain; display: block }
 .support .plogo { width: 156px; height: 76px }
@@ -3079,7 +3096,7 @@ a.frame-wrap:hover .frame { box-shadow: 0 34px 90px rgba(0,0,0,.42), 0 0 0 2px v
 .tm-ph figcaption i.shs { background: var(--amber) }
 .tm-ph:not(.big) figcaption { bottom: auto; top: 12px }
 .tm-bubble { position: absolute; top: -22px; right: -14px; z-index: 2; background: #fff; color: var(--ink); font-weight: 600; font-size: 15px; padding: 12px 18px; border-radius: 16px 16px 4px 16px; border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(4, 61, 46, .18); animation: tmBob 4s ease-in-out infinite alternate }
-.tm-bubble small { display: block; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px }
+.tm-bubble small { display: block; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3px }
 @keyframes tmBob { to { transform: translateY(-8px) } }
 @media (prefers-reduced-motion: reduce) { .tm-bubble { animation: none } }
 .tm-stats { position: absolute; left: 24px; right: 24px; bottom: 0; display: grid; grid-template-columns: repeat(3, 1fr); background: linear-gradient(120deg, #065F46, #043D2E); color: #fff; border-radius: 16px; box-shadow: 0 22px 50px rgba(4, 61, 46, .3); overflow: hidden; z-index: 2 }
@@ -3105,8 +3122,102 @@ a.frame-wrap:hover .frame { box-shadow: 0 34px 90px rgba(0,0,0,.42), 0 0 0 2px v
     .tm-stats { position: relative; left: 0; right: 0; margin: -26px 10px 0 }
     .tm-stats div { padding: 12px 10px }
     .tm-stats b { font-size: 19px }
-    .tm-stats span { font-size: 11.5px }
+    .tm-stats span { font-size: 12px }
     .tm-foot { margin-top: 44px; flex-direction: column; align-items: flex-start; padding: 22px }
     .tm-foot span { font-size: 16px }
     .tm-grid { gap: 48px }
+}
+
+/* ---------- homepage: OSIP investment portal band ---------- */
+.osip { position: relative; overflow: hidden; color: #fff; isolation: isolate; padding: 112px 0; background: #071510 }
+.os-bg { position: absolute; inset: 0; z-index: -2 }
+.os-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; display: block; transform: scale(1.04); filter: saturate(1.1) brightness(1.12) }
+.osip::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(4, 30, 22, .94) 0%, rgba(4, 38, 28, .78) 38%, rgba(4, 38, 28, .22) 66%, rgba(4, 30, 22, .35) 100%), linear-gradient(0deg, rgba(4, 30, 22, .55), transparent 35%) }
+.os-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center }
+.os-mark { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); margin-bottom: 18px }
+.os-kicker { display: inline-block; font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--leaf); margin-bottom: 14px }
+.osip h2 { color: #fff; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.08; letter-spacing: -.02em; max-width: 16ch; text-wrap: balance }
+.osip h2 em { font-style: normal; color: var(--leaf) }
+.os-lead { font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, .82); margin-top: 18px; max-width: 56ch }
+.os-bridge { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: 10px; margin-top: 30px; max-width: 540px }
+.os-bridge > div { border-radius: 14px; padding: 14px 16px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .16); backdrop-filter: blur(8px) }
+.os-bridge > div.to { background: rgba(163, 211, 118, .14); border-color: rgba(163, 211, 118, .45) }
+.os-bridge span { display: block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .6) }
+.os-bridge .to span { color: var(--leaf) }
+.os-bridge b { display: block; font-size: 17px; margin-top: 4px }
+.os-bridge small { display: block; font-size: 13px; color: rgba(255, 255, 255, .7); margin-top: 2px }
+.os-bridge i { display: grid; place-items: center; color: var(--leaf); animation: osNudge 1.8s ease-in-out infinite }
+@keyframes osNudge { 50% { transform: translateX(4px) } }
+.os-acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px }
+.os-acts .btn-leaf:hover { background: #B6DE8F }
+.os-card { background: rgba(255, 255, 255, .97); color: var(--ink); border-radius: 22px; padding: 26px; box-shadow: 0 34px 80px rgba(0, 0, 0, .4) }
+.os-card-h { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin: 2px 4px 14px }
+.os-live { width: 9px; height: 9px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 4px rgba(163, 211, 118, .3) }
+.os-rows { display: grid; gap: 8px }
+.os-row { display: grid; grid-template-columns: 46px 1fr 18px; gap: 14px; align-items: center; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: #fff; transition: border-color .2s, background .2s, transform .2s, box-shadow .2s }
+.os-row > svg { color: var(--ink-2); transition: transform .2s, color .2s }
+.os-row:hover { border-color: var(--green); background: #F7FBF3; transform: translateX(4px); box-shadow: 0 10px 24px rgba(4, 61, 46, .1) }
+.os-row:hover > svg { color: var(--green); transform: translateX(3px) }
+.os-ic { width: 46px; height: 46px; border-radius: 12px; background: var(--field); color: var(--green); display: grid; place-items: center }
+.os-ic svg { width: 22px; height: 22px }
+.os-row:hover .os-ic { background: var(--green); color: #fff }
+.os-row b { display: block; font-size: 16px; font-weight: 600 }
+.os-row small { display: block; font-size: 13.5px; color: var(--ink-2); line-height: 1.4; margin-top: 1px }
+.os-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; padding-top: 16px; border-top: 1px solid var(--line) }
+.os-stats div { padding: 4px 6px }
+.os-stats b { display: block; font-size: 24px; font-weight: 700; color: var(--green); letter-spacing: -.02em; line-height: 1.1 }
+.os-stats span { font-size: 12.5px; color: var(--ink-2); line-height: 1.35; display: block; margin-top: 3px }
+@media (prefers-reduced-motion: reduce) { .os-bridge i { animation: none } }
+@media (max-width:1100px) { .os-grid { grid-template-columns: 1fr; gap: 48px } .os-card { max-width: 620px } .osip::before { background: linear-gradient(180deg, rgba(4, 30, 22, .95), rgba(4, 38, 28, .85)) } }
+@media (max-width:640px) {
+    .osip { padding: 72px 0 }
+    .os-mark { height: 34px }
+    .os-lead { font-size: 16.5px }
+    .os-bridge { grid-template-columns: 1fr; }
+    .os-bridge i { transform: rotate(90deg); animation: none; justify-self: start; margin-left: 18px }
+    .os-acts { flex-direction: column; align-items: stretch }
+    .os-acts .btn { justify-content: center }
+    .os-card { padding: 16px; border-radius: 18px }
+    .os-row { grid-template-columns: 40px 1fr 16px; gap: 12px; padding: 11px 12px }
+    .os-ic { width: 40px; height: 40px }
+    .os-row b { font-size: 15px }
+}
+
+/* ---------- rebrand alignment (concept note, Nov 2026) ---------- */
+footer .formerly { font-size: 13px; color: var(--ink-2); margin-top: 2px }
+.what-note { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; max-width: 72ch }
+.what-note .link { white-space: nowrap }
+.data-req { margin-top: 18px; font-size: 14.5px; color: var(--ink-2) }
+.data-req a { color: var(--green); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px }
+.data-req a:hover { text-decoration-thickness: 2px }
+.formerly-note { margin-top: 22px; max-width: 62ch; font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, .78); padding: 14px 18px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 12px; background: rgba(255, 255, 255, .05) }
+.formerly-note b { color: #fff }
+/* history timeline */
+.timeline { list-style: none; padding: 0; margin: 0 0 8px; position: relative }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: var(--line) }
+.timeline li { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 6px 22px; padding: 0 0 26px 34px }
+.timeline li::before { content: ""; position: absolute; left: 0; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 3px solid var(--green) }
+.timeline li.now::before { background: var(--leaf); border-color: var(--green); box-shadow: 0 0 0 5px rgba(163, 211, 118, .3) }
+.timeline .when { font-weight: 700; color: var(--green); font-size: 15px; font-variant-numeric: tabular-nums; padding-top: 1px }
+.timeline b { display: block; font-size: 17px; color: var(--ink) }
+.timeline p { margin: 4px 0 0; font-size: 15.5px; color: var(--ink-2) }
+/* data requests */
+.req { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start }
+.req-copy h2 { margin-bottom: 12px }
+.req-grid { display: grid; gap: 12px }
+.req-card { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; align-items: center; padding: 20px 22px; background: #fff; border: 1px solid var(--line); border-radius: 14px; color: var(--ink); transition: border-color .2s, box-shadow .2s, transform .2s }
+.req-card b { font-size: 17px; grid-column: 1 }
+.req-card p { grid-column: 1; font-size: 15px; color: var(--ink-2); margin: 0 }
+.req-card .link { grid-column: 2; grid-row: 1 / span 2; white-space: nowrap }
+.req-card:hover { border-color: var(--green); box-shadow: 0 12px 28px rgba(4, 61, 46, .1); transform: translateY(-2px) }
+.req-card:focus-visible { outline: 3px solid var(--green); outline-offset: 3px }
+/* NESP logo */
+.support-band img.nesp { height: 44px }
+.funders img[src*="logo-nesp"] { height: 50px }
+@media (max-width:1100px) { .req { grid-template-columns: 1fr; gap: 24px } }
+@media (max-width:640px) {
+    .timeline li { grid-template-columns: 1fr; padding-left: 30px }
+    .req-card { grid-template-columns: 1fr; padding: 18px }
+    .req-card .link { grid-column: 1; grid-row: auto; margin-top: 8px }
+    .support-band img.nesp { height: 36px }
 }
