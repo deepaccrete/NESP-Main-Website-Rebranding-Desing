@@ -4,49 +4,340 @@
   "title": "Design System: Nigeria Electrification Atlas",
   "extensions": {
     "colorMeta": {
-      "green": { "role": "primary", "displayName": "Forest Green", "canonical": "#065F46", "tonalRamp": ["#032A20", "#043D2E", "#054E3A", "#065F46", "#2C7E64", "#5CA187", "#97C6B4", "#D6EAE1"] },
-      "green-hover": { "role": "primary", "displayName": "Deep Forest", "canonical": "#064E3B", "tonalRamp": ["#022019", "#033326", "#044535", "#064E3B", "#2A6E58", "#5B917E", "#95BFAE", "#D4E7DF"] },
-      "night": { "role": "primary", "displayName": "Midnight Pine", "canonical": "#043D2E", "tonalRamp": ["#021A14", "#03281E", "#043429", "#043D2E", "#2A6150", "#5B887A", "#96BBAD", "#D5E8E0"] },
-      "leaf": { "role": "secondary", "displayName": "Leaf", "canonical": "#A3D376", "tonalRamp": ["#2F4A1A", "#466B28", "#5F8E39", "#79B04D", "#A3D376", "#BEE09A", "#D7ECC2", "#EFF8E4"] },
-      "leaf-soft": { "role": "secondary", "displayName": "Leaf Soft", "canonical": "#CFE9B8", "tonalRamp": ["#415A2C", "#5A7A3E", "#769B54", "#99BE79", "#CFE9B8", "#DCEFCB", "#E9F5DE", "#F6FBF0"] },
-      "slate": { "role": "tertiary", "displayName": "Slate Blue (Power)", "canonical": "#1E4E79", "tonalRamp": ["#0C2338", "#123451", "#18446B", "#1E4E79", "#3F6E97", "#6B92B5", "#A0B9D2", "#D5E1EE"] },
-      "slate-accent": { "role": "tertiary", "displayName": "Slate Accent (Power)", "canonical": "#6FA3D6", "tonalRamp": ["#203951", "#315677", "#44749C", "#5A8BBC", "#6FA3D6", "#93BBE1", "#B9D3ED", "#E0ECF8"] },
-      "amber": { "role": "tertiary", "displayName": "Amber (Solar)", "canonical": "#E8A317", "tonalRamp": ["#5C3F05", "#80580A", "#A67210", "#CC8D15", "#E8A317", "#F0BC51", "#F6D58E", "#FCEDCB"] },
-      "amber-ink": { "role": "tertiary", "displayName": "Amber Ink (Solar)", "canonical": "#9A6A06", "tonalRamp": ["#3D2A02", "#523804", "#6E4B05", "#845A05", "#9A6A06", "#C08B22", "#DCB665", "#F3E2BA"] },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0F172A", "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9"] },
-      "ink-2": { "role": "neutral", "displayName": "Ink Muted", "canonical": "#475569", "tonalRamp": ["#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F8FAFC"] },
-      "field": { "role": "neutral", "displayName": "Field", "canonical": "#F4F7F5", "tonalRamp": ["#4A5A52", "#6B7D74", "#8FA399", "#B5C4BC", "#D3DED6", "#E6EDE8", "#F4F7F5", "#FFFFFF"] },
-      "footer": { "role": "neutral", "displayName": "Footer Mist", "canonical": "#E6EDE8", "tonalRamp": ["#44524B", "#637168", "#879689", "#ADBBB1", "#CBD6CE", "#E6EDE8", "#F2F6F3", "#FFFFFF"] },
-      "ghost": { "role": "neutral", "displayName": "Ghost", "canonical": "#D3DED6", "tonalRamp": ["#44524B", "#5E6F65", "#7E9085", "#A3B3A9", "#C2CFC7", "#D3DED6", "#E8EEEA", "#FFFFFF"] },
-      "line": { "role": "neutral", "displayName": "Line", "canonical": "#E5E7EB", "tonalRamp": ["#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E5E7EB", "#F1F3F5", "#F8FAFB", "#FFFFFF"] },
-      "white": { "role": "neutral", "displayName": "White", "canonical": "#FFFFFF", "tonalRamp": ["#64748B", "#94A3B8", "#CBD5E1", "#E5E7EB", "#F1F5F9", "#F8FAFC", "#FCFDFD", "#FFFFFF"] }
+      "green": {
+        "role": "primary",
+        "displayName": "REA Green",
+        "canonical": "#006438",
+        "tonalRamp": [
+          "#002816",
+          "#00371F",
+          "#004627",
+          "#005530",
+          "#006438",
+          "#4C9274",
+          "#99C1AF",
+          "#D9E8E1"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "REA Green Deep",
+        "canonical": "#00502D",
+        "tonalRamp": [
+          "#002012",
+          "#002C19",
+          "#003820",
+          "#004426",
+          "#00502D",
+          "#4C846C",
+          "#99B9AB",
+          "#D9E5E0"
+        ]
+      },
+      "night": {
+        "role": "primary",
+        "displayName": "REA Night",
+        "canonical": "#003D22",
+        "tonalRamp": [
+          "#00180E",
+          "#002213",
+          "#002B18",
+          "#00341D",
+          "#003D22",
+          "#4C7764",
+          "#99B1A7",
+          "#D9E2DE"
+        ]
+      },
+      "leaf": {
+        "role": "secondary",
+        "displayName": "Mint",
+        "canonical": "#C8F0C8",
+        "tonalRamp": [
+          "#506050",
+          "#6E846E",
+          "#8CA88C",
+          "#AACCAA",
+          "#C8F0C8",
+          "#D8F4D8",
+          "#E9F9E9",
+          "#F7FDF7"
+        ]
+      },
+      "leaf-soft": {
+        "role": "secondary",
+        "displayName": "Mint Soft",
+        "canonical": "#E2F5E2",
+        "tonalRamp": [
+          "#5A625A",
+          "#7C877C",
+          "#9EAC9E",
+          "#C0D0C0",
+          "#E2F5E2",
+          "#EBF8EB",
+          "#F3FBF3",
+          "#FBFEFB"
+        ]
+      },
+      "slate": {
+        "role": "tertiary",
+        "displayName": "Slate Blue (Power)",
+        "canonical": "#1E4E79",
+        "tonalRamp": [
+          "#0C2338",
+          "#123451",
+          "#18446B",
+          "#1E4E79",
+          "#3F6E97",
+          "#6B92B5",
+          "#A0B9D2",
+          "#D5E1EE"
+        ]
+      },
+      "slate-accent": {
+        "role": "tertiary",
+        "displayName": "Slate Accent (Power)",
+        "canonical": "#6FA3D6",
+        "tonalRamp": [
+          "#203951",
+          "#315677",
+          "#44749C",
+          "#5A8BBC",
+          "#6FA3D6",
+          "#93BBE1",
+          "#B9D3ED",
+          "#E0ECF8"
+        ]
+      },
+      "amber": {
+        "role": "tertiary",
+        "displayName": "Amber (Solar)",
+        "canonical": "#E8A317",
+        "tonalRamp": [
+          "#5C3F05",
+          "#80580A",
+          "#A67210",
+          "#CC8D15",
+          "#E8A317",
+          "#F0BC51",
+          "#F6D58E",
+          "#FCEDCB"
+        ]
+      },
+      "amber-ink": {
+        "role": "tertiary",
+        "displayName": "Amber Ink (Solar)",
+        "canonical": "#9A6A06",
+        "tonalRamp": [
+          "#3D2A02",
+          "#523804",
+          "#6E4B05",
+          "#845A05",
+          "#9A6A06",
+          "#C08B22",
+          "#DCB665",
+          "#F3E2BA"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0F172A",
+        "tonalRamp": [
+          "#0F172A",
+          "#1E293B",
+          "#334155",
+          "#475569",
+          "#64748B",
+          "#94A3B8",
+          "#CBD5E1",
+          "#F1F5F9"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#475569",
+        "tonalRamp": [
+          "#1E293B",
+          "#334155",
+          "#475569",
+          "#64748B",
+          "#94A3B8",
+          "#CBD5E1",
+          "#E2E8F0",
+          "#F8FAFC"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "canonical": "#F2F7F3",
+        "tonalRamp": [
+          "#616361",
+          "#858886",
+          "#A9ADAA",
+          "#CED2CF",
+          "#F2F7F3",
+          "#F6F9F7",
+          "#FAFCFA",
+          "#FDFEFD"
+        ]
+      },
+      "footer": {
+        "role": "neutral",
+        "displayName": "Footer Mist",
+        "canonical": "#E6EFE8",
+        "tonalRamp": [
+          "#5C605D",
+          "#7E8380",
+          "#A1A7A2",
+          "#C4CBC5",
+          "#E6EFE8",
+          "#EEF4EF",
+          "#F5F9F6",
+          "#FBFDFC"
+        ]
+      },
+      "ghost": {
+        "role": "neutral",
+        "displayName": "Ghost",
+        "canonical": "#D3DED6",
+        "tonalRamp": [
+          "#44524B",
+          "#5E6F65",
+          "#7E9085",
+          "#A3B3A9",
+          "#C2CFC7",
+          "#D3DED6",
+          "#E8EEEA",
+          "#FFFFFF"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#E5E7EB",
+        "tonalRamp": [
+          "#475569",
+          "#64748B",
+          "#94A3B8",
+          "#CBD5E1",
+          "#E5E7EB",
+          "#F1F3F5",
+          "#F8FAFB",
+          "#FFFFFF"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#64748B",
+          "#94A3B8",
+          "#CBD5E1",
+          "#E5E7EB",
+          "#F1F5F9",
+          "#F8FAFC",
+          "#FCFDFD",
+          "#FFFFFF"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Page and hero headlines (54px inner pages / clamp 32–46px homepage hero). Balanced wrapping; homepage hero highlights the key phrase with a leaf gradient fill." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles (h2). 36px, scaling to 28/25px on small screens." },
-      "title": { "displayName": "Title", "purpose": "Subsection and card headings (h3), 22px." },
-      "body": { "displayName": "Body", "purpose": "Default prose at 17px/1.6; long-form articles step to 18px/1.75, capped 70–74ch." },
-      "label": { "displayName": "Label / Eyebrow", "purpose": "Uppercase eyebrows, kickers, table headers; 12.5px, 0.12–0.14em tracking, often with a leading dot." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page and hero headlines (54px inner pages / clamp 32–46px homepage hero). Balanced wrapping; homepage hero highlights the key phrase with a leaf gradient fill."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles (h2). 36px, scaling to 28/25px on small screens."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Subsection and card headings (h3), 22px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default prose at 17px/1.6; long-form articles step to 18px/1.75, capped 70–74ch."
+      },
+      "label": {
+        "displayName": "Label / Eyebrow",
+        "purpose": "Uppercase eyebrows, kickers, table headers; 12.5px, 0.12–0.14em tracking, often with a leading dot."
+      }
     },
     "shadows": [
-      { "name": "card-rest", "value": "0 14px 40px rgba(4,61,46,.16), 0 1px 0 #E5E7EB", "purpose": "KPI and overview cards at rest — soft green lift plus crisp hairline." },
-      { "name": "card-hover", "value": "0 24px 54px rgba(4,61,46,.22), 0 1px 0 #E5E7EB", "purpose": "Raised card state, paired with translateY(-5px)." },
-      { "name": "tool-hover", "value": "0 18px 40px rgba(4,61,46,.12)", "purpose": "Lighter lift for bordered tool and post cards, paired with translateY(-4px)." },
-      { "name": "menu", "value": "0 20px 50px rgba(4,61,46,.18), 0 0 0 1px #E5E7EB", "purpose": "Floating nav mega-menus and popovers." },
-      { "name": "frame", "value": "0 30px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.08)", "purpose": "Browser-frame webmap mockups on dark grounds — the one place near-black shadow is correct." },
-      { "name": "header-seam", "value": "0 1px 0 #E5E7EB", "purpose": "The solid-scrolled fixed header's single hairline." }
+      {
+        "name": "card-rest",
+        "value": "0 14px 40px rgba(0,61,34,.16), 0 1px 0 #E5E7EB",
+        "purpose": "KPI and overview cards at rest — soft green lift plus crisp hairline."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 24px 54px rgba(0,61,34,.22), 0 1px 0 #E5E7EB",
+        "purpose": "Raised card state, paired with translateY(-5px)."
+      },
+      {
+        "name": "tool-hover",
+        "value": "0 18px 40px rgba(0,61,34,.12)",
+        "purpose": "Lighter lift for bordered tool and post cards, paired with translateY(-4px)."
+      },
+      {
+        "name": "menu",
+        "value": "0 20px 50px rgba(0,61,34,.18), 0 0 0 1px #E5E7EB",
+        "purpose": "Floating nav mega-menus and popovers."
+      },
+      {
+        "name": "frame",
+        "value": "0 30px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.08)",
+        "purpose": "Browser-frame webmap mockups on dark grounds — the one place near-black shadow is correct."
+      },
+      {
+        "name": "header-seam",
+        "value": "0 1px 0 #E5E7EB",
+        "purpose": "The solid-scrolled fixed header's single hairline."
+      }
     ],
     "motion": [
-      { "name": "ease-soft", "value": "cubic-bezier(.2,.7,.2,1)", "purpose": "Signature easing for card lifts, reveals, hero word rises, and spring-like hovers." },
-      { "name": "dur-fast", "value": "180ms", "purpose": "Default state transitions — buttons, links, borders, chips." },
-      { "name": "dur-card", "value": "250ms", "purpose": "Card hover lift and shadow changes." },
-      { "name": "dur-reveal", "value": "700ms", "purpose": "Scroll-reveal fade/translate of sections and cards (respects prefers-reduced-motion)." }
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Signature easing for card lifts, reveals, hero word rises, and spring-like hovers."
+      },
+      {
+        "name": "dur-fast",
+        "value": "180ms",
+        "purpose": "Default state transitions — buttons, links, borders, chips."
+      },
+      {
+        "name": "dur-card",
+        "value": "250ms",
+        "purpose": "Card hover lift and shadow changes."
+      },
+      {
+        "name": "dur-reveal",
+        "value": "700ms",
+        "purpose": "Scroll-reveal fade/translate of sections and cards (respects prefers-reduced-motion)."
+      }
     ],
     "breakpoints": [
-      { "name": "xl", "value": "1280px" },
-      { "name": "lg", "value": "1100px" },
-      { "name": "sm", "value": "640px" },
-      { "name": "xs", "value": "480px" }
+      {
+        "name": "xl",
+        "value": "1280px"
+      },
+      {
+        "name": "lg",
+        "value": "1100px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "xs",
+        "value": "480px"
+      }
     ]
   },
   "components": [
@@ -56,15 +347,15 @@
       "refersTo": "button-primary",
       "description": "Load-bearing call to action on light surfaces; solid forest green.",
       "html": "<button class=\"ds-btn-primary\">Explore the webmaps<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"12 5 19 12 12 19\"/></svg></button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 14px 22px; border: 1.5px solid transparent; border-radius: 10px; background: #065F46; color: #fff; font: 600 16px Inter, 'Segoe UI', Roboto, sans-serif; cursor: pointer; transition: background .18s, transform .18s; } .ds-btn-primary:hover { background: #064E3B; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 3px solid #065F46; outline-offset: 3px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 14px 22px; border: 1.5px solid transparent; border-radius: 6px; background: #006438; color: #fff; font: 600 16px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; cursor: pointer; transition: background .18s, transform .18s; } .ds-btn-primary:hover { background: #00502D; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 3px solid #006438; outline-offset: 3px; }"
     },
     {
-      "name": "Leaf Button (dark grounds)",
+      "name": "Mint Button (dark grounds)",
       "kind": "button",
       "refersTo": "button-leaf",
       "description": "The primary CTA on dark green hero/CTA bands; bright leaf with midnight-pine text, leaf glow.",
-      "html": "<div style=\"background:linear-gradient(120deg,#065F46,#043D2E);padding:28px;border-radius:16px\"><button class=\"ds-btn-leaf\">Open the investment portal</button></div>",
-      "css": ".ds-btn-leaf { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 15px 26px; border: 1.5px solid transparent; border-radius: 10px; background: #A3D376; color: #043D2E; font: 600 16px Inter, 'Segoe UI', Roboto, sans-serif; cursor: pointer; box-shadow: 0 10px 28px rgba(163,211,118,.32); transition: background .18s, transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s; } .ds-btn-leaf:hover { background: #B6DE8F; transform: translateY(-2px); box-shadow: 0 16px 36px rgba(163,211,118,.45); } .ds-btn-leaf:focus-visible { outline: 3px solid #A3D376; outline-offset: 3px; }"
+      "html": "<div style=\"background:linear-gradient(120deg,#006438,#003D22);padding:28px;border-radius:16px\"><button class=\"ds-btn-leaf\">Open the investment portal</button></div>",
+      "css": ".ds-btn-leaf { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 15px 26px; border: 1.5px solid transparent; border-radius: 6px; background: #C8F0C8; color: #003D22; font: 600 16px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; cursor: pointer; box-shadow: 0 10px 28px rgba(200,240,200,.32); transition: background .18s, transform .22s cubic-bezier(.2,.7,.2,1), box-shadow .22s; } .ds-btn-leaf:hover { background: #B3E6B3; transform: translateY(-2px); box-shadow: 0 16px 36px rgba(200,240,200,.45); } .ds-btn-leaf:focus-visible { outline: 3px solid #C8F0C8; outline-offset: 3px; }"
     },
     {
       "name": "Outline Button",
@@ -72,7 +363,7 @@
       "refersTo": "button-outline",
       "description": "Secondary action on light surfaces; green stroke that washes on hover.",
       "html": "<button class=\"ds-btn-outline\">Download datasets</button>",
-      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 14px 22px; border: 1.5px solid #065F46; border-radius: 10px; background: transparent; color: #065F46; font: 600 16px Inter, 'Segoe UI', Roboto, sans-serif; cursor: pointer; transition: background .18s, transform .18s; } .ds-btn-outline:hover { background: rgba(6,95,70,.06); } .ds-btn-outline:active { transform: translateY(1px); } .ds-btn-outline:focus-visible { outline: 3px solid #065F46; outline-offset: 3px; }"
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 14px 22px; border: 1.5px solid #006438; border-radius: 6px; background: transparent; color: #006438; font: 600 16px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; cursor: pointer; transition: background .18s, transform .18s; } .ds-btn-outline:hover { background: rgba(0,100,56,.06); } .ds-btn-outline:active { transform: translateY(1px); } .ds-btn-outline:focus-visible { outline: 3px solid #006438; outline-offset: 3px; }"
     },
     {
       "name": "Status Chip",
@@ -80,7 +371,7 @@
       "refersTo": "chip",
       "description": "Pill tag with a leading sector-signal dot (green default, slate for power, amber for solar).",
       "html": "<span class=\"ds-chip\"><i></i>Mini-grids</span>",
-      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border-radius: 999px; background: #F4F7F5; color: #0F172A; font: 600 12.5px Inter, 'Segoe UI', Roboto, sans-serif; } .ds-chip i { width: 8px; height: 8px; border-radius: 50%; background: #065F46; } .ds-chip.ps i { background: #1E4E79; } .ds-chip.shs i { background: #E8A317; }"
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border-radius: 999px; background: #F2F7F3; color: #0F172A; font: 600 12.5px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-chip i { width: 8px; height: 8px; border-radius: 50%; background: #006438; } .ds-chip.ps i { background: #1E4E79; } .ds-chip.shs i { background: #E8A317; }"
     },
     {
       "name": "Filter Toggle",
@@ -88,7 +379,7 @@
       "refersTo": "chip",
       "description": "Bordered pill toggle for blog/dataset filters; fills solid green when pressed.",
       "html": "<button class=\"ds-filter\" aria-pressed=\"true\"><i></i>All sectors</button>",
-      "css": ".ds-filter { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1.5px solid #E5E7EB; border-radius: 999px; background: #fff; color: #475569; font: 600 14.5px Inter, 'Segoe UI', Roboto, sans-serif; cursor: pointer; transition: all .18s; } .ds-filter i { width: 8px; height: 8px; border-radius: 50%; background: #065F46; } .ds-filter:hover { border-color: #065F46; color: #065F46; } .ds-filter[aria-pressed=\"true\"] { background: #065F46; border-color: #065F46; color: #fff; } .ds-filter[aria-pressed=\"true\"] i { background: #fff; }"
+      "css": ".ds-filter { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1.5px solid #E5E7EB; border-radius: 999px; background: #fff; color: #475569; font: 600 14.5px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; cursor: pointer; transition: all .18s; } .ds-filter i { width: 8px; height: 8px; border-radius: 50%; background: #006438; } .ds-filter:hover { border-color: #006438; color: #006438; } .ds-filter[aria-pressed=\"true\"] { background: #006438; border-color: #006438; color: #fff; } .ds-filter[aria-pressed=\"true\"] i { background: #fff; }"
     },
     {
       "name": "KPI Card",
@@ -96,7 +387,7 @@
       "refersTo": "card",
       "description": "Floating stat card: tabular numeral, left accent bar, soft green lift on hover.",
       "html": "<div class=\"ds-kpi\"><div class=\"n\">12.5<sup>M</sup></div><div class=\"l\">Buildings mapped</div><div class=\"s\">Across all 36 states and the FCT</div></div>",
-      "css": ".ds-kpi { position: relative; overflow: hidden; background: #fff; border-radius: 16px; padding: 26px 26px 22px; box-shadow: 0 14px 40px rgba(4,61,46,.16), 0 1px 0 #E5E7EB; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s; font-family: Inter, 'Segoe UI', Roboto, sans-serif; } .ds-kpi::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #A3D376, #065F46); } .ds-kpi:hover { transform: translateY(-5px); box-shadow: 0 24px 54px rgba(4,61,46,.22), 0 1px 0 #E5E7EB; } .ds-kpi .n { font-size: 44px; font-weight: 700; color: #065F46; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; } .ds-kpi .n sup { font-size: 22px; vertical-align: top; } .ds-kpi .l { font-size: 15px; color: #0F172A; margin-top: 10px; font-weight: 500; } .ds-kpi .s { font-size: 12.5px; color: #475569; margin-top: 6px; }"
+      "css": ".ds-kpi { position: relative; overflow: hidden; background: #fff; border-radius: 8px; padding: 26px 26px 22px; box-shadow: 0 14px 40px rgba(0,61,34,.16), 0 1px 0 #E5E7EB; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-kpi::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #C8F0C8, #006438); } .ds-kpi:hover { transform: translateY(-5px); box-shadow: 0 24px 54px rgba(0,61,34,.22), 0 1px 0 #E5E7EB; } .ds-kpi .n { font-size: 44px; font-weight: 700; color: #006438; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; } .ds-kpi .n sup { font-size: 22px; vertical-align: top; } .ds-kpi .l { font-size: 15px; color: #0F172A; margin-top: 10px; font-weight: 500; } .ds-kpi .s { font-size: 12.5px; color: #475569; margin-top: 6px; }"
     },
     {
       "name": "Tool / Webmap Card",
@@ -104,7 +395,7 @@
       "refersTo": "card",
       "description": "Bordered tile with a 16:10 preview; border dissolves into a green shadow on hover.",
       "html": "<div class=\"ds-tool\"><div class=\"shot\"></div><div class=\"body\"><span class=\"ds-chip\" style=\"align-self:flex-start\"><i></i>Webmap</span><h3>Mini-grid opportunity map</h3><p>Viable sites, demand clusters and grid proximity, updated from field surveys.</p></div></div>",
-      "css": ".ds-tool { display: flex; flex-direction: column; background: #fff; border: 1px solid #E5E7EB; border-radius: 14px; overflow: hidden; font-family: Inter, 'Segoe UI', Roboto, sans-serif; transition: box-shadow .25s, transform .25s, border-color .25s; } .ds-tool:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(4,61,46,.12); border-color: transparent; } .ds-tool .shot { aspect-ratio: 16/10; background: linear-gradient(135deg,#F4F7F5,#E6EDE8); } .ds-tool .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; } .ds-tool .ds-chip { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border-radius: 999px; background: #F4F7F5; color: #0F172A; font-weight: 600; font-size: 12.5px; } .ds-tool .ds-chip i { width: 8px; height: 8px; border-radius: 50%; background: #065F46; } .ds-tool h3 { font-size: 19px; font-weight: 600; color: #0F172A; } .ds-tool p { font-size: 15px; color: #475569; line-height: 1.5; }"
+      "css": ".ds-tool { display: flex; flex-direction: column; background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; transition: box-shadow .25s, transform .25s, border-color .25s; } .ds-tool:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,61,34,.12); border-color: transparent; } .ds-tool .shot { aspect-ratio: 16/10; background: linear-gradient(135deg,#F2F7F3,#006438); } .ds-tool .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; } .ds-tool .ds-chip { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px; border-radius: 999px; background: #F2F7F3; color: #0F172A; font-weight: 600; font-size: 12.5px; } .ds-tool .ds-chip i { width: 8px; height: 8px; border-radius: 50%; background: #006438; } .ds-tool h3 { font-size: 19px; font-weight: 600; color: #0F172A; } .ds-tool p { font-size: 15px; color: #475569; line-height: 1.5; }"
     },
     {
       "name": "Section Eyebrow",
@@ -112,7 +403,7 @@
       "refersTo": "label",
       "description": "Legacy pattern — uppercase kicker label with a leading dot above a heading. Keep existing instances; do not add new eyebrows/kickers to new work.",
       "html": "<span class=\"ds-eyebrow\">Open data platform</span>",
-      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 13px; border-radius: 999px; background: rgba(6,95,70,.07); border: 1px solid rgba(6,95,70,.18); color: #065F46; font: 600 12.5px Inter, 'Segoe UI', Roboto, sans-serif; letter-spacing: .12em; text-transform: uppercase; } .ds-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #065F46; }"
+      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 13px; border-radius: 999px; background: rgba(0,100,56,.07); border: 1px solid rgba(0,100,56,.18); color: #006438; font: 600 12.5px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; letter-spacing: .12em; text-transform: uppercase; } .ds-eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #006438; }"
     },
     {
       "name": "Top Navigation Link",
@@ -120,7 +411,7 @@
       "refersTo": "nav-link",
       "description": "Header nav item with an underline that grows on hover/active; shown here in the scrolled light state.",
       "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"on\">Webmaps</a><a href=\"#\">Datasets</a><a href=\"#\">Learn</a></nav>",
-      "css": ".ds-nav { display: flex; gap: 22px; font-family: Inter, 'Segoe UI', Roboto, sans-serif; } .ds-nav a { padding: 6px 0; font-size: 15px; font-weight: 500; color: #0F172A; opacity: .9; border-bottom: 2px solid transparent; transition: border-color .18s, opacity .18s; cursor: pointer; } .ds-nav a:hover { border-color: currentColor; } .ds-nav a.on { opacity: 1; border-color: #065F46; color: #065F46; } .ds-nav a:focus-visible { outline: 3px solid #065F46; outline-offset: 3px; }"
+      "css": ".ds-nav { display: flex; gap: 22px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-nav a { padding: 6px 0; font-size: 15px; font-weight: 500; color: #0F172A; opacity: .9; border-bottom: 2px solid transparent; transition: border-color .18s, opacity .18s; cursor: pointer; } .ds-nav a:hover { border-color: currentColor; } .ds-nav a.on { opacity: 1; border-color: #006438; color: #006438; } .ds-nav a:focus-visible { outline: 3px solid #006438; outline-offset: 3px; }"
     },
     {
       "name": "History Timeline",
@@ -128,7 +419,7 @@
       "refersTo": "card",
       "description": "About-page vertical timeline: a green-rail list with ringed dots; the current entry's dot is leaf with a halo.",
       "html": "<ul class=\"ds-timeline\"><li><span class=\"when\">2013</span><div><b>Programme launch</b><p>NESP begins geospatial data collection for electrification planning.</p></div></li><li class=\"now\"><span class=\"when\">2026</span><div><b>Rebrand &amp; handover</b><p>The platform transitions to REA as the long-term owner.</p></div></li></ul>",
-      "css": ".ds-timeline { list-style: none; padding: 0; margin: 0; position: relative; font-family: Inter, 'Segoe UI', Roboto, sans-serif; } .ds-timeline::before { content: ''; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: #E5E7EB; } .ds-timeline li { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 6px 22px; padding: 0 0 26px 34px; } .ds-timeline li::before { content: ''; position: absolute; left: 0; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 3px solid #065F46; } .ds-timeline li.now::before { background: #A3D376; border-color: #065F46; box-shadow: 0 0 0 5px rgba(163,211,118,.3); } .ds-timeline .when { font-weight: 700; color: #065F46; font-size: 15px; font-variant-numeric: tabular-nums; padding-top: 1px; } .ds-timeline b { display: block; font-size: 17px; color: #0F172A; } .ds-timeline p { margin: 4px 0 0; font-size: 15.5px; color: #475569; }"
+      "css": ".ds-timeline { list-style: none; padding: 0; margin: 0; position: relative; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; } .ds-timeline::before { content: ''; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: #E5E7EB; } .ds-timeline li { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 6px 22px; padding: 0 0 26px 34px; } .ds-timeline li::before { content: ''; position: absolute; left: 0; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: #fff; border: 3px solid #006438; } .ds-timeline li.now::before { background: #C8F0C8; border-color: #006438; box-shadow: 0 0 0 5px rgba(200,240,200,.3); } .ds-timeline .when { font-weight: 700; color: #006438; font-size: 15px; font-variant-numeric: tabular-nums; padding-top: 1px; } .ds-timeline b { display: block; font-size: 17px; color: #0F172A; } .ds-timeline p { margin: 4px 0 0; font-size: 15.5px; color: #475569; }"
     },
     {
       "name": "Request / Share Data Row",
@@ -136,43 +427,71 @@
       "refersTo": "card",
       "description": "About-page row card for requesting or contributing data; green-link action, border + lift on hover.",
       "html": "<a class=\"ds-req\" href=\"#\"><b>Request a custom dataset</b><p>Tell us the layers, geography and format you need.</p><span class=\"link\">Start a request<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"12 5 19 12 12 19\"/></svg></span></a>",
-      "css": ".ds-req { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; align-items: center; padding: 20px 22px; background: #fff; border: 1px solid #E5E7EB; border-radius: 14px; color: #0F172A; font-family: Inter, 'Segoe UI', Roboto, sans-serif; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .2s; } .ds-req b { font-size: 17px; font-weight: 600; grid-column: 1; } .ds-req p { grid-column: 1; margin: 0; font-size: 15px; color: #475569; } .ds-req .link { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-weight: 600; color: #065F46; } .ds-req:hover { border-color: #065F46; box-shadow: 0 12px 28px rgba(4,61,46,.1); transform: translateY(-2px); } .ds-req:focus-visible { outline: 3px solid #065F46; outline-offset: 3px; }"
+      "css": ".ds-req { display: grid; grid-template-columns: 1fr auto; gap: 4px 24px; align-items: center; padding: 20px 22px; background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; color: #0F172A; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; text-decoration: none; transition: border-color .2s, box-shadow .2s, transform .2s; } .ds-req b { font-size: 17px; font-weight: 600; grid-column: 1; } .ds-req p { grid-column: 1; margin: 0; font-size: 15px; color: #475569; } .ds-req .link { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-weight: 600; color: #006438; } .ds-req:hover { border-color: #006438; box-shadow: 0 12px 28px rgba(0,61,34,.1); transform: translateY(-2px); } .ds-req:focus-visible { outline: 3px solid #006438; outline-offset: 3px; }"
     }
   ],
   "narrative": {
     "northStar": "The National Atlas",
-    "overview": "This is the authoritative, map-first record of who in Nigeria has power and who does not. It should feel like opening the definitive national reference — official, but never cold. The visual world is built from two things the platform actually traffics in: land (a deep forest-green cover, the colour of the country's electrification mission) and data layers (clean white plates that lift off the page, maps that carry the eye, numbers set in confident type). Dark green establishes authority at the top of every page; a light, almost paper-white body carries the evidence below it.\n\nThe system runs on restraint. One typeface (Inter) does all the work; one green carries nearly all the brand weight; depth is gentle and functional. Against that calm institutional base, a single bright leaf-green is the spark — used sparingly, mostly on dark grounds, to mark what's live, what's current, what matters now. Sector work is colour-coded with discipline: slate-blue for the power sector, amber for solar home systems, leaf-green for mini-grids and the default. These are signals, not decoration.\n\nThe platform serves developers, government planners, DisCos, researchers and students together, often on mobile and on variable Nigerian networks. So the craft shows as precision and legibility: generous line length, tabular numerals on every statistic, honest sourcing lines under charts, and interactions that reward without distracting. Nothing here is loud for its own sake. The confidence comes from clarity.",
+    "overview": "This is the authoritative, map-first record of who in Nigeria has power and who does not. It should feel like opening the definitive national reference — official, but never cold. The visual world is built from two things the platform actually traffics in: land (a deep forest-green cover, the colour of the country's electrification mission) and data layers (clean white plates that lift off the page, maps that carry the eye, numbers set in confident type). Dark green establishes authority at the top of every page; a light, almost paper-white body carries the evidence below it.\n\nThe system runs on restraint. One typeface (Inter) does all the work; one green carries nearly all the brand weight; depth is gentle and functional. Against that calm institutional base, a single bright mint is the spark — used sparingly, mostly on dark grounds, to mark what's live, what's current, what matters now. Sector work is colour-coded with discipline: slate-blue for the power sector, amber for solar home systems, mint for mini-grids and the default. These are signals, not decoration.\n\nThe platform serves developers, government planners, DisCos, researchers and students together, often on mobile and on variable Nigerian networks. So the craft shows as precision and legibility: generous line length, tabular numerals on every statistic, honest sourcing lines under charts, and interactions that reward without distracting. Nothing here is loud for its own sake. The confidence comes from clarity.",
     "keyCharacteristics": [
       "Deep forest-green authority bands over a light, paper-white body.",
       "One typeface (Inter), hierarchy built from size, weight and tracking.",
       "Flat pages; white cards float on soft green-tinted shadows and lift on hover.",
-      "A single bright leaf-green accent, used rarely, as the 'live / now' signal.",
+      "A single bright mint accent, used rarely, as the 'live / now' signal.",
       "Disciplined sector colour-coding: slate = power, amber = solar, leaf = mini-grid/default.",
       "Map, data-layer and chart motifs as the recurring visual language."
     ],
     "rules": [
-      { "name": "The One Green Rule", "body": "Forest Green (#065F46) is the only accent that appears freely on light surfaces. Everything else — leaf, slate, amber — is reserved for a specific job. If you reach for a second colour 'to add interest,' stop: use green, or use white space.", "section": "colors" },
-      { "name": "The Live-Leaf Rule", "body": "Bright Leaf (#A3D376) is the 'now' signal, not a fill. It belongs to pulsing status dots, hero highlight words, focus rings, and the leaf CTA on dark bands — surfaces where it reads as energy. It should never become a large flat background on a light page.", "section": "colors" },
-      { "name": "The Sector Signal Rule", "body": "Slate = power sector, amber = solar home systems, leaf-green = mini-grids and the default. A sector colour appears only to mark that sector's content (a chip, a dot, a page accent bar). It is never decoration and never mixed across sectors.", "section": "colors" },
-      { "name": "The One Typeface Rule", "body": "Inter is the entire type system. Never introduce a second family for 'contrast' — contrast comes from weight (400 vs 600/700), size, and tracking. A serif or display face would break the institutional voice.", "section": "typography" },
-      { "name": "The Tabular Numbers Rule", "body": "Every figure that represents data — KPIs, stats, file sizes, years, chart labels — uses font-variant-numeric: tabular-nums so columns align and numbers don't jitter between states.", "section": "typography" },
-      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest unless they are a distinct floating object (a card, a menu, a frame). Shadows signal 'this is a separate thing' or respond to hover/focus — they are never applied to sections, bands, or text blocks for ambience.", "section": "elevation" },
-      { "name": "The Green-Shadow Rule", "body": "Card and UI shadows are tinted with rgba(4,61,46,…) (midnight pine), not black. Reserve neutral-black shadow only for mockup frames sitting on dark grounds.", "section": "elevation" }
+      {
+        "name": "The One Green Rule",
+        "body": "REA Green (#006438) is the only accent that appears freely on light surfaces. Everything else — leaf, slate, amber — is reserved for a specific job. If you reach for a second colour 'to add interest,' stop: use green, or use white space.",
+        "section": "colors"
+      },
+      {
+        "name": "The Live-Mint Rule",
+        "body": "Bright Mint (#C8F0C8) is the 'now' signal, not a fill. It belongs to pulsing status dots, hero highlight words, focus rings, and the leaf CTA on dark bands — surfaces where it reads as energy. It should never become a large flat background on a light page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sector Signal Rule",
+        "body": "Slate = power sector, amber = solar home systems, mint = mini-grids and the default. A sector colour appears only to mark that sector's content (a chip, a dot, a page accent bar). It is never decoration and never mixed across sectors.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Typeface Rule",
+        "body": "Inter is the entire type system. Never introduce a second family for 'contrast' — contrast comes from weight (400 vs 600/700), size, and tracking. A serif or display face would break the institutional voice.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Numbers Rule",
+        "body": "Every figure that represents data — KPIs, stats, file sizes, years, chart labels — uses font-variant-numeric: tabular-nums so columns align and numbers don't jitter between states.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest unless they are a distinct floating object (a card, a menu, a frame). Shadows signal 'this is a separate thing' or respond to hover/focus — they are never applied to sections, bands, or text blocks for ambience.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Green-Shadow Rule",
+        "body": "Card and UI shadows are tinted with rgba(0,61,34,…) (midnight pine), not black. Reserve neutral-black shadow only for mockup frames sitting on dark grounds.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do lead with Forest Green (#065F46) for all primary action and brand emphasis on light surfaces; let white space do the rest.",
-      "Do reserve bright Leaf (#A3D376) for 'live/now' signals, hero highlights, focus rings, and the CTA on dark bands — small doses only.",
+      "Do lead with REA Green (#006438) for all primary action and brand emphasis on light surfaces; let white space do the rest.",
+      "Do reserve bright Mint (#C8F0C8) for 'live/now' signals, hero highlights, focus rings, and the CTA on dark bands — small doses only.",
       "Do key sector content with its signal colour (slate = power, amber = solar, leaf = mini-grid/default) and nothing else.",
-      "Do tint card shadows with rgba(4,61,46,…), and pair every hover lift with a matching translateY.",
+      "Do tint card shadows with rgba(0,61,34,…), and pair every hover lift with a matching translateY.",
       "Do set every data figure in Inter with font-variant-numeric: tabular-nums.",
       "Do keep long-form reading to 70–74ch and step body type up to 18px/1.75 in articles.",
-      "Do give every interactive element a 3px focus outline: Forest Green (#065F46) on light surfaces, Leaf only on dark green grounds. WCAG 2.2 AA requires a 3:1 focus indicator, and leaf-on-white is ~1.6:1.",
+      "Do give every interactive element a 3px focus outline: REA Green (#006438) on light surfaces, Mint only on dark green grounds. WCAG 2.2 AA requires a 3:1 focus indicator, and leaf-on-white is ~1.6:1.",
       "Do honour prefers-reduced-motion (reveals and loops already disable under it)."
     ],
     "donts": [
       "Don't introduce a second typeface — build contrast from Inter's weights, sizes, and tracking.",
       "Don't add a new accent colour 'for variety'; the palette is deliberately narrow.",
-      "Don't flood a light surface with a large flat leaf-green fill — it's a spark, not a background.",
+      "Don't flood a light surface with a large flat mint fill — it's a spark, not a background.",
       "Don't use neutral-black shadows on light surfaces (green-tinted only); reserve black shadow for mockup frames on dark grounds.",
       "Don't apply shadows to sections, bands, or text blocks for ambience — depth belongs to discrete floating objects.",
       "Don't add new eyebrow/kicker labels above headings or new left-edge accent bars — both are legacy; retain existing instances but don't extend the pattern.",
