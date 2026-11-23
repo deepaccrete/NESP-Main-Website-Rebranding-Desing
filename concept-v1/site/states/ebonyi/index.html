@@ -1,0 +1,75 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ebonyi state profile | Nigeria SE4ALL</title><meta name="description" content="Settlements, grid, mini-grids and surveyed communities in Ebonyi, calculated from Nigeria SE4ALL open data.">
+<link rel="icon" href="https://nigeriase4all.gov.ng/assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"><link rel="stylesheet" href="../../assets/site.css"></head><body>
+<header class="top"><div class="wrap">
+<a class="id" href="../../index.html"><img src="https://nigeriase4all.gov.ng/assets/logo-5-blitz.png" alt="SE4ALL logo"><span><b>Nigeria SE4ALL</b><small>Federal Ministry of Power · NESP</small></span></a>
+<nav aria-label="Primary"><a href="../../index.html#map">Map</a><a href="../../states/index.html" aria-current=page>States</a><a href="../../index.html#finder">Site-finder</a><a href="https://data.nigeriase4all.gov.ng/">Data</a><a href="https://nigeriase4all.gov.ng/blog">Stories</a><a href="https://nigeriase4all.gov.ng/about">About</a></nav><button class="menu-btn" aria-expanded="false">Menu</button>
+<a href="https://www.power.gov.ng/" class="fmpl" aria-label="Federal Ministry of Power"><img class="fmp" src="https://nigeriase4all.gov.ng/assets/fmp_logo_no_text.png" alt="FMP"></a>
+</div></header>
+<main><div class="wrap"><div class="crumb"><a href="../../index.html">Home</a> / <a href="../index.html">States</a> / Ebonyi</div>
+<div class="state-h"><div><span class="kicker">State profile</span><h1>Ebonyi</h1><p class="muted">Distribution company: Enugu Electricity Distribution Company (EEDC)</p></div>
+<div class="meta">Calculated from Nigeria SE4ALL GeoNode layers<br>Pulled 20 November 2026 · <a href="#notes">Data notes</a></div></div>
+<div class="kpis">
+<div class="kpi"><b>9,552</b><span>settlement clusters</span><small>cluster_all_simple_new</small></div>
+<div class="kpi"><b>192,560</b><span>buildings in settlements</span><small>cluster_all_simple_new</small></div>
+<div class="kpi"><b>4,064</b><span>buildings &gt;5 km from mapped grid (2.1%)</span><small>grid_dist_km &gt; 5</small></div>
+<div class="kpi"><b>740</b><span>SE4ALL off-grid settlements · 18,008 buildings</span><small>cluster_offgrid_simple</small></div>
+<div class="kpi"><b>1,832</b><span>km of MV grid mapped</span><small>distribution_line_mv</small></div>
+<div class="kpi"><b>253</b><span>km of HV transmission lines</span><small>existing_lines_high_voltage</small></div>
+<div class="kpi"><b>4</b><span>substations installed</span><small>substations_currently_installed</small></div>
+<div class="kpi"><b>3 · 199 kW</b><span>mini-grids recorded</span><small>minigrids</small></div>
+<div class="kpi"><b>0</b><span>communities surveyed in the field</span><small>cluster_offgrid_survey</small></div>
+<div class="kpi"><b>1,684</b><span>markets (GRID3)</span><small>grid3_market_edited</small></div>
+</div></div>
+
+<section class="sec" id="map"><div class="wrap"><div class="split">
+<div><h2 style="margin-bottom:14px">Map</h2><div class="state-map"><div class="map" id="state-map"></div>
+<div class="map-ui layers"><b class="small">Layers</b>
+<label><input type="checkbox" data-layer="settle"> Settlement clusters</label>
+<label><input type="checkbox" data-layer="offgrid"> SE4ALL off-grid settlements</label>
+<label><input type="checkbox" data-layer="mv"> MV grid</label>
+<label><input type="checkbox" data-layer="hv"> HV lines</label>
+<label><input type="checkbox" data-layer="subs"> Substations</label>
+<label><input type="checkbox" data-layer="mg"> <i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#0E5A3A"></i> Mini-grids</label>
+<label><input type="checkbox" data-layer="survey"> <i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#B9770E"></i> Surveyed: no grid</label></div></div>
+<p class="small muted" style="margin-top:8px">Lines and settlements are drawn live from the SE4ALL GeoServer. Blue survey points had grid present at the time of survey.</p></div>
+<div><h2 style="margin-bottom:6px">Distance to the grid</h2><p class="muted" style="margin-bottom:18px">Share of Ebonyi's 192,560 buildings by distance from the mapped grid. The black tick marks Nigeria as a whole.</p>
+<div class="bars"><div class="row"><span>0–1 km</span><span class="track"><span class="fill near" style="width:84.7%"></span><span class="nat" style="left:71.2%" title="Nigeria: 71.2%"></span></span><span class="v">84.7% · 163,106</span></div><div class="row"><span>1–5 km</span><span class="track"><span class="fill near" style="width:13.2%"></span><span class="nat" style="left:14.8%" title="Nigeria: 14.8%"></span></span><span class="v">13.2% · 25,390</span></div><div class="row"><span>5–10 km</span><span class="track"><span class="fill" style="width:1.9%"></span><span class="nat" style="left:7.2%" title="Nigeria: 7.2%"></span></span><span class="v">1.9% · 3,668</span></div><div class="row"><span>10–20 km</span><span class="track"><span class="fill" style="width:0.2%"></span><span class="nat" style="left:4.5%" title="Nigeria: 4.5%"></span></span><span class="v">0.2% · 396</span></div><div class="row"><span>20+ km</span><span class="track"><span class="fill" style="width:0.0%"></span><span class="nat" style="left:2.3%" title="Nigeria: 2.3%"></span></span><span class="v">0.0% · 0</span></div></div>
+<div class="flag" style="margin-top:22px">511 settlement clusters (4,064 buildings) in Ebonyi are more than 5 km from the mapped grid. <a class="arrow" href="../../index.html#finder">Filter them in the site-finder</a></div>
+
+<div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid">Off-grid webmap</a><a class="btn line" href="https://apps.nigeriase4all.gov.ng/power-sector">Power sector webmap</a></div>
+</div></div></div></section>
+
+<section class="sec white"><div class="wrap"><div class="sec-h"><div><span class="kicker">Generation</span><h2>Mini-grids</h2></div><p class="lede">Mini-grids recorded for Ebonyi in the SE4ALL mini-grid layer.</p></div><div class="tbl"><table class="t" data-sort><thead><tr><th>Community</th><th>LGA</th><th data-n>kW</th><th data-n>Connections</th><th>System</th><th>Status</th><th>Programme</th></tr></thead><tbody><tr><td>Orie Obeagu Isu</td><td>Obeagu Isu</td><td class="n">66</td><td class="n">100</td><td>Solar Hybrid</td><td>Under Construction · Non Operational</td><td>REA;REF</td></tr><tr><td>Umuntumuna Obeagu Isu</td><td>Obeagu Isu</td><td class="n">33</td><td class="n">—</td><td>Solar Hybrid</td><td>Under Construction · Non Operational</td><td>—</td></tr><tr><td>Eka Awoke</td><td>Ikwo</td><td class="n">100</td><td class="n">855</td><td>Solar Hybrid</td><td>Existing · Operational</td><td>REA;REF</td></tr></tbody></table></div></div></section>
+<section class="sec"><div class="wrap"><div class="sec-h"><div><span class="kicker">Ground truth</span><h2>Surveyed communities</h2></div><p class="lede">Communities visited by the SE4ALL field teams, with what they found on the ground.</p></div><p class="muted">No communities in this state are in the published field-survey layer.</p></div></section>
+
+<section class="sec" id="notes"><div class="wrap"><div class="split">
+<div><h2 style="margin-bottom:14px">Layers used</h2><ul class="layers-used">
+<li><span>se4allWS:cluster_all_simple_new</span><span>settlements, buildings, distance</span></li>
+<li><span>se4allWS:cluster_offgrid_simple</span><span>off-grid settlements</span></li>
+<li><span>se4allWS:cluster_offgrid_survey</span><span>field survey</span></li>
+<li><span>se4allWS:distribution_line_mv</span><span>MV grid</span></li>
+<li><span>geonode:existing_lines_high_voltage</span><span>HV lines</span></li>
+<li><span>geonode:substations_currently_installed</span><span>substations</span></li>
+<li><span>se4allWS:minigrids</span><span>mini-grids</span></li>
+<li><span>se4allWS:disco_coverage</span><span>DisCo areas</span></li>
+<li><span>se4allWS:grid3_market_edited</span><span>markets (GRID3)</span></li></ul>
+<p style="margin-top:14px"><a class="arrow" href="https://data.nigeriase4all.gov.ng/">Download from the data portal</a></p></div>
+<div><h2 style="margin-bottom:14px">Data notes</h2><ul class="notes">
+<li>Figures are calculated from the public GeoNode layers (planned refresh: nightly). Last pull: 20 November 2026.</li>
+<li>Line lengths are measured after clipping to the state boundary. The MV layer combines SE4ALL field data, DisCo grid data (KAECO, KEDCO) and 2025 field work orders.</li>
+<li>"Distance to the grid" is the distance recorded for each settlement cluster in the SE4ALL settlement layer. It may not yet reflect MV lines added in later field work, so it can overstate distances where new grid data has been collected.</li>
+<li>Field-survey records are shown as published. Survey dates for Ebonyi: none.</li>
+<li>Dataset licences are not yet specified on the data portal.</li></ul></div></div></div></section></main>
+<footer class="foot"><div class="wrap"><div class="g">
+<div><h4>Nigeria SE4ALL</h4><p>An initiative of the Federal Ministry of Power, in partnership with the Nigerian Energy Support Programme (NESP).</p>
+<div class="logos"><img src="https://nigeriase4all.gov.ng/assets/logo-1-eu.png" alt="European Union"><img src="https://nigeriase4all.gov.ng/assets/logo-4-ger-coop.png" alt="German Cooperation"><img src="https://nigeriase4all.gov.ng/assets/logo-3-giz.png" alt="GIZ"></div></div>
+<div><h4>Explore</h4><ul><li><a href="../../states/index.html">States</a></li><li><a href="../../index.html#finder">Site-finder</a></li><li><a href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid">Off-grid webmap</a></li><li><a href="https://apps.nigeriase4all.gov.ng/power-sector">Power sector webmap</a></li><li><a href="https://apps.nigeriase4all.gov.ng/shs">Solar home systems webmap</a></li></ul></div>
+<div><h4>Data</h4><ul><li><a href="https://data.nigeriase4all.gov.ng/">Data portal (GeoNode)</a></li><li><a href="https://data.nigeriase4all.gov.ng/geoserver/ows?service=WFS&version=2.0.0&request=GetCapabilities">WFS endpoint</a></li><li><a href="https://minigridmonitor.nigeriase4all.gov.ng/">Mini-grid monitor</a></li><li><a href="https://learning.nigeriase4all.gov.ng/">Learning platform</a></li></ul></div>
+<div><h4>Office</h4><p>Federal Ministry of Power<br>POWER HOUSE 14, Zambezi Crescent Maitama<br>Abuja, Nigeria</p><p style="margin-top:10px"><a href="mailto:contact.nigeriase4all@gmail.com">contact.nigeriase4all@gmail.com</a><br><a href="http://www.power.gov.ng">www.power.gov.ng</a></p></div>
+</div><div class="bot"><span>© 2021 All Rights Reserved by nigeriase4all.gov.ng</span><span><a href="https://nigeriase4all.gov.ng/terms-of-service">Terms of Service</a> · <a href="https://nigeriase4all.gov.ng/privacy-policy">Privacy Policy</a> · <a href="https://nigeriase4all.gov.ng/accreditation">Accreditation</a></span></div></div></footer>
+<script>window.PAGE={"root":"../../","state":"Ebonyi","minigrids":[{"community":"Orie Obeagu Isu","lga":"Obeagu Isu","kw":66.0,"connections":100,"status":"Under Construction","system":"Solar Hybrid","programme":"REA;REF","owner":"Zylab Technologies Nigeria Limited","condition":"Non Operational","lat":6.25707,"lon":7.76257},{"community":"Umuntumuna Obeagu Isu","lga":"Obeagu Isu","kw":33.0,"connections":null,"status":"Under Construction","system":"Solar Hybrid","programme":null,"owner":null,"condition":"Non Operational","lat":6.2589,"lon":7.76918},{"community":"Eka Awoke","lga":"Ikwo","kw":100.0,"connections":855,"status":"Existing","system":"Solar Hybrid","programme":"REA;REF","owner":"Cloud Energy","condition":"Operational","lat":6.07249,"lon":8.1411}],"survey":[]};</script>
+<script src="../../data/se4all-data.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><script src="../../assets/site.js"></script></body></html>

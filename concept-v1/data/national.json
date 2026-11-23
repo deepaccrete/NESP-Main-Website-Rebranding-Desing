@@ -1,0 +1,54 @@
+{
+ "pulled": "2026-11-20",
+ "source": "https://data.nigeriase4all.gov.ng/geoserver/ows",
+ "clusters": 454267,
+ "buildings": 23052816,
+ "offgrid_clusters": 17532,
+ "offgrid_buildings": 3689103,
+ "mv_km": 98517.0,
+ "hv_km": 17043.0,
+ "substations": 458,
+ "thermal_plants": 60,
+ "hydro_plants": 8,
+ "minigrids": 66,
+ "minigrid_kw": 3016.0,
+ "minigrid_connections": 19472,
+ "surveyed": 769,
+ "markets": 11129,
+ "bands": [
+  {
+   "lo": 0,
+   "hi": 1,
+   "clusters": 195881,
+   "buildings": 16296486
+  },
+  {
+   "lo": 1,
+   "hi": 5,
+   "clusters": 141844,
+   "buildings": 3395665
+  },
+  {
+   "lo": 5,
+   "hi": 10,
+   "clusters": 61833,
+   "buildings": 1658311
+  },
+  {
+   "lo": 10,
+   "hi": 20,
+   "clusters": 34626,
+   "buildings": 1026062
+  },
+  {
+   "lo": 20,
+   "hi": null,
+   "clusters": 15490,
+   "buildings": 521177
+  }
+ ],
+ "unassigned": {
+  "clusters_no_state": 390,
+  "minigrids_no_state": 1
+ }
+}
