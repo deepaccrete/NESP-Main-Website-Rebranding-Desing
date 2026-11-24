@@ -1,0 +1,327 @@
+{
+ "checked_on": "2026-11-23",
+ "layers": [
+  {
+   "title": "boundary_adm1",
+   "layer": "se4allWS:nigeria_state_boundaries",
+   "features": 37,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/11"
+  },
+  {
+   "title": "cluster_all_new",
+   "layer": "se4allWS:cluster_all_new",
+   "features": 454267,
+   "duplicates": null,
+   "checked": false,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/2"
+  },
+  {
+   "title": "cluster_all_simple_new",
+   "layer": "se4allWS:cluster_all_simple_new",
+   "features": 454267,
+   "duplicates": null,
+   "checked": false,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/3"
+  },
+  {
+   "title": "cluster_offgrid",
+   "layer": "se4allWS:cluster_offgrid",
+   "features": 17532,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/4"
+  },
+  {
+   "title": "cluster_offgrid_simple",
+   "layer": "se4allWS:cluster_offgrid_simple",
+   "features": 17532,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/31"
+  },
+  {
+   "title": "cluster_offgrid_survey",
+   "layer": "se4allWS:cluster_offgrid_survey",
+   "features": 769,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/5"
+  },
+  {
+   "title": "disco_coverage",
+   "layer": "se4allWS:disco_coverage",
+   "features": 10,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/6"
+  },
+  {
+   "title": "distribution_line_all_no_modell_mv",
+   "layer": "se4allWS:distribution_line_all_no_modell_mv",
+   "features": 46221,
+   "duplicates": null,
+   "checked": false,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/7"
+  },
+  {
+   "title": "distribution_line_mv",
+   "layer": "se4allWS:distribution_line_mv",
+   "features": 63240,
+   "duplicates": null,
+   "checked": false,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/32"
+  },
+  {
+   "title": "existing_lines_high_voltage",
+   "layer": "geonode:existing_lines_high_voltage",
+   "features": 386,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/14"
+  },
+  {
+   "title": "gas_fields",
+   "layer": "geonode:gas_fields",
+   "features": 124,
+   "duplicates": 15,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/15"
+  },
+  {
+   "title": "gas_infrastructure",
+   "layer": "geonode:gas_infrastructure",
+   "features": 112,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/16"
+  },
+  {
+   "title": "gas_pipelines",
+   "layer": "geonode:gas_pipelines",
+   "features": 218,
+   "duplicates": 109,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/19"
+  },
+  {
+   "title": "generation_thermal",
+   "layer": "geonode:generation_thermal",
+   "features": 60,
+   "duplicates": 30,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/18"
+  },
+  {
+   "title": "grid3_market_buffer_merged",
+   "layer": "se4allWS:grid3_market_buffer_merged",
+   "features": 570,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/8"
+  },
+  {
+   "title": "grid3_market_edited",
+   "layer": "se4allWS:grid3_market_edited",
+   "features": 11129,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/9"
+  },
+  {
+   "title": "high_voltage_pylons",
+   "layer": "geonode:high_voltage_pylons",
+   "features": 78966,
+   "duplicates": null,
+   "checked": false,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/20"
+  },
+  {
+   "title": "hydro_generation",
+   "layer": "geonode:hydro_generation",
+   "features": 8,
+   "duplicates": 4,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/17"
+  },
+  {
+   "title": "minigrids",
+   "layer": "se4allWS:minigrids",
+   "features": 66,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/1"
+  },
+  {
+   "title": "modelled_grid_actual_mv",
+   "layer": "se4allWS:modelled_grid_no_mapped",
+   "features": 2588,
+   "duplicates": 0,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/10"
+  },
+  {
+   "title": "night_light_z_score_2019_hex",
+   "layer": "se4allWS:night_light_z_score_2019_hex",
+   "features": 377291,
+   "duplicates": null,
+   "checked": false,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/12"
+  },
+  {
+   "title": "osm_power_line_with_fmp_data",
+   "layer": "se4allWS:osm_power_line_with_fmp_data",
+   "features": 810,
+   "duplicates": 102,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/30"
+  },
+  {
+   "title": "substations_currently_installed",
+   "layer": "geonode:substations_currently_installed",
+   "features": 458,
+   "duplicates": 229,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/23"
+  },
+  {
+   "title": "substations_future",
+   "layer": "geonode:substations_future",
+   "features": 156,
+   "duplicates": 78,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/22"
+  },
+  {
+   "title": "thermal_future",
+   "layer": "geonode:thermal_future",
+   "features": 4,
+   "duplicates": 2,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/21"
+  },
+  {
+   "title": "towns_villages",
+   "layer": "geonode:towns_villages",
+   "features": 12328,
+   "duplicates": 6166,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/25"
+  },
+  {
+   "title": "transmission_lines",
+   "layer": "geonode:transmission_lines",
+   "features": 1620,
+   "duplicates": 810,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/24"
+  },
+  {
+   "title": "wind_existing",
+   "layer": "geonode:wind_existing",
+   "features": 2,
+   "duplicates": 1,
+   "checked": true,
+   "licence": "not_specified",
+   "last_updated": "2026-11-18",
+   "page": "https://data.nigeriase4all.gov.ng/catalogue/#/dataset/26"
+  }
+ ],
+ "links": {
+  "Off-grid webmap": {
+   "url": "https://apps.nigeriase4all.gov.ng/minigrid-offgrid",
+   "status": 200
+  },
+  "Interconnected webmap": {
+   "url": "https://apps.nigeriase4all.gov.ng/minigrid-interconnected",
+   "status": 200
+  },
+  "Power sector webmap": {
+   "url": "https://apps.nigeriase4all.gov.ng/power-sector",
+   "status": 200
+  },
+  "Solar home systems webmap": {
+   "url": "https://apps.nigeriase4all.gov.ng/shs",
+   "status": 200
+  },
+  "Mini-grid monitor": {
+   "url": "https://minigridmonitor.nigeriase4all.gov.ng/",
+   "status": "HTTPSConnectionPool(host='minigridmonitor.nigeriase4all.gov."
+  },
+  "Learning platform": {
+   "url": "https://learning.nigeriase4all.gov.ng/",
+   "status": 200
+  },
+  "Guide: how to download geodata": {
+   "url": "https://data.nigeriase4all.gov.ng/documents/29/download",
+   "status": 200
+  },
+  "Guide: how to use WMS/WFS": {
+   "url": "https://data.nigeriase4all.gov.ng/documents/28/download",
+   "status": 200
+  },
+  "Off-grid site map PDF (linked from the current homepage)": {
+   "url": "https://data.nigeriase4all.gov.ng/documents/367/download",
+   "status": 404
+  },
+  "30:30:30 source document (linked from the current Power Sector page)": {
+   "url": "https://data.nigeriase4all.gov.ng/documents/357",
+   "status": 404
+  }
+ }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Isheagu, Delta | Field survey | Nigeria Electrification Atlas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/img/rea-mark.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<link rel="stylesheet" href="../../assets/css/v6.css">
+    <style>
+
+        .hero-c .wrap { grid-template-columns: minmax(380px, 540px) 1fr; gap: 56px; min-height: 560px }
+        .hero-c .hero-copy { padding: 40px 0 130px }
+        .collage { position: relative; padding: 46px 0 104px; margin-bottom: 40px; opacity: 0; animation: fade 1s .4s forwards }
+        .vid { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden;
+               background: url(https://i.ytimg.com/vi/uDzljpYAuu4/maxresdefault.jpg) center/cover, url(https://i.ytimg.com/vi/uDzljpYAuu4/hqdefault.jpg) center/cover, #032A20 url(assets/img/blog-mobile-mapping.jpg) center/cover; box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.1) }
+        .vid iframe { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%) scale(1.02); border: 0; pointer-events: none }
+        .vid-sound { position: absolute; left: 16px; top: 16px; z-index: 2; display: inline-flex; gap: 8px; align-items: center; padding: 8px 14px; border-radius: 999px;
+                     background: rgba(4,61,46,.78); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 13px; font-weight: 600; transition: background .2s }
+        .vid-sound:hover { background: var(--green) }
+        .ph { position: absolute; margin: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.4); z-index: 3 }
+        .ph img { width: 100%; height: 100%; object-fit: cover; display: block }
+        /* photos hang off the video's bottom edge: left overlaps more, right overlaps less */
+        .ph2 { right: -18px; bottom: 30px; width: 36%; height: 150px; border: 5px solid #053E2E }
+        .ph2 img { object-position: 40% 30% }
+        .fc { z-index: 4; position: absolute; background: #fff; color: var(--ink); border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,.3) }
+        .fc1 { left: -28px; bottom: 22px; padding: 16px 20px; max-width: 220px }
+        .fc1 b { display: block; font-size: 30px; line-height: 1.05; color: var(--green); letter-spacing: -.02em }
+        .fc1 span { font-size: 13px; color: var(--ink-2); line-height: 1.35; display: block; margin-top: 4px }
+        .fc2 { right: -10px; top: 0; display: flex; gap: 10px; align-items: center; padding: 12px 14px; font-size: 13px; transition: transform .2s }
+        .fc2:hover { transform: translateY(-3px) }
+        .fc2 i { width: 10px; height: 10px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 4px rgba(163,211,118,.35); animation: pulse 2s infinite }
+        .fc2 b { display: block; font-size: 14px } .fc2 small { color: var(--ink-2) } .fc2 svg { color: var(--green) }
+        @media (max-width:1100px) { .hero-c .wrap { grid-template-columns: 1fr } .hero-c .hero-copy { padding-bottom: 10px } .collage { margin-bottom: 110px } .ph2 { right: 0 } .fc2 { right: 0 } }
+        @media (max-width:640px) { .collage { padding: 0; margin-bottom: 100px } .ph2, .fc2 { display: none } .fc1 { position: relative; left: 0; bottom: 0; margin: -28px 0 0 14px; display: inline-block; padding: 12px 16px } .fc1 b { font-size: 24px } .vid-sound { left: 10px; top: 10px; font-size: 12px; padding: 6px 11px } }
+        /* video: only embed when served over http(s) — YouTube blocks embeds on file:// pages (Error 153) */
+        .vid iframe { opacity: 0; transition: opacity .6s }
+        .vid.playing iframe { opacity: 1 }
+        .vid-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 76px; height: 76px; border-radius: 50%;
+                    display: grid; place-items: center; background: var(--leaf); color: var(--night); box-shadow: 0 12px 34px rgba(0,0,0,.4), 0 0 0 10px rgba(163,211,118,.25); transition: transform .2s }
+        .vid-play:hover { transform: translate(-50%, -50%) scale(1.06) }
+        .vid-play svg { margin-left: 4px }
+        .vid.playing .vid-play { display: none }
+        .vid:not(.playing) .vid-sound { display: none }
+        .ph3 { left: -28px; bottom: 74px; width: 34%; height: 150px; border: 5px solid #053E2E }
+        @media (max-width:1100px) { .ph3 { left: 0 } }
+        @media (max-width:640px) { .ph3 { display: none } }
+    </style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+        <div class="wrap">
+            <a class="brand" href="../../index.html" aria-label="Nigeria Electrification Atlas home">
+                <div class="mark"><img
+                        src="../../assets/img/rea-mark.png"
+                        alt="Rural Electrification Agency"></div>
+                <div class="div"></div>
+                <div>
+                    <div class="brand-name">Nigeria Electrification Atlas</div>
+                    <div class="brand-sub">Rural Electrification Agency</div>
+                </div>
+            </a>
+            <nav class="main" aria-label="Main">
+                <div class="dd" id="dd">
+                    <button class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">Who are you?
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></button>
+                    <div class="dd-menu" id="dd-menu" role="menu"><a role="menuitem" href="../../for/developers/index.html"><span class="dd-ic a-ic-developer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14l2.5-8h13L21 14z"/><path d="M4.4 10h15.2M9 6l-1 8M15 6l1 8"/><path d="M12 14v3M8 21h8M12 17l-1.5 2.2h3L12 21.4"/></svg></span><span><b>Mini-grid developers</b><small>Build-ready communities and site criteria</small></span></a><a role="menuitem" href="../../for/investors/index.html"><span class="dd-ic a-ic-investor"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M5 16l4-4 3 3 6-7"/><path d="M14 8h4v4"/><circle cx="6.5" cy="6.5" r="2.5"/></svg></span><span><b>Investors and financiers</b><small>Market by state, recorded fleet, grid backbone</small></span></a><a role="menuitem" href="../../states/index.html"><span class="dd-ic a-ic-state"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 21h18M4 18h16"/></svg></span><span><b>State governments</b><small>Profiles for the 36 states and the FCT</small></span></a><a role="menuitem" href="../../for/researchers/index.html"><span class="dd-ic a-ic-researcher"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="10" cy="5.5" rx="6.5" ry="2.5"/><path d="M3.5 5.5v9c0 1.4 2.9 2.5 6.5 2.5"/><path d="M16.5 5.5V10"/><path d="M3.5 10c0 1.4 2.9 2.5 6.5 2.5"/><circle cx="17" cy="16" r="3"/><path d="M19.2 18.2L21.5 20.5"/></svg></span><span><b>Researchers and data users</b><small>Catalogue, downloads, WMS/WFS and data notes</small></span></a><a role="menuitem" href="../../for/learners/index.html"><span class="dd-ic a-ic-learner"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V11"/><path d="M22 9v5"/></svg></span><span><b>Students and GIS careers</b><small>Free courses, mapathons and a learning path</small></span></a><a class="dd-foot" href="../../index.html#briefings">See every briefing <svg width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-6-6 6 6-6 6" />
+                            </svg></a>
+                    </div>
+                </div>
+                <a href="../../communities/index.html">Field survey</a><a href="../../index.html#data">Data</a><a href="https://nigeriase4all.gov.ng/blog">Blog</a><a href="https://nigeriase4all.gov.ng/about">About</a>
+            </nav>
+            <div class="hdr-right">
+                <a class="partner" href="https://power.gov.ng" target="_blank" rel="noopener" aria-label="Federal Ministry of Power">
+                    <span class="pmark"><img src="../../assets/img/fmp-mark.png" alt="" width="36" height="36"></span>
+                    <span class="ptxt"><b>Federal Ministry</b><small>of Power</small></span>
+                </a>
+                <div class="dd a-dd2" id="dd2"><button class="btn btn-primary a-dd2-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd2-menu">Explore webmaps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="dd-menu" id="dd2-menu" role="menu"><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid?buildings_max=2000&buildings_min=100&grid_dist_max=40&grid_dist_min=5" target="_blank" rel="noopener"><span class="dd-ic a-ic-offgrid"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17.5" cy="6" r="2.5"/><path d="M17.5 1.5v.8M21.7 6h-.8M14.1 6h-.8M20.5 3l-.6.6"/><path d="M3 12l6-5 6 5"/><path d="M5 11v9h8v-9"/><path d="M8 20v-4h2v4"/></svg></span><span><b>Off-grid mini-grids <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>Unelectrified settlements far from the grid</small></span></a><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/minigrid-interconnected?buildings_max=2000&buildings_min=100&grid_dist_max=5&grid_dist_min=0" target="_blank" rel="noopener"><span class="dd-ic a-ic-interconnected"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></svg></span><span><b>Interconnected mini-grids <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>Grid-connected communities with weak supply</small></span></a><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/power-sector?grid_buffer=3" target="_blank" rel="noopener"><span class="dd-ic a-ic-power"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l-5 20M12 2l5 20"/><path d="M6 8h12M5 13h14"/><path d="M8.3 8l7.6 5M15.7 8L8.1 13"/><path d="M9.5 18h5"/></svg></span><span><b>Power sector <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>DisCo areas, substations, MV and HV grid</small></span></a><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/shs?market_dist=10&grid_dist_max=40&grid_dist_min=0" target="_blank" rel="noopener"><span class="dd-ic a-ic-shs"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 13h6l1 4H8z"/><path d="M11 13l-.5 4M13 13l.5 4"/></svg></span><span><b>Solar home systems <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>Markets and the customer base around them</small></span></a><a class="dd-foot" href="../../index.html#tools">About the webmaps</a></div></div>
+                <button class="icon-btn burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 7h16M4 12h16M4 17h16" />
+                    </svg></button>
+            </div>
+        </div>
+    </header>
+    <div class="mnav" id="mnav" hidden>
+        <div class="mnav-group">
+            <div class="mnav-h">Who are you?</div>
+            <a href="../../for/developers/index.html">Mini-grid developers</a><a href="../../for/investors/index.html">Investors and financiers</a><a href="../../states/index.html">State governments</a><a href="../../for/researchers/index.html">Researchers and data users</a><a href="../../for/learners/index.html">Students and GIS careers</a>
+        </div>
+        <a href="../../communities/index.html">Field survey</a><a href="../../index.html#data">Data</a><a href="https://nigeriase4all.gov.ng/blog">Blog</a><a href="https://nigeriase4all.gov.ng/about">About</a>
+        <div class="mnav-group"><div class="mnav-h">Explore webmaps</div><a href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid?buildings_max=2000&buildings_min=100&grid_dist_max=40&grid_dist_min=5" target="_blank" rel="noopener">Off-grid mini-grids</a><a href="https://apps.nigeriase4all.gov.ng/minigrid-interconnected?buildings_max=2000&buildings_min=100&grid_dist_max=5&grid_dist_min=0" target="_blank" rel="noopener">Interconnected mini-grids</a><a href="https://apps.nigeriase4all.gov.ng/power-sector?grid_buffer=3" target="_blank" rel="noopener">Power sector</a><a href="https://apps.nigeriase4all.gov.ng/shs?market_dist=10&grid_dist_max=40&grid_dist_min=0" target="_blank" rel="noopener">Solar home systems</a></div>
+    </div>
+<main id="main"><section class="phero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../../index.html">Home</a> <span>/</span> <a href="../index.html">Field survey</a> <span>/</span> <a href="../../states/delta/index.html">Delta</a> <span>/</span> <span>Isheagu</span></nav><div class="eyebrow">Surveyed community</div><h1>Isheagu</h1>
+<p class="lead">Aniocha South LGA, Delta · surveyed 2022-05-04</p><div class="hero-cta" style="opacity:1;animation:none;margin-top:22px"><button class="btn btn-leaf" type="button" onclick="window.print()">Print or save as PDF</button><a class="btn btn-ghost" href="mailto:contact.nigeriase4all@gmail.com?subject=Correction:%20Isheagu%20(106208-9-1)">Report a correction</a></div><p class="a-stamp">Calculated from the platform's public data on 23 November 2026. <a href="#notes">How these figures are made</a></p></div></section>
+<section class="sec" style="padding-top:56px"><div class="wrap">
+<div class="a-kpis">
+<div class="a-kpi"><b>915</b><span>buildings in the settlement</span><small>field survey</small></div><div class="a-kpi"><b>Connected to national grid</b><span>grid at survey</span><small>field survey</small></div>
+<div class="a-kpi"><b>0.04 km</b><span>to the nearest MV line</span><small>recalculated, distribution_line_mv</small></div>
+<div class="a-kpi"><b>21.5 km</b><span>to Asaba AIS 132kV</span><small>installed substations, de-duplicated</small></div>
+<div class="a-kpi"><b>50%</b><span>of businesses run generators</span><small>field survey</small></div>
+</div></div></section>
+<section class="sec field" style="padding-top:56px"><div class="wrap"><div class="a-split">
+<div><div class="a-fact"><h3 class="a-h3">Energy today</h3><table class="a-kv"><tr><th>Grid at survey</th><td>yes, connected to national grid</td></tr><tr><th>Grid voltage</th><td>mv and lv</td></tr><tr><th>Grid functionality</th><td>everything functional</td></tr><tr><th>Grid built</th><td>1975</td></tr><tr><th>Transformer present</th><td>Yes</td></tr><tr><th>Mini-grid present</th><td>No</td></tr><tr><th>Households with generators</th><td>50%</td></tr><tr><th>Household generator size (kVA)</th><td>0.9</td></tr><tr><th>Businesses with generators</th><td>50%</td></tr><tr><th>Business generator size (kVA)</th><td>1.3</td></tr><tr><th>Petrol (₦/litre)</th><td>400</td></tr><tr><th>Diesel (₦/litre)</th><td>700</td></tr><tr><th>Kerosene (₦/litre)</th><td>400</td></tr><tr><th>Petrol station in community</th><td>No</td></tr><tr><th>Nearest petrol station (km)</th><td>15</td></tr></table></div><div class="a-fact"><h3 class="a-h3">Economy and productive use</h3><table class="a-kv"><tr><th>Main income</th><td>farming</td></tr><tr><th>Second income</th><td>fishing</td></tr><tr><th>Third income</th><td>trading</td></tr><tr><th>Grinding mills</th><td>8</td></tr><tr><th>Oil presses</th><td>2</td></tr><tr><th>Other productive use</th><td>block industries</td></tr><tr><th>Shops and kiosks</th><td>32</td></tr><tr><th>Barbers and salons</th><td>8</td></tr><tr><th>Tailors</th><td>10</td></tr><tr><th>Phone charging</th><td>7</td></tr><tr><th>Welders</th><td>2</td></tr><tr><th>Carpenters</th><td>15</td></tr><tr><th>Generator repairers</th><td>6</td></tr><tr><th>Vulcanisers</th><td>4</td></tr><tr><th>Market days</th><td>Monday, Thursday</td></tr></table></div><div class="a-fact"><h3 class="a-h3">Services and finance</h3><table class="a-kv"><tr><th>Health facilities</th><td>1</td></tr><tr><th>Primary schools</th><td>5</td></tr><tr><th>Secondary schools</th><td>1</td></tr><tr><th>Bank</th><td>No</td></tr><tr><th>Mobile money</th><td>Yes</td></tr></table></div><div class="a-fact"><h3 class="a-h3">Connectivity and access</h3><table class="a-kv"><tr><th>MTN</th><td>4G</td></tr><tr><th>Airtel</th><td>4G</td></tr><tr><th>Glo</th><td>4G</td></tr><tr><th>9mobile</th><td>not available</td></tr><tr><th>Truck access</th><td>all year round</td></tr><tr><th>4x4 access</th><td>all year round</td></tr><tr><th>Saloon car access</th><td>all year round</td></tr><tr><th>Motorbike access</th><td>all year round</td></tr><tr><th>Public transport</th><td>all year round</td></tr></table></div><div class="a-fact"><h3 class="a-h3">Agriculture</h3><table class="a-kv"><tr><th>Main crop</th><td>cassava</td></tr><tr><th>Second crop</th><td>yam</td></tr><tr><th>Third crop</th><td>okro</td></tr><tr><th>Fourth crop</th><td>pepper</td></tr><tr><th>Other crops</th><td>yam, pepper, okro</td></tr></table></div></div>
+<div><div class="a-smap a-cmap"><div class="a-map" id="a-one-map"></div></div><p class="sm a-muted" style="margin-top:8px">The community (amber), medium-voltage grid (live from GeoServer) and the nearest installed substation (blue).</p>
+<div class="a-flag" style="margin-top:18px">Recorded as surveyed on 2022-05-04; conditions may have changed. Seen something out of date? <a class="a-go" href="mailto:contact.nigeriase4all@gmail.com?subject=Correction:%20Isheagu%20(106208-9-1)">Report a correction</a></div>
+<p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-primary" href="../../states/delta/index.html">Delta state profile</a><a class="btn btn-outline" href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid" target="_blank" rel="noopener">Off-grid webmap</a></p></div>
+</div></div></section>
+<section class="sec" id="notes"><div class="wrap"><ul class="a-notes"><li>Source: <code>cluster_offgrid_survey</code>, record 106208-9-1. Nearest MV line and substation recalculated on 23 November 2026.</li><li>Dataset licence not yet specified on the data portal.</li></ul></div></section></main>
+<footer>
+        
+        <svg class="ghost-arms" viewBox="0 0 200 220" aria-hidden="true" fill="none" stroke="#D3DED6" stroke-width="2.5"
+            stroke-linejoin="round">
+            <path d="M100 40c-18 0-32 10-40 26l-6 42c-2 26 18 48 46 60 28-12 48-34 46-60l-6-42c-8-16-22-26-40-26z" />
+            <path d="M100 48l-22 40 22 22 22-22z" stroke-width="2" />
+            <path d="M100 110v48" stroke-width="2" />
+            <path d="M100 8c-10 6-16 14-14 24 6-2 10-6 14-12 4 6 8 10 14 12 2-10-4-18-14-24z" />
+            <path d="M52 100c-14-2-24 6-30 20 8-4 14-2 20 2-6 8-6 18 0 26 8-6 10-16 8-26 6 0 10-6 2-22z" />
+            <path d="M148 100c14-2 24 6 30 20-8-4-14-2-20 2 6 8 6 18 0 26-8-6-10-16-8-26-6 0-10-6-2-22z" />
+            <path d="M30 188c20-8 40 4 70 4s50-12 70-4" stroke-width="2" />
+        </svg>
+        <div class="wrap">
+            <div class="ftop">
+                <div class="fcontact">
+                    <img class="flogo"
+                        src="../../assets/img/rea-logo.png"
+                        alt="Rural Electrification Agency — Energy, Empowerment, Efficiency">
+                    <div style="font-weight:700;margin-top:18px">Nigeria Electrification Atlas</div><div class="formerly">Formerly Nigeria SE4ALL</div>
+                    <p>Rural Electrification Agency<br>Abuja, Nigeria<br><a href="mailto:contact.nigeriase4all@gmail.com">contact.nigeriase4all@gmail.com</a></p>
+                    <div class="sm"><a href="https://rea.gov.ng/" style="color:var(--green);font-weight:600">rea.gov.ng</a> &nbsp;·&nbsp;
+                        <a href="https://www.power.gov.ng/" style="color:var(--green);font-weight:600">power.gov.ng</a>
+                    </div>
+                </div>
+                <div class="fcol"><h4>Briefings</h4><a href="../../for/developers/index.html">Mini-grid developers</a><a href="../../for/investors/index.html">Investors</a><a href="../../states/index.html">State governments</a></div><div class="fcol"><h4>Platform</h4><a href="../../communities/index.html">Field survey explorer</a><a href="../../data-health/index.html">Data health</a><a href="../../index.html#explore">Map by state</a><a href="../../index.html#finder">Site-finder</a><a href="../../index.html#tools">Webmaps</a><a href="../../index.html#data">Data downloads</a></div><div class="fcol"><h4>Resources</h4><a href="https://learning.nigeriase4all.gov.ng/" target="_blank" rel="noopener">Learning platform</a><a href="https://nigeriase4all.gov.ng/blog">Blog</a><a href="https://data.nigeriase4all.gov.ng/documents/29/download">How to download data</a><a href="https://data.nigeriase4all.gov.ng/documents/28/download">How to use WMS/WFS</a></div><div class="fcol"><h4>About</h4><a href="https://nigeriase4all.gov.ng/about">About the platform</a><a href="mailto:contact.nigeriase4all@gmail.com?subject=Data%20request">Request or share data</a><a href="https://rea.gov.ng/">Rural Electrification Agency</a><a href="https://www.power.gov.ng/">Federal Ministry of Power</a><a href="https://nigeriase4all.gov.ng/accreditation">Accreditation</a><a href="mailto:contact.nigeriase4all@gmail.com">Contact</a></div>
+            </div>
+            <div class="fbot">
+                <span>© <span id="yr"></span> Rural Electrification Agency. All rights reserved.</span>
+                <span><a href="https://nigeriase4all.gov.ng/accreditation">Accreditation</a><a href="https://nigeriase4all.gov.ng/terms-of-service">Terms of service</a><a href="https://nigeriase4all.gov.ng/privacy-policy">Privacy</a></span></div>
+        </div>
+    </footer>
+<script>window.PAGE={"root": "../../", "kind": "community", "point": [6.0355, 6.545], "name": "Isheagu", "sub": {"name": "Asaba AIS 132kV", "kv": 132, "lat": 6.18199, "lon": 6.67216}};</script><script src="../../data/atlas-data.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><script src="../../assets/js/v6.js"></script>
+</body></html>
