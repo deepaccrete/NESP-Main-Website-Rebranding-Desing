@@ -736,7 +736,6 @@ html{scroll-padding-top:72px}
             <span class="lbl">Colour settlements by</span>
             <div class="seg" id="colorBy" style="flex-wrap:wrap"><button type="button" data-v="ap" aria-pressed="true">Approach</button><button type="button" data-v="dist" aria-pressed="false">Distance</button><button type="button" data-v="score" aria-pressed="false">Score</button></div>
             <label class="ck" style="margin-top:10px"><input type="checkbox" id="heat">Show as heatmap of buildings</label>
-            <label class="ck" style="margin-top:6px"><input type="checkbox" id="autoSat" checked>Satellite under footprints when zoomed in</label>
           </div>
         </div>
       </div>
@@ -1904,7 +1903,7 @@ $('#layerList').addEventListener('change', e => { const id = e.target.dataset.l;
 /* ---------- view menu ---------- */
 $('#viewBtn').onclick = () => { const p = $('#viewPop'); p.hidden = !p.hidden; $('#viewBtn').setAttribute('aria-expanded', !p.hidden); };
 $('#base').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.base = b.dataset.v; $$('#base button').forEach(x => x.setAttribute('aria-pressed', x === b)); applyBase(); writeHash(); });
-function applyBase() { const sat = S.base === 'sat' || (S.autoSat !== false && map.getZoom() >= 12 && isOn('foot')); map.setLayoutProperty('osm', 'visibility', sat ? 'none' : 'visible'); map.setLayoutProperty('sat', 'visibility', sat ? 'visible' : 'none'); map.setPaintProperty('osm', 'raster-saturation', S.base === 'light' ? -1 : -0.3); map.setPaintProperty('osm', 'raster-brightness-min', S.base === 'light' ? .25 : 0); map.setPaintProperty('osm', 'raster-contrast', S.base === 'light' ? -.25 : 0); }
+function applyBase() { const sat = S.base === 'sat'; map.setLayoutProperty('osm', 'visibility', sat ? 'none' : 'visible'); map.setLayoutProperty('sat', 'visibility', sat ? 'visible' : 'none'); map.setPaintProperty('osm', 'raster-saturation', S.base === 'light' ? -1 : -0.3); map.setPaintProperty('osm', 'raster-brightness-min', S.base === 'light' ? .25 : 0); map.setPaintProperty('osm', 'raster-contrast', S.base === 'light' ? -.25 : 0); }
 $('#colorBy').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; S.colorBy = b.dataset.v; $$('#colorBy button').forEach(x => x.setAttribute('aria-pressed', x === b)); colorClusters(); legend(); writeHash(); });
 $('#heat').addEventListener('change', e => { S.heat = e.target.checked; map.setLayoutProperty('heat', 'visibility', S.heat && isOn('clusters') ? 'visible' : 'none'); writeHash(); });
 
@@ -2162,7 +2161,6 @@ map.on('load', () => {
   map.addLayer({ id: 'meas-pts', type: 'circle', source: 'meas', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-radius': 5, 'circle-color': ['case', ['==', ['get', 'k'], 'snap'], '#C0392B', '#fff'], 'circle-stroke-color': '#0F172A', 'circle-stroke-width': 2 } });
   map.on('zoomend', applyBase);
 });
-$('#autoSat').addEventListener('change', e => { S.autoSat = e.target.checked; applyBase(); });
 
 /* ---------- 1. exact footprint of the open settlement ---------- */
 let footTok = 0;
