@@ -2,7 +2,8 @@
 """State profiles v2 (map-first). Rewrites site/states/<slug>/index.html in place.
 Keeps each page's v3 header/footer; replaces <main>. Originals are kept in _backup/states-before-redesign/.
 Run from anywhere:  python3 concept-v3/src/make_state_pages.py"""
-import os, re, json, html, shutil, datetime
+import os, re, json, html, shutil, datetime, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from clean_footer import fix as clean_footer
 
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 SITE = os.path.join(ROOT, "site"); BAK = os.path.join(os.path.dirname(ROOT), "_backup", "states-before-redesign")
@@ -158,6 +159,7 @@ for name in STATES:
     if "state.js" not in doc: doc = doc.replace('<script src="../../assets/js/v9.js"></script>', '<script src="../../assets/js/v9.js"></script><script src="../../assets/js/state.js"></script>', 1)
     doc = re.sub(r'state\.(css|js)(\?v=[0-9a-f]+)?"', lambda m: f'state.{m.group(1)}?v={VER[m.group(1)]}"', doc)
     assert "state.css" in doc and "state.js" in doc and '"kind": "stateprofile"' in doc, name
+    doc = clean_footer(doc)
     open(path, "w", encoding="utf-8").write(doc); n += 1
 for f, sub in (("state.css", "css"), ("state.js", "js")):
     src = os.path.join(HERE, "assets", sub, f)

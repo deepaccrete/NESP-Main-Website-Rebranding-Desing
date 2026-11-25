@@ -92,5 +92,6 @@ page = (head.rstrip() + '\n<style>\n' + css + '\n</style>\n</head>\n' + chrome_t
         f'<script>window.PAGE={{"root": "{root}", "kind": "explorer"}};</script>\n<script src="{root}assets/js/v9.js"></script>\n'
         '<script>(function(){var h=document.getElementById("hdr");if(!h)return;var k=function(){if(!h.classList.contains("solid"))h.classList.add("solid")};k();new MutationObserver(k).observe(h,{attributes:true,attributeFilter:["class"]});})();</script>\n'
         '<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>\n' + app_js + '\n</body>\n</html>\n')
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from clean_footer import fix as _cf; page = _cf(page)
 open(DEST, 'w', encoding='utf-8').write(page)
 print('wrote', DEST, len(page))

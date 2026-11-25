@@ -35,5 +35,6 @@ page = (head.rstrip() + '\n</head>\n' + chrome_top + '<main id="main">\n' + body
         f'<script>window.PAGE={{"root": "{R}", "kind": "about"}};</script>\n<script src="{R}assets/js/v9.js"></script>\n</body>\n</html>\n')
 os.makedirs(os.path.join(SITE, 'about'), exist_ok=True)
 out = os.path.join(SITE, 'about', 'index.html')
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from clean_footer import fix as _cf; page = _cf(page)
 open(out, 'w', encoding='utf-8').write(page)
 print('wrote', out, len(page))

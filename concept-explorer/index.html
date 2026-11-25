@@ -296,11 +296,6 @@ button.near-i:hover{border-color:var(--green)}
 .score p{font-size:12.5px;color:var(--ink-2);line-height:1.45}
 #ar,#nb,#bo,#bs,#bv{display:grid;gap:14px}
 #nb{gap:6px}
-.dq{display:grid;gap:8px}
-.dq-i{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:4px}
-.dq-i .top{display:flex;align-items:center;gap:8px;justify-content:space-between}
-.dq-i b{font-size:13.5px;font-weight:600}
-.dq-i p{font-size:12.5px;color:var(--ink-2);line-height:1.45}
 .pill{font-size:11.5px;font-weight:600;border-radius:999px;padding:2px 9px;white-space:nowrap}
 .pill.ok{background:rgba(6,95,70,.08);color:var(--green)}.pill.warn{background:#FBEFD5;color:var(--amber-ink)}.pill.bad{background:#FBEAEA;color:var(--red)}.pill.info{background:var(--field);color:var(--ink-2)}
 .cmpt{width:100%;border-collapse:collapse;font-size:12.5px}
@@ -644,10 +639,6 @@ button.near-i:hover{border-color:var(--green)}
         <summary>Change over time</summary>
         <div class="fg-b" id="timeBox"><div class="skel"></div></div>
       </details>
-      <details class="fg" open>
-        <summary>Data quality checks <span class="on" id="dqN"></span></summary>
-        <div class="fg-b" id="dqBox"><div class="skel"></div></div>
-      </details>
     </div>
 
     <!-- ============ LAYERS ============ -->
@@ -966,7 +957,6 @@ async function init() {
   await Promise.all(['subs', 'thermal', 'hydro', 'wind'].map(id => ensureVec(id)));
   done();
   buildLayerList();
-  flagSurvey();
   readHash();
   fillSchemes();
   svRecompute();
@@ -1425,7 +1415,7 @@ function surveyDet(f) {
   const vClass = g === 'ok' ? 'inter' : g === 'never' ? 'bad' : g === 'nc' ? 'warn' : 'off';
   const vTitle = { ok: 'Connected, grid working', never: 'Grid built, never worked', nc: 'Grid nearby, not connected', no: 'No grid connection' }[g];
   const allCrops = Object.keys(p).filter(k => /^crop_cultivated_(?!primary|secondary|third|fourth|other)/.test(k) && p[k] === true).map(k => nice(k.replace('crop_cultivated_', '')));
-  const overview = () => `${p._flag ? `<div class="verdict bad"><small>Data note</small><p>${esc(p._flag)}</p></div>` : ''}
+  const overview = () => `
     <div class="verdict ${vClass}"><small>Power today</small><b>${vTitle}</b><p>${[p.grid_voltage ? 'Voltage ' + p.grid_voltage.replace(/_and_/, ' and ').toUpperCase() : '', p.grid_year_built ? 'built ' + p.grid_year_built : '', p.mini_grid_presence ? 'mini-grid ' + (nice(p.mini_grid_status) || 'present').toLowerCase() : ''].filter(Boolean).join(' · ') || 'As recorded by the field team on the survey date.'}</p></div>
     ${tiles([[p.building_count != null ? fmt(p.building_count) : '–', 'buildings'], [p.grid_dist_km != null ? km(p.grid_dist_km) : '–', 'to mapped MV grid'], [(p.survey_date || '').slice(0, 4) || '–', 'survey year']])}
     ${potentialHTML(p.building_count, (p.building_count || 0) < S.size ? 'shs' : 'off', p)}
@@ -1840,7 +1830,7 @@ function legend() {
 
 /* =====================================================================
    PLANNING TOOLS: grid extension what-if, scoring schemes, portfolios,
-   change over time, data quality
+   change over time
    ===================================================================== */
 const PF_COLORS = ['#7C3AED', '#0EA5E9', '#DB2777', '#EA580C', '#0D9488', '#4F46E5', '#CA8A04', '#9333EA', '#0284C7', '#BE123C'];
 const mPerPx = (lat, z) => 156543.03 * Math.cos(lat * Math.PI / 180) / Math.pow(2, z);
@@ -1848,14 +1838,12 @@ map.on('load', () => {
   map.addSource('plan', { type: 'geojson', data: EMPTY() });
   map.addSource('reach', { type: 'geojson', data: EMPTY() });
   map.addSource('port', { type: 'geojson', data: EMPTY() });
-  map.addSource('flags', { type: 'geojson', data: EMPTY() });
   [[5, .07], [3, .09], [1, .12]].forEach(([k, o]) => map.addLayer({ id: 'buf' + k, type: 'line', source: 'plan', filter: ['==', ['geometry-type'], 'LineString'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#1E4E79', 'line-opacity': o, 'line-width': ['interpolate', ['exponential', 2], ['zoom'], 0, 2 * k * 1000 / mPerPx(9, 0), 22, 2 * k * 1000 / mPerPx(9, 22)] } }, 'heat'));
   map.addLayer({ id: 'port-fill', type: 'fill', source: 'port', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .14 } }, 'heat');
   map.addLayer({ id: 'port-line', type: 'line', source: 'port', paint: { 'line-color': ['get', 'color'], 'line-width': 2.2 } }, 'heat');
   map.addLayer({ id: 'plan-line', type: 'line', source: 'plan', filter: ['==', ['geometry-type'], 'LineString'], paint: { 'line-color': '#C0392B', 'line-width': 3.5, 'line-dasharray': [2, 1] } });
   map.addLayer({ id: 'plan-pts', type: 'circle', source: 'plan', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-radius': 5, 'circle-color': '#fff', 'circle-stroke-color': '#C0392B', 'circle-stroke-width': 2.5 } });
   map.addLayer({ id: 'reach', type: 'circle', source: 'reach', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 6, 3, 11, 8], 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-width': 2, 'circle-stroke-color': ['match', ['get', 'b'], 1, '#C0392B', 3, '#E67E22', '#1E4E79'] } });
-  map.addLayer({ id: 'flags', type: 'circle', source: 'flags', paint: { 'circle-radius': 11, 'circle-color': 'rgba(219,39,119,.12)', 'circle-stroke-color': '#DB2777', 'circle-stroke-width': 2.5 } });
 });
 
 /* ---------- 1. grid extension what-if ---------- */
@@ -2053,60 +2041,7 @@ function paintPoints() {
   map.setLayoutProperty('mg', 'icon-image', MG_ICON());
 }
 
-/* ---------- 5. data quality ---------- */
-function flagSurvey() {
-  const F = D.survey.features, ids = {}; F.forEach(f => ids[f.properties.cluster_offgrid_id] = (ids[f.properties.cluster_offgrid_id] || 0) + 1);
-  F.forEach(f => { const p = f.properties, notes = []; const s = polyAt(D.states, f.geometry.coordinates);
-    if (s && s.properties.adm1_en !== p.state_name) { notes.push(`Recorded as ${p.state_name}, but the location falls in ${s.properties.adm1_en}.`); p._wrongState = 1; }
-    if (!p.cluster_offgrid_id) { notes.push('Has no cluster ID (0).'); p._badId = 1; } else if (ids[p.cluster_offgrid_id] > 1) { notes.push('Shares its cluster ID with another record.'); p._badId = 1; }
-    if (p.grid_presence && p.grid_presence !== 'no' && !p.grid_functionality) notes.push('Grid recorded, but not whether it works.');
-    p._flag = notes.join(' ') || null; });
-}
-const DQ = {};
-async function dataQuality() {
-  const box = $('#dqBox');
-  const F = D.survey.features, P = F.map(f => f.properties);
-  const items = [];
-  const add = (lvl, title, n, text, show) => { const id = 'q' + items.length; if (show) DQ[id] = show; items.push(`<div class="dq-i"><div class="top"><b>${esc(title)}</b><span class="pill ${n === null ? 'info' : n ? lvl : 'ok'}">${n === null ? 'Note' : n ? fmt(n) : 'None'}</span></div><p>${text}</p>${n && show ? `<div><button class="btn btn-ghost btn-sm" type="button" data-dq="${id}">Show on map</button></div>` : ''}</div>`); };
-  // substations
-  const dupSubs = D.subsDropped || 0;
-  add('bad', 'Substations recorded twice at the same spot', dupSubs, 'The installed-substations layer repeats many points at identical coordinates. This explorer counts each location once; the source layer should be de-duplicated.');
-  const subOut = D.subs.features.filter(f => !polyAt(D.states, f.geometry.coordinates));
-  add('warn', 'Installed substations outside every state boundary', subOut.length, 'Points that fall outside Nigeria\'s state boundaries, usually from wrong or swapped coordinates.', () => subOut);
-  const vVar = new Set(D.subs.features.map(f => f.properties.volt).filter(Boolean)).size, vNull = D.subs.features.filter(f => f.properties.voltage == null).length;
-  add('info', 'Substation voltage written in different ways', vNull, `Voltage labels come in ${vVar} spellings (for example "132kV" and "132 kV"); ${vNull} records have no voltage. Labels are read as numbers here.`, () => D.subs.features.filter(f => f.properties.voltage == null));
-  // survey
-  const wrongState = F.filter(f => f.properties._wrongState);
-  add('bad', 'Survey locations in a different state from the record', wrongState.length, 'The community\'s coordinates sit in another state than the one written on the record, so one of the two needs checking.', () => wrongState);
-  const badId = F.filter(f => f.properties._badId);
-  add('warn', 'Survey records with a missing or shared cluster ID', badId.length, 'IDs of 0 or used twice make it impossible to link a survey record to one settlement.', () => badId);
-  const nm = {}; F.forEach(f => { const k = (f.properties.community_name || '').toLowerCase().trim() + '|' + (f.properties.lga_name || '').toLowerCase().trim(); (nm[k] = nm[k] || []).push(f); });
-  const dupName = Object.values(nm).filter(a => a.length > 1).flat();
-  add('warn', 'Same community and LGA recorded twice', dupName.length / 2, 'Pairs of records with the same community and LGA names. They may be two visits or a duplicate entry.', () => dupName);
-  const noFunc = F.filter(f => f.properties.grid_presence && f.properties.grid_presence !== 'no' && !f.properties.grid_functionality);
-  add('warn', 'Grid present but working status not recorded', noFunc.length, 'The team recorded grid infrastructure but not whether it works, so these show as "grid working" by default.', () => noFunc);
-  add('info', 'Survey records without a diesel price', P.filter(p => p.diesel_price_ngn_per_litre == null).length, 'Diesel was not sold or not recorded. Fuel price comparisons use the records that have it.');
-  // mini-grids
-  const mgNoConn = D.mg.features.filter(f => f.properties.number_of_connections == null);
-  add('warn', 'Mini-grids without a connection count', mgNoConn.length, `${mgNoConn.length} of ${D.mg.features.length} records. Condition is also spelled three ways ("Non Operational", "Non operational", "Not Operational"); this explorer reads them as one.`, () => mgNoConn);
-  // HV voltages (load lazily)
-  const hv = await ensureVec('hv'); const unk = hv ? hv.features.filter(f => !/kV/.test(f.properties.volt || '')).length : 0;
-  add('info', 'HV lines with unknown voltage', unk, 'Lines marked "UNK" draw in the 132 kV colour.');
-  // state settlements
-  if (stateFeat) { const nd = D.clusters.filter(f => f.properties.grid_dist_km == null); add('warn', `Settlements in ${S.state} with no grid distance`, nd.length, 'These are treated as far from the grid (off-grid) in the approach and score.', () => nd); }
-  add('info', 'Layer ages', null, 'Night lights are from 2019. Field surveys are mostly from 2022, with 60 records from 2026 in Gombe, Kano and Ogun. Each feature\'s Data tab names its source layer.');
-  $('#dqN').textContent = items.length;
-  box.innerHTML = `<p class="src" style="margin-bottom:10px">Checks run live in your browser on the data loaded from the portal.</p><div class="dq">${items.join('')}</div>`;
-}
-$('#dqBox').addEventListener('click', e => {
-  const b = e.target.closest('[data-dq]'); if (!b) return; const fs = DQ[b.dataset.dq](); if (!fs.length) return;
-  map.getSource('flags').setData({ type: 'FeatureCollection', features: fs.map(f => ({ type: 'Feature', properties: {}, geometry: f.geometry.type === 'Point' ? f.geometry : { type: 'Point', coordinates: f.geometry.coordinates } })) });
-  const xs = fs.map(f => f.geometry.coordinates[0]), ys = fs.map(f => f.geometry.coordinates[1]);
-  if (S.state && fs.some(f => !inState(f.geometry.coordinates))) selectState('').then(() => fitFlags(xs, ys)); else fitFlags(xs, ys);
-  toast(`${fs.length} records circled in pink`);
-});
-function fitFlags(xs, ys) { map.fitBounds([[Math.min(...xs) - .2, Math.min(...ys) - .2], [Math.max(...xs) + .2, Math.max(...ys) + .2]], { padding: 60, maxZoom: 12 }); }
-$$('.tabs .tab').forEach(t => t.addEventListener('click', () => { if (t.dataset.pane === 'data' && D.survey) { timeView(); dataQuality(); } if (t.dataset.pane === 'plan') $('#pfScope').textContent = S.state ? `in ${S.state}` : 'Choose a state'; }));
+$$('.tabs .tab').forEach(t => t.addEventListener('click', () => { if (t.dataset.pane === 'data' && D.survey) { timeView(); } if (t.dataset.pane === 'plan') $('#pfScope').textContent = S.state ? `in ${S.state}` : 'Choose a state'; }));
 
 /* =====================================================================
    FOOTPRINTS, MINI-GRID POTENTIAL, STATE REPORT, MEASURE
@@ -2183,7 +2118,7 @@ async function stateReport() {
   const sv = D.survey.features.filter(f => f.properties.state_name === st).map(f => f.properties).sort((a, b) => (a.lga_name || '').localeCompare(b.lga_name || ''));
   const mg = D.mg.features.filter(f => f.properties._st === st).map(f => f.properties);
   const subs = D.subs.features.filter(f => inState(f.geometry.coordinates)).map(f => f.properties).sort((a, b) => (b.voltage || 0) - (a.voltage || 0));
-  const nd = C.filter(p => p.grid_dist_km == null).length, flagged = sv.filter(p => p._flag).length;
+  const nd = C.filter(p => p.grid_dist_km == null).length;
   const G = { no: 'No grid', ok: 'Grid working', never: 'Grid never worked', nc: 'Grid, not connected' };
   const pct = (a, b) => b ? Math.round(a / b * 100) + '%' : '–';
   const tbl = (head, rows) => `<table><thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`;
@@ -2222,7 +2157,7 @@ ${img ? `<img class="map" src="${img}" alt="Map of ${esc(st)} with settlements c
 <div><h2>Grid and supply</h2>${tbl(['Item', '<span class="r">Value</span>'], [['Installed substations, 330 kV', subs.filter(p => p.voltage >= 300).length], ['Installed substations, 132 kV and below', subs.filter(p => !(p.voltage >= 300)).length], ['Markets recorded', D.markets ? D.markets.features.length : '–'], ['Mini-grids under construction', mg.filter(p => p.status === 'Under Construction').length], ['Mini-grids not operating', mg.filter(p => p.status === 'Existing' && !p._ok).length], ['Installed mini-grid capacity', fmt(mg.reduce((a, p) => a + (p.power_kw || 0), 0)) + ' kW']].map(([k, v]) => `<tr><td>${k}</td><td class="r">${typeof v === 'number' ? fmt(v) : v}</td></tr>`))}</div></div>
 <h2>Top ${top.length} off-grid mini-grid sites (score: ${esc(S.wName)})</h2>
 ${tbl(['#', '<span class="r">Buildings</span>', '<span class="r">To grid</span>', '<span class="r">Substation</span>', '<span class="r">Market</span>', 'Services', '<span class="r">Score</span>', 'Location'], top.map((f, i) => { const p = f.properties, c = f.geometry.coordinates; return `<tr><td>${i + 1}</td><td class="r">${fmt(p.number_of_buildings)}</td><td class="r">${p._d == null ? '–' : km(p._d)}</td><td class="r">${km(p._sub)}</td><td class="r">${p._mkt === Infinity ? '15 km+' : km(p._mkt)}</td><td>${p._og ? [p._hc ? 'clinic' : '', p._sch ? 'school' : '', p._mk ? 'market' : ''].filter(Boolean).join(', ') || '–' : '–'}</td><td class="r"><b>${p._s}</b></td><td>${c[1].toFixed(4)}, ${c[0].toFixed(4)}</td></tr>`; }))}
-${sv.length ? `<h2>Communities surveyed on site (${sv.length})</h2>${tbl(['Community', 'LGA', 'Year', 'Power', '<span class="r">Business gen.</span>', '<span class="r">Mills</span>', '<span class="r">Diesel ₦/l</span>'], sv.map(p => `<tr><td>${esc(p.community_name)}${p._flag ? ' *' : ''}</td><td>${esc(p.lga_name || '')}</td><td>${(p.survey_date || '').slice(0, 4)}</td><td>${G[p._g]}</td><td class="r">${esc(p.businesses_with_genset_percentage || '–')}</td><td class="r">${p.count_productive_use_grinding_mills ?? '–'}</td><td class="r">${p.diesel_price_ngn_per_litre ? fmt(p.diesel_price_ngn_per_litre) : '–'}</td></tr>`))}${flagged ? `<p class="note">* ${flagged} record${flagged > 1 ? 's have' : ' has'} a data note (for example a location outside the recorded state). See the Data tab in the explorer.</p>` : ''}` : ''}
+${sv.length ? `<h2>Communities surveyed on site (${sv.length})</h2>${tbl(['Community', 'LGA', 'Year', 'Power', '<span class="r">Business gen.</span>', '<span class="r">Mills</span>', '<span class="r">Diesel ₦/l</span>'], sv.map(p => `<tr><td>${esc(p.community_name)}</td><td>${esc(p.lga_name || '')}</td><td>${(p.survey_date || '').slice(0, 4)}</td><td>${G[p._g]}</td><td class="r">${esc(p.businesses_with_genset_percentage || '–')}</td><td class="r">${p.count_productive_use_grinding_mills ?? '–'}</td><td class="r">${p.diesel_price_ngn_per_litre ? fmt(p.diesel_price_ngn_per_litre) : '–'}</td></tr>`))}` : ''}
 ${mg.length ? `<h2>Mini-grids recorded (${mg.length})</h2>${tbl(['Community', 'LGA', '<span class="r">kW</span>', 'System', '<span class="r">Connections</span>', 'Status', 'Developer'], mg.map(p => `<tr><td>${esc(p.community)}</td><td>${esc(p.lga_name || '')}</td><td class="r">${p.power_kw ?? '–'}</td><td>${esc(p.power_system || '')}</td><td class="r">${p.number_of_connections != null ? fmt(p.number_of_connections) : '–'}</td><td>${esc([p.status, p.condition].filter(Boolean).join(', '))}</td><td>${esc(p.owner || '')}</td></tr>`))}` : ''}
 ${subs.length ? `<h2>Installed substations (${subs.length})</h2>${tbl(['Substation', '<span class="r">Voltage</span>'], subs.map(p => `<tr><td>${esc(p.sub_name || '')}</td><td class="r">${esc(p.volt || (p.voltage ? p.voltage + ' kV' : '–'))}</td></tr>`))}` : ''}
 <h2>Method and notes</h2>
