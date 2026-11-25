@@ -79,9 +79,16 @@ details.fg>summary .on:empty{display:none}
 
 /* inputs */
 select.sel,input.txt{width:100%;height:42px;border:1.5px solid var(--line);border-radius:10px;padding:0 12px;background:#fff}
-select.sel{cursor:pointer}
+select.sel{cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center/14px 14px;padding-right:36px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+select.sel::-ms-expand{display:none}
+.sel-x{position:relative}
+.sel-x.has select.sel{padding-right:60px}
+.x-clear{position:absolute;right:32px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;border:0;background:var(--field);color:var(--ink-2);display:grid;place-items:center;cursor:pointer;padding:0}
+.x-clear:hover{background:#e2e8e4;color:var(--ink)}
+.x-clear[hidden]{display:none}
+.li{display:inline-block;vertical-align:middle;flex:none}
 select.sel:focus,input.txt:focus{border-color:var(--green);outline:none}
-select.sm{height:34px;font-size:13px;padding:0 8px;border-radius:8px;width:auto}
+select.sm{height:34px;font-size:13px;padding:0 28px 0 8px;border-radius:8px;width:auto;background-position:right 8px center}
 .rng{margin-top:12px}
 .rng:first-child{margin-top:0}
 .rng-top{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--ink-2);margin-bottom:2px;gap:8px}
@@ -422,8 +429,8 @@ button.near-i:hover{border-color:var(--green)}
 
       <div class="blk">
         <div class="row2">
-          <div><label class="lbl" for="state">State</label><select class="sel" id="state"><option value="">All of Nigeria</option></select></div>
-          <div><label class="lbl" for="disco">Distribution company</label><select class="sel" id="disco"><option value="">Any</option></select></div>
+          <div><label class="lbl" for="state">State</label><div class="sel-x" id="stateX"><select class="sel" id="state"><option value="">All of Nigeria</option></select><button type="button" class="x-clear" data-clear="state" aria-label="Clear state: show all of Nigeria" title="Show all of Nigeria" hidden><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div></div>
+          <div><label class="lbl" for="disco">Distribution company</label><div class="sel-x" id="discoX"><select class="sel" id="disco"><option value="">Any</option></select><button type="button" class="x-clear" data-clear="disco" aria-label="Clear distribution company" title="Any distribution company" hidden><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div></div>
         </div>
       </div>
 
@@ -799,30 +806,66 @@ const LAYERS = [
   { g: 'Distribution grid', id: 'mvm', name: 'MV grid, modelled', sw: 'repeating-linear-gradient(90deg,#C0392B 0 4px,transparent 4px 7px)', ln: 1, kind: 'wms', ws: 'se4allWS', layer: 'modelled_grid_no_mapped', opacity: .8 },
   { g: 'Distribution grid', id: 'disco', name: 'DisCo franchise areas', sw: 'rgba(30,78,121,.2)', kind: 'vec', geom: 'poly', note: '10' },
   { g: 'Transmission', id: 'hv', name: 'HV lines, 132 and 330 kV', sw: 'linear-gradient(90deg,#6D28D9 50%,#1E4E79 50%)', ln: 1, kind: 'vec', ws: 'geonode', layer: 'existing_lines_high_voltage', geom: 'line', note: '386' },
-  { g: 'Transmission', id: 'subs', name: 'Substations, installed', sw: '#1E4E79', dot: 1, kind: 'vec', ws: 'geonode', layer: 'substations_currently_installed', geom: 'pt', on: true, note: '458' },
-  { g: 'Transmission', id: 'subsf', name: 'Substations, planned', sw: 'transparent', ring: '#6D28D9', dot: 1, kind: 'vec', ws: 'geonode', layer: 'substations_future', geom: 'pt', note: '156' },
+  { g: 'Transmission', id: 'subs', icon: 'i-sub', name: 'Substations, installed', sw: '#1E4E79', dot: 1, kind: 'vec', ws: 'geonode', layer: 'substations_currently_installed', geom: 'pt', on: true, note: '458' },
+  { g: 'Transmission', id: 'subsf', icon: 'i-subf', name: 'Substations, planned', sw: 'transparent', ring: '#6D28D9', dot: 1, kind: 'vec', ws: 'geonode', layer: 'substations_future', geom: 'pt', note: '156' },
   { g: 'Transmission', id: 'tl', name: 'Transmission lines, OpenStreetMap', sw: '#64748B', ln: 1, kind: 'wms', ws: 'geonode', layer: 'transmission_lines', note: '1,620' },
   { g: 'Transmission', id: 'pylons', name: 'HV pylons', sw: '#94A3B8', dot: 1, kind: 'wms', ws: 'geonode', layer: 'high_voltage_pylons', minzoom: 9, note: '78,966' },
-  { g: 'Generation', id: 'mg', name: 'Mini-grids', sw: '#043D2E', ring: '#A3D376', dot: 1, core: true, on: true, note: '66' },
-  { g: 'Generation', id: 'thermal', name: 'Thermal power plants', sw: '#B45309', dot: 1, kind: 'vec', ws: 'geonode', layer: 'generation_thermal', geom: 'pt', on: true, note: '60' },
-  { g: 'Generation', id: 'hydro', name: 'Hydro power plants', sw: '#0284C7', dot: 1, kind: 'vec', ws: 'geonode', layer: 'hydro_generation', geom: 'pt', on: true, note: '8' },
-  { g: 'Generation', id: 'wind', name: 'Wind farms', sw: '#0D9488', dot: 1, kind: 'vec', ws: 'geonode', layer: 'wind_existing', geom: 'pt', on: true, note: '2' },
-  { g: 'Generation', id: 'thermalf', name: 'Thermal plants, planned', sw: 'transparent', ring: '#B45309', dot: 1, kind: 'vec', ws: 'geonode', layer: 'thermal_future', geom: 'pt', note: '4' },
+  { g: 'Generation', id: 'mg', icon: 'i-mg', name: 'Mini-grids', sw: '#043D2E', ring: '#A3D376', dot: 1, core: true, on: true, note: '66' },
+  { g: 'Generation', id: 'thermal', icon: 'i-thermal', name: 'Thermal power plants', sw: '#B45309', dot: 1, kind: 'vec', ws: 'geonode', layer: 'generation_thermal', geom: 'pt', on: true, note: '60' },
+  { g: 'Generation', id: 'hydro', icon: 'i-hydro', name: 'Hydro power plants', sw: '#0284C7', dot: 1, kind: 'vec', ws: 'geonode', layer: 'hydro_generation', geom: 'pt', on: true, note: '8' },
+  { g: 'Generation', id: 'wind', icon: 'i-wind', name: 'Wind farms', sw: '#0D9488', dot: 1, kind: 'vec', ws: 'geonode', layer: 'wind_existing', geom: 'pt', on: true, note: '2' },
+  { g: 'Generation', id: 'thermalf', icon: 'i-thermalf', name: 'Thermal plants, planned', sw: 'transparent', ring: '#B45309', dot: 1, kind: 'vec', ws: 'geonode', layer: 'thermal_future', geom: 'pt', note: '4' },
   { g: 'Gas', id: 'gaspipe', name: 'Gas pipelines', sw: '#A16207', ln: 1, kind: 'vec', ws: 'geonode', layer: 'gas_pipelines', geom: 'line', note: '218' },
-  { g: 'Gas', id: 'gasinf', name: 'Gas infrastructure', sw: '#78350F', dot: 1, kind: 'vec', ws: 'geonode', layer: 'gas_infrastructure', geom: 'pt', note: '112' },
+  { g: 'Gas', id: 'gasinf', icon: 'i-gas', name: 'Gas infrastructure', sw: '#78350F', dot: 1, kind: 'vec', ws: 'geonode', layer: 'gas_infrastructure', geom: 'pt', note: '112' },
   { g: 'Gas', id: 'gasfield', name: 'Oil and gas fields', sw: 'rgba(234,179,8,.35)', kind: 'vec', ws: 'geonode', layer: 'gas_fields', geom: 'poly', note: '124' }
 ];
 const LBYID = Object.fromEntries(LAYERS.map(l => [l.id, l]));
+
+/* ---------------- map icons (drawn once, used on the map, in the legend and in the layer list) ---------------- */
+const GLYPH = {
+  bolt: { fill: 'M13.2 2.5 5.8 13.2h5.1l-1 8.3 7.4-10.7h-5.1z' },
+  factory: { fill: 'M3 20.5V10.2l5 3v-3l5 3V6.5h2.6l.8-3h1.6l.8 3h.7v14z' },
+  drop: { fill: 'M12 2.8c3.7 4.6 6.2 7.8 6.2 10.9a6.2 6.2 0 0 1-12.4 0c0-3.1 2.5-6.3 6.2-10.9z' },
+  wind: { stroke: 'M12 11.2v10.3M12 11.2 8.6 3.4M12 11.2l8.2 3.1M12 11.2l-7.3 5.5M9 21.5h6', dot: [12, 11.2, 1.7] },
+  flame: { fill: 'M12.2 2.5c.6 3.2 4.6 5 4.6 10.1a4.8 4.8 0 0 1-9.6 0c0-2.4 1.1-4 2.4-5.2.1 2 .9 3.2 2.1 3.6-.6-2.9-.4-5.6.5-8.5z' },
+  solar: { stroke: 'M4 9.5h16l-2.2 7.5H6.2zM12 9.5V17M5.1 13.2h13.8M12 17v3.6M8.5 20.6h7M16.5 3.2l-.9 2.3M20.5 6l-2.2.9M12.2 3.6l.4 2.2' }
+};
+const ICON_DEF = {
+  'i-sub': ['bolt', '#1E4E79', 'sq'], 'i-sub330': ['bolt', '#6D28D9', 'sq'], 'i-subf': ['bolt', '#6D28D9', 'sq', 1],
+  'i-thermal': ['factory', '#B45309'], 'i-thermalf': ['factory', '#B45309', 0, 1], 'i-hydro': ['drop', '#0284C7'], 'i-wind': ['wind', '#0D9488'],
+  'i-gas': ['flame', '#78350F'], 'i-mg': ['solar', '#043D2E', 'leaf'], 'i-mg-no': ['solar', '#9F2A2A', 'leaf'], 'i-mg-uc': ['solar', '#B7791F', 'leaf']
+};
+function drawIcon(name) {
+  const [g, color, shape, planned] = ICON_DEF[name], N = 56, c = document.createElement('canvas'); c.width = c.height = N;
+  const x = c.getContext('2d'), G = GLYPH[g];
+  x.beginPath();
+  if (shape === 'sq') { const r = 11, m = 5; x.moveTo(m + r, m); x.arcTo(N - m, m, N - m, N - m, r); x.arcTo(N - m, N - m, m, N - m, r); x.arcTo(m, N - m, m, m, r); x.arcTo(m, m, N - m, m, r); x.closePath(); }
+  else x.arc(N / 2, N / 2, N / 2 - 4, 0, Math.PI * 2);
+  x.fillStyle = planned ? '#fff' : color; x.fill();
+  x.lineWidth = planned ? 4.5 : 3.5; x.strokeStyle = planned ? color : (shape === 'leaf' ? '#A3D376' : '#fff'); x.stroke();
+  const ink = planned ? color : '#fff', s = 1.42; x.save(); x.translate(N / 2 - 12 * s, N / 2 - 12 * s); x.scale(s, s);
+  if (G.fill) { x.fillStyle = ink; x.fill(new Path2D(G.fill)); }
+  if (G.stroke) { x.strokeStyle = ink; x.lineWidth = 2.1; x.lineCap = 'round'; x.lineJoin = 'round'; x.stroke(new Path2D(G.stroke)); }
+  if (G.dot) { x.fillStyle = ink; x.beginPath(); x.arc(G.dot[0], G.dot[1], G.dot[2], 0, Math.PI * 2); x.fill(); }
+  x.restore();
+  return c;
+}
+const ICON_CANVAS = Object.fromEntries(Object.keys(ICON_DEF).map(n => [n, drawIcon(n)]));
+const ICON_URL = Object.fromEntries(Object.entries(ICON_CANVAS).map(([n, c]) => [n, c.toDataURL()]));
+const iconImg = (n, size = 16) => `<img class="li" src="${ICON_URL[n]}" width="${size}" height="${size}" alt="">`;
+function addIcons() { for (const [n, c] of Object.entries(ICON_CANVAS)) if (!map.hasImage(n)) map.addImage(n, c.getContext('2d').getImageData(0, 0, c.width, c.height), { pixelRatio: 2 }); }
+const SYM = img => ({ type: 'symbol', layout: { 'icon-image': img, 'icon-size': ['interpolate', ['linear'], ['zoom'], 4, .62, 8, .82, 12, 1.05], 'icon-allow-overlap': true, 'icon-ignore-placement': true }, paint: {} });
+const MG_ICON = () => S.mgColor === 'status' ? ['case', ['==', ['get', 'status'], 'Under Construction'], 'i-mg-uc', ['==', ['get', '_ok'], 1], 'i-mg', 'i-mg-no'] : ['case', ['==', ['get', '_ok'], 1], 'i-mg', 'i-mg-no'];
 const VEC_STYLE = {
   hv: { type: 'line', paint: { 'line-color': ['match', ['get', 'volt'], '330 kV', '#6D28D9', '#1E4E79'], 'line-width': ['interpolate', ['linear'], ['zoom'], 5, ['match', ['get', 'volt'], '330 kV', 2, 1.4], 10, ['match', ['get', 'volt'], '330 kV', 4, 3]], 'line-opacity': .85 } },
-  subs: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, ['case', ['>=', ['coalesce', ['get', 'voltage'], 0], 300], 4.5, 3.2], 10, 8], 'circle-color': ['case', ['>=', ['coalesce', ['get', 'voltage'], 0], 300], '#6D28D9', '#1E4E79'], 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.2 } },
-  subsf: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3.5, 10, 7], 'circle-color': 'rgba(255,255,255,.7)', 'circle-stroke-color': '#6D28D9', 'circle-stroke-width': 2 } },
-  thermal: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 5, 10, 9], 'circle-color': '#B45309', 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5 } },
-  hydro: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 6, 10, 10], 'circle-color': '#0284C7', 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5 } },
-  wind: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 6, 10, 10], 'circle-color': '#0D9488', 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5 } },
-  thermalf: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 5, 10, 9], 'circle-color': 'rgba(255,255,255,.8)', 'circle-stroke-color': '#B45309', 'circle-stroke-width': 2.2 } },
+  subs: SYM(['case', ['>=', ['coalesce', ['get', 'voltage'], 0], 300], 'i-sub330', 'i-sub']),
+  subsf: SYM('i-subf'),
+  thermal: SYM('i-thermal'),
+  hydro: SYM('i-hydro'),
+  wind: SYM('i-wind'),
+  thermalf: SYM('i-thermalf'),
   gaspipe: { type: 'line', paint: { 'line-color': '#A16207', 'line-width': 1.8, 'line-dasharray': [3, 2] } },
-  gasinf: { type: 'circle', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3.5, 10, 7], 'circle-color': '#78350F', 'circle-stroke-color': '#fff', 'circle-stroke-width': 1 } },
+  gasinf: SYM('i-gas'),
   gasfield: { type: 'fill', paint: { 'fill-color': '#EAB308', 'fill-opacity': .25, 'fill-outline-color': '#A16207' } },
   disco: { type: 'fill', paint: { 'fill-color': ['match', ['%', ['to-number', ['get', 'disco_id'], 0], 5], 0, '#1E4E79', 1, '#065F46', 2, '#8A5A0C', 3, '#475569', '#6D28D9'], 'fill-opacity': .09 } }
 };
@@ -850,6 +893,7 @@ map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
 const EMPTY = () => ({ type: 'FeatureCollection', features: [] });
 
 map.on('load', () => {
+  addIcons();
   mapReady = true;
   // fade the basemap outside the chosen state (data outside is removed, not covered)
   map.addSource('mask', { type: 'geojson', data: EMPTY() });
@@ -864,7 +908,7 @@ map.on('load', () => {
   ['poly', 'line', 'pt'].forEach(geom => LAYERS.filter(l => l.kind === 'vec' && l.geom === geom).forEach(l => {
     map.addSource(l.id, { type: 'geojson', data: EMPTY() });
     const st = VEC_STYLE[l.id];
-    map.addLayer({ id: l.id, type: st.type, source: l.id, paint: st.paint, layout: { visibility: l.on ? 'visible' : 'none' } });
+    map.addLayer({ id: l.id, type: st.type, source: l.id, paint: st.paint || {}, layout: Object.assign({ visibility: l.on ? 'visible' : 'none' }, st.layout || {}) });
     if (l.id === 'disco') map.addLayer({ id: 'disco-line', type: 'line', source: 'disco', paint: { 'line-color': '#1E4E79', 'line-width': 1.4, 'line-opacity': .7 }, layout: { visibility: 'none' } });
     if (l.id === 'gasfield') map.addLayer({ id: 'gasfield-line', type: 'line', source: 'gasfield', paint: { 'line-color': '#A16207', 'line-width': 1 }, layout: { visibility: 'none' } });
   }));
@@ -891,7 +935,7 @@ map.on('load', () => {
   map.addSource('survey', { type: 'geojson', data: EMPTY() });
   map.addLayer({ id: 'survey', type: 'circle', source: 'survey', filter: ['==', ['get', '_m'], 1], paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 3.8, 10, 7.5], 'circle-color': ['match', ['get', '_g'], 'ok', '#1E4E79', 'never', '#9F2A2A', 'nc', '#E8A317', '#fff'], 'circle-stroke-color': '#065F46', 'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 5, 1.8, 10, 3] } });
   map.addSource('mg', { type: 'geojson', data: EMPTY() });
-  map.addLayer({ id: 'mg', type: 'circle', source: 'mg', paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 5, 4.5, 10, 8.5], 'circle-color': ['case', ['==', ['get', '_ok'], 1], '#043D2E', '#9F2A2A'], 'circle-stroke-color': '#A3D376', 'circle-stroke-width': 2 } });
+  map.addLayer(Object.assign({ id: 'mg', source: 'mg' }, SYM(MG_ICON())));
   map.addSource('pin', { type: 'geojson', data: EMPTY() });
   map.addLayer({ id: 'pin', type: 'circle', source: 'pin', paint: { 'circle-radius': 16, 'circle-color': 'rgba(0,0,0,0)', 'circle-stroke-color': '#0F172A', 'circle-stroke-width': 2.5 } });
   colorClusters();
@@ -979,7 +1023,7 @@ async function national() {
    STATE VIEW
    ===================================================================== */
 async function selectState(name, opt = {}) {
-  S.state = name || ''; $('#state').value = S.state; closeDet();
+  S.state = name || ''; $('#state').value = S.state; syncClear(); closeDet();
   if (S.bnd && !opt.keepBnd) { const st = polyAt(D.states, S.bnd.pt); if (!st || st.properties.adm1_en !== S.state) clearBoundary(); }
   if (stateFeat) map.setFeatureState({ source: 'states', id: stateFeat.properties.adm1_en }, { sel: false });
   stateFeat = D.states.features.find(f => f.properties.adm1_en === S.state) || null;
@@ -1712,11 +1756,14 @@ function syncUI() {
   $$('.ap').forEach(b => b.setAttribute('aria-pressed', S.f.aps.includes(b.dataset.ap)));
   $$('#svc input').forEach(i => i.checked = S.f.svc.includes(i.value));
   $('#disco').value = S.f.disco;
+  syncClear();
 }
 $$('.ap').forEach(b => b.addEventListener('click', () => { const k = b.dataset.ap; S.f.aps = S.f.aps.includes(k) ? S.f.aps.filter(x => x !== k) : [...S.f.aps, k]; b.setAttribute('aria-pressed', S.f.aps.includes(k)); recompute(); writeHash(); }));
 $('#svc').addEventListener('change', () => { S.f.svc = $$('#svc input:checked').map(i => i.value); recompute(); writeHash(); });
-$('#disco').addEventListener('change', async e => { S.f.disco = e.target.value; if (S.f.disco && stateFeat) { const d = busy('Matching settlements to DisCo areas'); await discoTag(); d(); } if (S.f.disco) setLayer('disco', true); recompute(); writeHash(); });
+$('#disco').addEventListener('change', async e => { S.f.disco = e.target.value; if (S.f.disco && stateFeat) { const d = busy('Matching settlements to DisCo areas'); await discoTag(); d(); } if (S.f.disco) setLayer('disco', true); recompute(); writeHash(); syncClear(); });
 $('#state').addEventListener('change', e => selectState(e.target.value));
+function syncClear() { [['state', $('#state').value], ['disco', $('#disco').value]].forEach(([k, v]) => { const w = $('#' + k + 'X'); w.classList.toggle('has', !!v); w.querySelector('.x-clear').hidden = !v; }); }
+$$('.x-clear').forEach(b => b.addEventListener('click', () => { if (b.dataset.clear === 'state') selectState(''); else { $('#disco').value = ''; S.f.disco = ''; recompute(); writeHash(); syncClear(); } }));
 $('#metric').addEventListener('change', e => { S.metric = e.target.value; national(); });
 $('#rank').addEventListener('click', e => { const b = e.target.closest('[data-st]'); if (b) selectState(b.dataset.st); });
 $('#reset').onclick = () => { S.f = structuredClone(DEF); S.near = 5; S.size = 100; $('#chips').innerHTML = ''; syncUI(); recompute(); writeHash(); };
@@ -1742,7 +1789,7 @@ $$('.tabs .tab').forEach(t => t.addEventListener('click', () => { $$('.tabs .tab
 /* ---------- layers pane ---------- */
 function buildLayerList() {
   const groups = [...new Set(LAYERS.map(l => l.g))];
-  $('#layerList').innerHTML = groups.map(g => `<div class="lg"><div class="lg-t">${g}</div>${LAYERS.filter(l => l.g === g).map(l => `<label class="lyr" data-id="${l.id}"><input type="checkbox" data-l="${l.id}" ${isOn(l.id) ? 'checked' : ''}><span class="sw" style="background:${l.sw};${l.ln ? 'height:3px;' : ''}${l.dot ? 'width:12px;height:12px;border-radius:50%;' : 'width:22px;'}${l.ring ? `box-shadow:inset 0 0 0 2.5px ${l.ring};` : ''}"></span><span>${esc(l.name)}</span><span><small>${l.note || ''}</small><span class="ld"></span></span></label>`).join('')}</div>`).join('');
+  $('#layerList').innerHTML = groups.map(g => `<div class="lg"><div class="lg-t">${g}</div>${LAYERS.filter(l => l.g === g).map(l => `<label class="lyr" data-id="${l.id}"><input type="checkbox" data-l="${l.id}" ${isOn(l.id) ? 'checked' : ''}>${l.icon ? `<span class="sw" style="width:auto;height:auto">${iconImg(l.icon, 18)}</span>` : `<span class="sw" style="background:${l.sw};${l.ln ? 'height:3px;' : ''}${l.dot ? 'width:12px;height:12px;border-radius:50%;' : 'width:22px;'}${l.ring ? `box-shadow:inset 0 0 0 2.5px ${l.ring};` : ''}"></span>`}<span>${esc(l.name)}</span><span><small>${l.note || ''}</small><span class="ld"></span></span></label>`).join('')}</div>`).join('');
   $('#ctLayers').textContent = LAYERS.filter(l => isOn(l.id)).length;
 }
 const isOn = id => mapReady && map.getLayer(id) ? map.getLayoutProperty(id, 'visibility') !== 'none' : !!LBYID[id].on;
@@ -1783,10 +1830,10 @@ function legend() {
   if (isOn('survey')) rows.push(S.svColor === 'round' ? '<h5>Surveyed communities</h5><div><i style="background:#0EA5E9;box-shadow:inset 0 0 0 2px #065F46"></i>Surveyed 2019–2022</div><div><i style="background:#DB2777;box-shadow:inset 0 0 0 2px #065F46"></i>Surveyed 2026</div>' : '<h5>Surveyed communities</h5><div><i style="background:#fff;box-shadow:inset 0 0 0 2.5px #065F46"></i>No grid</div><div><i style="background:#1E4E79;box-shadow:inset 0 0 0 2px #065F46"></i>Grid working</div><div><i style="background:#9F2A2A;box-shadow:inset 0 0 0 2px #065F46"></i>Grid never worked</div>');
   const pts = LAYERS.filter(l => !l.core && isOn(l.id) && l.id !== 'clusters' && l.id !== 'survey');
   if (isOn('mg') || pts.length) rows.push('<h5>Infrastructure</h5>');
-  if (isOn('mg')) rows.push(S.mgColor === 'status' ? '<div><i style="background:#043D2E;box-shadow:inset 0 0 0 2px #A3D376"></i>Mini-grid, operating</div><div><i style="background:#9F2A2A;box-shadow:inset 0 0 0 2px #A3D376"></i>Mini-grid, not operating</div><div><i style="background:#E8A317;box-shadow:inset 0 0 0 2px #A3D376"></i>Mini-grid, under construction</div>' : '<div><i style="background:#043D2E;box-shadow:inset 0 0 0 2px #A3D376"></i>Mini-grid (red: not operating)</div>');
+  if (isOn('mg')) rows.push(S.mgColor === 'status' ? `<div>${iconImg('i-mg')}Mini-grid, operating</div><div>${iconImg('i-mg-no')}Mini-grid, not operating</div><div>${iconImg('i-mg-uc')}Mini-grid, under construction</div>` : `<div>${iconImg('i-mg')}Mini-grid, operating</div><div>${iconImg('i-mg-no')}Mini-grid, not operating</div>`);
   if (DR.line) rows.push('<div><i class="ln" style="background:#C0392B"></i>Proposed MV line, 1/3/5 km bands</div>');
   if (PF.length) rows.push('<div><i class="sq" style="background:rgba(124,58,237,.3);box-shadow:inset 0 0 0 2px #7C3AED"></i>Portfolios</div>');
-  pts.forEach(l => rows.push(`<div><i class="${l.ln ? 'ln' : l.dot ? '' : 'sq'}" style="background:${l.sw};${l.ring ? `box-shadow:inset 0 0 0 2px ${l.ring}` : ''}"></i>${esc(l.name)}</div>`));
+  pts.forEach(l => { if (l.id === 'subs') rows.push(`<div>${iconImg('i-sub330')}Substation, 330 kV</div><div>${iconImg('i-sub')}Substation, 132 kV and below</div>`); else if (l.icon) rows.push(`<div>${iconImg(l.icon)}${esc(l.name)}</div>`); else rows.push(`<div><i class="${l.ln ? 'ln' : l.dot ? '' : 'sq'}" style="background:${l.sw};${l.ring ? `box-shadow:inset 0 0 0 2px ${l.ring}` : ''}"></i>${esc(l.name)}</div>`); });
   const open = store.get('atlas-legend', innerHeight > 760);
   $('#legend').innerHTML = `<button type="button" class="lg-tog" aria-expanded="${open}">Legend<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg></button><div class="lg-b" ${open ? '' : 'hidden'}>${rows.join('')}</div>`; $('#legend').hidden = rows.length < 2;
 }
@@ -2003,7 +2050,7 @@ function timeView() {
 }
 function paintPoints() {
   map.setPaintProperty('survey', 'circle-color', S.svColor === 'round' ? ['case', ['==', ['slice', ['coalesce', ['get', 'survey_date'], ''], 0, 4], '2026'], '#DB2777', '#0EA5E9'] : ['match', ['get', '_g'], 'ok', '#1E4E79', 'never', '#9F2A2A', 'nc', '#E8A317', '#fff']);
-  map.setPaintProperty('mg', 'circle-color', S.mgColor === 'status' ? ['case', ['==', ['get', 'status'], 'Under Construction'], '#E8A317', ['==', ['get', '_ok'], 1], '#043D2E', '#9F2A2A'] : ['case', ['==', ['get', '_ok'], 1], '#043D2E', '#9F2A2A']);
+  map.setLayoutProperty('mg', 'icon-image', MG_ICON());
 }
 
 /* ---------- 5. data quality ---------- */
