@@ -1,0 +1,2829 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-24T10:03:31Z",
+    "timestamp_areas_base": "2026-11-24T03:56:50Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 215459543,
+  "center": {
+    "lat": 7.4697215,
+    "lon": 6.6584949
+  },
+  "tags": {
+    "barrier": "wall",
+    "fence_type": "barbed_wire",
+    "landuse": "industrial",
+    "name": "Geregu I Power Plant",
+    "operator": "Geregu Power PLC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "414 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.nigeriapowerreform.org/index.php?option=com_rokdownloads&view=file&task=download&id=69%3Auyo-summit-feb-24-25-2012-genco-geregu&Itemid=82",
+    "wikidata": "Q56372726"
+  }
+},
+{
+  "type": "way",
+  "id": 356573680,
+  "center": {
+    "lat": 9.9004521,
+    "lon": 6.2941843
+  },
+  "tags": {
+    "name": "Zungeru Hydro Power Station",
+    "plant:output:electricity": "700 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "wikidata": "Q56372694"
+  }
+},
+{
+  "type": "way",
+  "id": 460201254,
+  "center": {
+    "lat": 6.4109820,
+    "lon": 5.6807954
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Azura-Edo IPP",
+    "name:en": "Azura-Edo IPP",
+    "operator": "PIC Group inc.",
+    "plant:method": "combustion",
+    "plant:output:electricity": "461 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://azuraedo.com/;https://www.gem.wiki/Azura-Edo_IPP_power_station",
+    "start_date": "2017-12-20",
+    "website": "https://azuraedo.com/",
+    "wikidata": "Q25230511"
+  }
+},
+{
+  "type": "way",
+  "id": 460771196,
+  "center": {
+    "lat": 6.4067318,
+    "lon": 5.6858175
+  },
+  "tags": {
+    "alt_name": "NIPP Ihovbor Plant",
+    "barrier": "wall",
+    "landuse": "industrial",
+    "name": "Ihovbor Power Plant",
+    "name:en": "Ihovbor Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "451 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/ihovbor;https://www.gem.wiki/Ihovbor_power_station",
+    "wikidata": "Q56372739"
+  }
+},
+{
+  "type": "way",
+  "id": 485733022,
+  "center": {
+    "lat": 10.4597709,
+    "lon": 7.3741798
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Kaduna Power Plant",
+    "plant:output:electricity": "215 MW",
+    "plant:source": "oil;gas",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 553566358,
+  "center": {
+    "lat": 5.0674283,
+    "lon": 7.3218015
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Alaoji Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "1074 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/alaoji;https://nerc.gov.ng/index.php/home/nesi/403-generation;https://www.gem.wiki/Alaoji_power_station",
+    "wikidata": "Q56372708"
+  }
+},
+{
+  "type": "way",
+  "id": 564747656,
+  "center": {
+    "lat": 6.8854982,
+    "lon": 3.3156125
+  },
+  "tags": {
+    "alt_name": "Olorunsogo NIPP",
+    "landuse": "industrial",
+    "name": "Olorunsogo II Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "676 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/olorunsogo",
+    "wikidata": "Q56372885"
+  }
+},
+{
+  "type": "way",
+  "id": 571298390,
+  "center": {
+    "lat": 9.3897532,
+    "lon": 8.6811388
+  },
+  "tags": {
+    "name": "Kurra Falls II",
+    "operator": "NESCO",
+    "plant:output:electricity": "yes",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 575706870,
+  "center": {
+    "lat": 5.7092875,
+    "lon": 6.5753432
+  },
+  "tags": {
+    "alt_name": "Okpai IPP",
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Okpai Power Plant",
+    "operator": "Agip",
+    "plant:method": "combustion",
+    "plant:output:electricity": "480 MW",
+    "plant:source": "gas",
+    "plant:type": "combined_cycle",
+    "power": "plant",
+    "source": "http://nerp.abv.ng/index.php/power-plants/okpai-power-station-ipp/",
+    "wikidata": "Q11993280"
+  }
+},
+{
+  "type": "way",
+  "id": 597677790,
+  "center": {
+    "lat": 9.9736106,
+    "lon": 6.8345127
+  },
+  "tags": {
+    "building": "industrial",
+    "name": "Shiroro Hydroelectric Power Station",
+    "plant:output:electricity": "600 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "start_date": "1990",
+    "wikidata": "Q7498956",
+    "wikipedia": "en:Shiroro Hydroelectric Power Station"
+  }
+},
+{
+  "type": "way",
+  "id": 655276476,
+  "center": {
+    "lat": 9.1400157,
+    "lon": 4.7893339
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Jebba Hydroelectric Power Station",
+    "operator": "Mainstream Energy Solutions Limited",
+    "plant:method": "run-of-the-river",
+    "plant:output:electricity": "578.4 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "source": "https://mainstream.com.ng/",
+    "start_date": "1985",
+    "wikidata": "Q1115086",
+    "wikipedia": "en:Jebba Hydroelectric Power Station"
+  }
+},
+{
+  "type": "way",
+  "id": 669728643,
+  "center": {
+    "lat": 5.1902836,
+    "lon": 8.2736063
+  },
+  "tags": {
+    "alt_name": "Odukpani Power Plant",
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Calabar Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "562.5 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/calabar",
+    "wikidata": "Q56372710"
+  }
+},
+{
+  "type": "way",
+  "id": 669973420,
+  "center": {
+    "lat": 6.5631559,
+    "lon": 3.6130454
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Egbin Thermal Power Station",
+    "operator": "Egbin Power",
+    "plant:method": "combustion",
+    "plant:output:electricity": "1320 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "website": "https://egbin-power.com/",
+    "wikidata": "Q16890934",
+    "wikipedia": "en:Egbin Thermal Power Station"
+  }
+},
+{
+  "type": "way",
+  "id": 699952933,
+  "center": {
+    "lat": 6.8474559,
+    "lon": 4.2124695
+  },
+  "tags": {
+    "generator:source": "solar",
+    "name": "Gbamu Gbamu",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "0.085MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 754858559,
+  "center": {
+    "lat": 4.7244860,
+    "lon": 5.9482898
+  },
+  "tags": {
+    "name": "Community Power Plant",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 794643818,
+  "center": {
+    "lat": 7.3024548,
+    "lon": 5.1343939
+  },
+  "tags": {
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 833311906,
+  "center": {
+    "lat": 10.3211779,
+    "lon": 11.4814918
+  },
+  "tags": {
+    "building": "industrial",
+    "name": "Dadin Kowa Hydro Power Plant",
+    "operator": "Mabon Limited",
+    "plant:output:electricity": "39 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "source": "https://www.mabonltd.com/power-generation/",
+    "wikidata": "Q5208083"
+  }
+},
+{
+  "type": "way",
+  "id": 836122564,
+  "center": {
+    "lat": 6.8816795,
+    "lon": 3.3142381
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Olorunsogo I Power Plant",
+    "operator": "Pacific Energy Company Limited",
+    "plant:method": "combustion",
+    "plant:output:electricity": "335 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://pacificholdingsltd.com/pacificenergy/",
+    "wikidata": "Q56372884"
+  }
+},
+{
+  "type": "way",
+  "id": 836122570,
+  "center": {
+    "lat": 4.8501334,
+    "lon": 7.2566830
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Afam VI Power Plant",
+    "plant:method": "combustion",
+    "plant:output:electricity": "642 MW",
+    "plant:source": "gas",
+    "plant:type": "combined_cycle",
+    "power": "plant",
+    "source": "https://nerc.gov.ng/index.php/home/nesi/403-generation",
+    "wikidata": "Q56372725"
+  }
+},
+{
+  "type": "way",
+  "id": 836122577,
+  "center": {
+    "lat": 9.8637617,
+    "lon": 4.6121114
+  },
+  "tags": {
+    "building": "industrial",
+    "name": "Kainji Hydro Power Plant",
+    "operator": "Mainstream Energy Solutions Limited",
+    "plant:method": "run-of-the-river",
+    "plant:output:electricity": "760 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "source": "https://mainstream.com.ng/",
+    "start_date": "1968",
+    "wikidata": "Q15043618"
+  }
+},
+{
+  "type": "way",
+  "id": 836125052,
+  "center": {
+    "lat": 6.7357481,
+    "lon": 4.7098910
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Omotosho I Power Plant",
+    "operator": "Pacific Energy Company Limited",
+    "plant:method": "combustion",
+    "plant:output:electricity": "335 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://pacificholdingsltd.com/pacificenergy/",
+    "wikidata": "Q56372985"
+  }
+},
+{
+  "type": "way",
+  "id": 836125053,
+  "center": {
+    "lat": 6.7324824,
+    "lon": 4.7105719
+  },
+  "tags": {
+    "alt_name": "Omotosho NIPP",
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Omotosho II Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "451 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/omotosho",
+    "wikidata": "Q56372988"
+  }
+},
+{
+  "type": "way",
+  "id": 836245773,
+  "center": {
+    "lat": 5.3850979,
+    "lon": 6.6647791
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Omoku II Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "225 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/omoku",
+    "wikidata": "Q56372856"
+  }
+},
+{
+  "type": "way",
+  "id": 836245774,
+  "center": {
+    "lat": 5.3897764,
+    "lon": 6.6635675
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "industrial",
+    "name": "Omoku I Power Plant",
+    "operator": "First Independent Power Limited",
+    "plant:method": "combustion",
+    "plant:output:electricity": "150 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://fipl-ng.com/plants/",
+    "wikidata": "Q56372855"
+  }
+},
+{
+  "type": "way",
+  "id": 836634510,
+  "center": {
+    "lat": 7.4724896,
+    "lon": 6.6596648
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Geregu II Power Plant",
+    "plant:method": "combustion",
+    "plant:output:electricity": "434 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/geregu",
+    "wikidata": "Q56372727"
+  }
+},
+{
+  "type": "way",
+  "id": 836843608,
+  "center": {
+    "lat": 4.5648532,
+    "lon": 7.5680748
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Ibom Power Plant",
+    "operator": "Ibom Power Company",
+    "plant:method": "combustion",
+    "plant:output:electricity": "191 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://nerp.abv.ng/index.php/genco/ibom/",
+    "wikidata": "Q56373019"
+  }
+},
+{
+  "type": "way",
+  "id": 837260365,
+  "center": {
+    "lat": 4.5686004,
+    "lon": 7.5736543
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "ALSCON Aluminum Smelter Company of Nigeria",
+    "operator": "Aluminum Smelter Company of Nigeria",
+    "plant:method": "combustion",
+    "plant:output:electricity": "360 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://nerc.gov.ng/index.php/library/documents/Licensing/List-of-Licensees/",
+    "wikidata": "Q56372990"
+  }
+},
+{
+  "type": "way",
+  "id": 837263049,
+  "center": {
+    "lat": 5.5643799,
+    "lon": 6.7375897
+  },
+  "tags": {
+    "barrier": "fence",
+    "name": "Egbema Power Plant",
+    "operator": "NDPHC",
+    "owner": "Egbema Generation Company Limited",
+    "plant:method": "combustion",
+    "plant:output:electricity": "338 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/egbema",
+    "wikidata": "Q56372711"
+  }
+},
+{
+  "type": "way",
+  "id": 837264215,
+  "center": {
+    "lat": 6.5595252,
+    "lon": 3.6143813
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "AES Barge",
+    "operator": "AES",
+    "operator:wikidata": "Q291508",
+    "plant:method": "combustion",
+    "plant:output:electricity": "270 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://nerp.abv.ng/index.php/power-plants/aesbarge/",
+    "wikidata": "Q56372956"
+  }
+},
+{
+  "type": "way",
+  "id": 858966069,
+  "center": {
+    "lat": 4.8357686,
+    "lon": 7.2270356
+  },
+  "tags": {
+    "alt_name": "Rivers IPP",
+    "landuse": "industrial",
+    "name": "Afam (FIPL) power station",
+    "plant:method": "combustion",
+    "plant:output:electricity": "180 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://www.gem.wiki/Afam_(FIPL)_power_station"
+  }
+},
+{
+  "type": "way",
+  "id": 884934600,
+  "center": {
+    "lat": 6.8709449,
+    "lon": 9.7617037
+  },
+  "tags": {
+    "name": "Kashimbila Dam",
+    "name:en": "Kashimbila Dam",
+    "name:fr": "Barrage de Kashimbila",
+    "note": "Dam not yet visible in Hd imageries",
+    "plant:output:electricity": "40 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "source": "Copernicus - Sentiel 2 Imagery - 2020/12/05",
+    "waterway": "dam",
+    "wikipedia": "en:Kashimbila Hydroelectric Power Station"
+  }
+},
+{
+  "type": "way",
+  "id": 942844433,
+  "center": {
+    "lat": 12.8358715,
+    "lon": 7.6666273
+  },
+  "tags": {
+    "boundary": "fence",
+    "landuse": "industrial",
+    "name": "Katsina Wind Farm",
+    "plant:method": "wind_turbine",
+    "plant:output:electricity": "10 MW",
+    "plant:source": "wind",
+    "power": "plant",
+    "source": "https://www.powertransformernews.com/2021/03/15/nigeria-to-commission-katsina-wind-farm/"
+  }
+},
+{
+  "type": "way",
+  "id": 944919621,
+  "center": {
+    "lat": 7.9225691,
+    "lon": 6.4291084
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Dangote Obajana Cement",
+    "plant:method": "combustion",
+    "plant:output:electricity": "135 MW",
+    "plant:source": "oil",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 945308310,
+  "center": {
+    "lat": 7.0092219,
+    "lon": 3.0509055
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Dangote Ibese Cement Power Station",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 965463944,
+  "center": {
+    "lat": 4.8354765,
+    "lon": 7.1029183
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Indorama Eleme Petrochemicals Power Station",
+    "power": "plant",
+    "source": "https://www.indoramaeleme.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 1035459352,
+  "center": {
+    "lat": 8.9649954,
+    "lon": 7.3613435
+  },
+  "tags": {
+    "name": "Voice of Nigeria",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "yes",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1120416964,
+  "center": {
+    "lat": 4.9050493,
+    "lon": 6.2681702
+  },
+  "tags": {
+    "landuse": "industrial",
+    "plant:method": "combustion",
+    "plant:output:electricity": "yes",
+    "plant:source": "oil",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1124902830,
+  "center": {
+    "lat": 7.7844003,
+    "lon": 8.6185074
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Joseph Sarwuan Tarka University Makurdi (Jostum)",
+    "operator": "JOSTUM",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "3.5 MW",
+    "plant:source": "solar",
+    "power": "plant",
+    "start_date": "2020"
+  }
+},
+{
+  "type": "way",
+  "id": 1138971165,
+  "center": {
+    "lat": 7.4978310,
+    "lon": 6.6871409
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Ajaokuta Power Plant",
+    "operator": "Ajaokuta Steel Company Ltd (ASCL)",
+    "power": "plant",
+    "source": "https://www.thecable.ng/110mw-ajaokuta-power-plant-to-come-alive-again"
+  }
+},
+{
+  "type": "way",
+  "id": 1161543589,
+  "center": {
+    "lat": 5.1531142,
+    "lon": 7.3108251
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Aba IPP",
+    "operator": "Geometric Power Aba Limited (GPAL)",
+    "plant:method": "combustion",
+    "plant:output:electricity": "141 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://geometricpower.com/projects/aba-phase-i/;https://geometricpower.com/;https://www.thisdaylive.com/index.php/2022/05/03/geometric-completes-retrofitting-of-power-turbine-in-us-returns-equipment-to-nigeria/"
+  }
+},
+{
+  "type": "way",
+  "id": 1207250001,
+  "center": {
+    "lat": 9.0184000,
+    "lon": 7.4281908
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "VCG gas plant",
+    "plant:method": "combustion",
+    "plant:output:electricity": "yes",
+    "plant:source": "gas",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288129505,
+  "center": {
+    "lat": 11.9180730,
+    "lon": 8.4210021
+  },
+  "tags": {
+    "name": "Kumbotso",
+    "operator": "Haske Solar Company",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "10 MW",
+    "plant:source": "solar",
+    "power": "plant",
+    "start_date": "2023"
+  }
+},
+{
+  "type": "way",
+  "id": 1288129519,
+  "center": {
+    "lat": 11.9831012,
+    "lon": 8.4315770
+  },
+  "tags": {
+    "name": "Bayero University, Kano (BUK)",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "7.1 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288132889,
+  "center": {
+    "lat": 13.1346335,
+    "lon": 5.2250528
+  },
+  "tags": {
+    "name": "Usmanu Danfodiyo University",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "2 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288133298,
+  "center": {
+    "lat": 13.1263703,
+    "lon": 5.2083910
+  },
+  "tags": {
+    "landuse": "industrial",
+    "plant:method": "combustion",
+    "plant:output:electricity": "yes",
+    "plant:source": "gas",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288133299,
+  "center": {
+    "lat": 13.1265873,
+    "lon": 5.2084005
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Usmanu Danfodiyo University",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288133961,
+  "center": {
+    "lat": 6.2538698,
+    "lon": 7.1221446
+  },
+  "tags": {
+    "name": "Unizik solar farm",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "2 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288134806,
+  "center": {
+    "lat": 6.7876817,
+    "lon": 4.0050828
+  },
+  "tags": {
+    "name": "Tulip Cocoa Processing Co",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "2.35 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288136185,
+  "center": {
+    "lat": 6.1271583,
+    "lon": 8.1383395
+  },
+  "tags": {
+    "name": "Alex Ekwueme Federal University",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "1.115 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288148118,
+  "center": {
+    "lat": 11.8564574,
+    "lon": 13.1386949
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Maiduguri Emeregency Power Plant",
+    "plant:method": "combustion",
+    "plant:output:electricity": "50 MW",
+    "plant:source": "oil",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288148290,
+  "center": {
+    "lat": 9.7850358,
+    "lon": 8.8645272
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Bukuru Power Station",
+    "operator": "NESCO",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288150633,
+  "center": {
+    "lat": 9.4082433,
+    "lon": 8.7225283
+  },
+  "tags": {
+    "name": "Kurra Falls I",
+    "operator": "NESCO",
+    "plant:output:electricity": "yes",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288150638,
+  "center": {
+    "lat": 9.3837330,
+    "lon": 8.6761292
+  },
+  "tags": {
+    "name": "Kurra Falls III",
+    "operator": "NESCO",
+    "plant:output:electricity": "yes",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288152647,
+  "center": {
+    "lat": 9.3602973,
+    "lon": 8.7587789
+  },
+  "tags": {
+    "operator": "NESCO",
+    "plant:output:electricity": "yes",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288153391,
+  "center": {
+    "lat": 9.3621692,
+    "lon": 8.7398310
+  },
+  "tags": {
+    "operator": "NESCO",
+    "plant:output:electricity": "yes",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288645211,
+  "center": {
+    "lat": 6.4686083,
+    "lon": 3.3800558
+  },
+  "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288645213,
+  "center": {
+    "lat": 6.4670856,
+    "lon": 3.3796020
+  },
+  "tags": {
+    "landuse": "industrial",
+    "plant:method": "combustion",
+    "plant:output:electricity": "yes",
+    "plant:source": "oil",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288856909,
+  "center": {
+    "lat": 9.1934471,
+    "lon": 12.4888734
+  },
+  "tags": {
+    "name": "Modibbo Adama University",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "1.8MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1288867648,
+  "center": {
+    "lat": 5.5690623,
+    "lon": 5.8380149
+  },
+  "tags": {
+    "name": "FUPRE Solar Farm",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "1.35MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1289160532,
+  "center": {
+    "lat": 6.8863988,
+    "lon": 3.3840059
+  },
+  "tags": {
+    "name": "Mokoloki Town",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "185kW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1290093314,
+  "center": {
+    "lat": 8.8079186,
+    "lon": 7.3615455
+  },
+  "tags": {
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "yes",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1290093350,
+  "center": {
+    "lat": 8.8067342,
+    "lon": 7.3589472
+  },
+  "tags": {
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "yes",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1290345511,
+  "center": {
+    "lat": 12.0428330,
+    "lon": 13.9133934
+  },
+  "tags": {
+    "name": "Dikwa General Hospital",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "yes",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1290345520,
+  "center": {
+    "lat": 12.2618972,
+    "lon": 13.8628407
+  },
+  "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1290345521,
+  "center": {
+    "lat": 12.2617137,
+    "lon": 13.8626898
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "New Marte Power Station (Defunct)",
+    "plant:method": "combustion",
+    "plant:output:electricity": "yes",
+    "plant:source": "oil",
+    "power": "plant",
+    "start_date": "1978"
+  }
+},
+{
+  "type": "way",
+  "id": 1290408550,
+  "center": {
+    "lat": 6.4198017,
+    "lon": 3.4097471
+  },
+  "tags": {
+    "name": "Eko Atlantica Solar Farm",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "2 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1290593195,
+  "center": {
+    "lat": 9.6462610,
+    "lon": 7.7331318
+  },
+  "tags": {
+    "name": "Gurara",
+    "plant:output:electricity": "30 MW",
+    "plant:source": "hydro",
+    "power": "plant",
+    "start_date": "2015"
+  }
+},
+{
+  "type": "way",
+  "id": 1324578563,
+  "center": {
+    "lat": 6.7191450,
+    "lon": 3.5229162
+  },
+  "tags": {
+    "name": "Paras Energy",
+    "operator": "Paras Energy",
+    "plant:method": "combustion",
+    "plant:output:electricity": "96 MW",
+    "plant:source": "gas",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1324578570,
+  "center": {
+    "lat": 5.9270253,
+    "lon": 5.6448072
+  },
+  "tags": {
+    "alt_name": "Ogorode Power Plant",
+    "name": "Sapele II Power Plant",
+    "plant:method": "combustion",
+    "plant:output:electricity": "451 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/sapele",
+    "wikidata": "Q56372972"
+  }
+},
+{
+  "type": "way",
+  "id": 1324578576,
+  "center": {
+    "lat": 12.5120634,
+    "lon": 6.1827331
+  },
+  "tags": {
+    "plant:output:electricity": "yes",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1373287628,
+  "center": {
+    "lat": 9.2964545,
+    "lon": 7.2239774
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1383544943,
+  "center": {
+    "lat": 9.0255820,
+    "lon": 7.5000170
+  },
+  "tags": {
+    "landuse": "industrial",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1394913576,
+  "center": {
+    "lat": 4.9019239,
+    "lon": 6.9195962
+  },
+  "tags": {
+    "addr:city": "University of Port Harcourt, Abuja Campus, Choba, Rivers State.",
+    "addr:street": "Dan Etete Road",
+    "landuse": "industrial",
+    "name": "Abuja Campus Power Station",
+    "plant:method": "combustion",
+    "plant:output:electricity": "yes",
+    "plant:source": "oil",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1395052247,
+  "center": {
+    "lat": 10.4763416,
+    "lon": 9.8372000
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424093398,
+  "center": {
+    "lat": 11.4646104,
+    "lon": 8.4073278
+  },
+  "tags": {
+    "name": "Kano State Power Plant",
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424428168,
+  "center": {
+    "lat": 9.0047337,
+    "lon": 7.4084933
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424428467,
+  "center": {
+    "lat": 9.2660848,
+    "lon": 6.9797002
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424428562,
+  "center": {
+    "lat": 9.0998611,
+    "lon": 5.2278156
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430027,
+  "center": {
+    "lat": 6.4042930,
+    "lon": 3.0507982
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430151,
+  "center": {
+    "lat": 8.9925937,
+    "lon": 7.1710950
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430266,
+  "center": {
+    "lat": 6.8202116,
+    "lon": 3.8481319
+  },
+  "tags": {
+    "name": "Rite Foods",
+    "plant:output:electricity": "1 MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430432,
+  "center": {
+    "lat": 9.3551411,
+    "lon": 12.4931636
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430571,
+  "center": {
+    "lat": 5.4866383,
+    "lon": 7.5499155
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430667,
+  "center": {
+    "lat": 12.1151024,
+    "lon": 8.9482731
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424430771,
+  "center": {
+    "lat": 5.9985127,
+    "lon": 6.0248661
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424431051,
+  "center": {
+    "lat": 11.7943447,
+    "lon": 13.2050511
+  },
+  "tags": {
+    "name": "University of Maiduguri",
+    "plant:output:electricity": "12MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424431119,
+  "center": {
+    "lat": 12.8808661,
+    "lon": 11.0133152
+  },
+  "tags": {
+    "name": "Federal University Gashua",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "1.8MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1424432004,
+  "center": {
+    "lat": 10.6060933,
+    "lon": 7.3792529
+  },
+  "tags": {
+    "name": "Nigerian Defence Academy",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "2.5MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1458273012,
+  "center": {
+    "lat": 10.6205546,
+    "lon": 7.3669126
+  },
+  "tags": {
+    "name": "Nigerian Defence Academy",
+    "plant:method": "photovoltaic",
+    "plant:output:electricity": "0.6MW",
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1459237892,
+  "center": {
+    "lat": 11.9664195,
+    "lon": 8.4340178
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1462680217,
+  "center": {
+    "lat": 6.8682873,
+    "lon": 11.1657223
+  },
+  "tags": {
+    "plant:source": "hydro",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1467994505,
+  "center": {
+    "lat": 8.7177232,
+    "lon": 4.4713778
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1468050356,
+  "center": {
+    "lat": 5.0135826,
+    "lon": 8.3489630
+  },
+  "tags": {
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720799,
+  "center": {
+    "lat": 11.7937406,
+    "lon": 13.2028748
+  },
+  "tags": {
+    "plant:source": "battery",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720807,
+  "center": {
+    "lat": 11.8871286,
+    "lon": 8.4769070
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720808,
+  "center": {
+    "lat": 11.8861982,
+    "lon": 8.4775789
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720865,
+  "center": {
+    "lat": 9.0430603,
+    "lon": 7.4329467
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720900,
+  "center": {
+    "lat": 9.0025680,
+    "lon": 7.4093637
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720901,
+  "center": {
+    "lat": 9.0063778,
+    "lon": 7.4044298
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720902,
+  "center": {
+    "lat": 9.0065183,
+    "lon": 7.4042370
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720913,
+  "center": {
+    "lat": 9.0157401,
+    "lon": 7.3974982
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720922,
+  "center": {
+    "lat": 9.0288647,
+    "lon": 7.4020687
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720924,
+  "center": {
+    "lat": 9.0351440,
+    "lon": 7.4078443
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720940,
+  "center": {
+    "lat": 6.5027929,
+    "lon": 3.0988134
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720941,
+  "center": {
+    "lat": 6.5024628,
+    "lon": 3.0978877
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720942,
+  "center": {
+    "lat": 6.5027813,
+    "lon": 3.0947401
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720943,
+  "center": {
+    "lat": 6.5027020,
+    "lon": 3.0942265
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720944,
+  "center": {
+    "lat": 6.5015441,
+    "lon": 3.0908724
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720945,
+  "center": {
+    "lat": 6.5307111,
+    "lon": 3.0978803
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720946,
+  "center": {
+    "lat": 6.5116681,
+    "lon": 3.0781272
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720947,
+  "center": {
+    "lat": 6.5111538,
+    "lon": 3.0777276
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561720948,
+  "center": {
+    "lat": 6.5199239,
+    "lon": 3.0724731
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738172,
+  "center": {
+    "lat": 12.0305090,
+    "lon": 8.4989014
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738173,
+  "center": {
+    "lat": 12.0016728,
+    "lon": 8.5676207
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738174,
+  "center": {
+    "lat": 12.0022169,
+    "lon": 8.5671982
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738175,
+  "center": {
+    "lat": 12.0024051,
+    "lon": 8.5667694
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738176,
+  "center": {
+    "lat": 12.0151315,
+    "lon": 8.5738259
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738177,
+  "center": {
+    "lat": 12.0154020,
+    "lon": 8.5740074
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738178,
+  "center": {
+    "lat": 12.0122608,
+    "lon": 8.5706723
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738179,
+  "center": {
+    "lat": 12.0014957,
+    "lon": 8.5668381
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738180,
+  "center": {
+    "lat": 12.0018047,
+    "lon": 8.5666792
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738181,
+  "center": {
+    "lat": 12.0020768,
+    "lon": 8.5663775
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738182,
+  "center": {
+    "lat": 11.9792390,
+    "lon": 8.5347938
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738183,
+  "center": {
+    "lat": 11.9787300,
+    "lon": 8.5347730
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738184,
+  "center": {
+    "lat": 11.1187878,
+    "lon": 7.7154594
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738185,
+  "center": {
+    "lat": 5.4988397,
+    "lon": 7.0055498
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738186,
+  "center": {
+    "lat": 6.7603247,
+    "lon": 3.3172119
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738188,
+  "center": {
+    "lat": 6.6169661,
+    "lon": 3.3524575
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738189,
+  "center": {
+    "lat": 6.6145482,
+    "lon": 3.3539609
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738190,
+  "center": {
+    "lat": 6.6142411,
+    "lon": 3.3529651
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738191,
+  "center": {
+    "lat": 6.6141559,
+    "lon": 3.3526453
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738192,
+  "center": {
+    "lat": 6.6165274,
+    "lon": 3.3629379
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738193,
+  "center": {
+    "lat": 6.6165941,
+    "lon": 3.3635287
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738194,
+  "center": {
+    "lat": 6.6110905,
+    "lon": 3.3679170
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738195,
+  "center": {
+    "lat": 6.6114475,
+    "lon": 3.3676717
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738196,
+  "center": {
+    "lat": 6.6106285,
+    "lon": 3.3683566
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738197,
+  "center": {
+    "lat": 6.6096604,
+    "lon": 3.3688941
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738198,
+  "center": {
+    "lat": 6.5948782,
+    "lon": 3.3724661
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738199,
+  "center": {
+    "lat": 6.6025578,
+    "lon": 3.3748620
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738200,
+  "center": {
+    "lat": 6.6012882,
+    "lon": 3.3752348
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738201,
+  "center": {
+    "lat": 6.6018317,
+    "lon": 3.3740446
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738202,
+  "center": {
+    "lat": 6.6034330,
+    "lon": 3.3733821
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738203,
+  "center": {
+    "lat": 6.5260131,
+    "lon": 3.3296145
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738204,
+  "center": {
+    "lat": 6.5232890,
+    "lon": 3.3291562
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738205,
+  "center": {
+    "lat": 6.5254421,
+    "lon": 3.3321109
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738206,
+  "center": {
+    "lat": 6.5251776,
+    "lon": 3.3332234
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738207,
+  "center": {
+    "lat": 6.5260204,
+    "lon": 3.3331254
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738212,
+  "center": {
+    "lat": 6.4728556,
+    "lon": 3.6034768
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738213,
+  "center": {
+    "lat": 6.4645690,
+    "lon": 3.3221613
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738214,
+  "center": {
+    "lat": 6.4639248,
+    "lon": 3.3224047
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738215,
+  "center": {
+    "lat": 6.4637775,
+    "lon": 3.3218749
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738216,
+  "center": {
+    "lat": 6.4799827,
+    "lon": 3.3636953
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738217,
+  "center": {
+    "lat": 10.4658422,
+    "lon": 7.3756054
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738218,
+  "center": {
+    "lat": 10.4666783,
+    "lon": 7.3757522
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738219,
+  "center": {
+    "lat": 10.4459436,
+    "lon": 7.4175585
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738220,
+  "center": {
+    "lat": 10.4493101,
+    "lon": 7.4058406
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738221,
+  "center": {
+    "lat": 11.8663850,
+    "lon": 8.5445832
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738222,
+  "center": {
+    "lat": 11.8667315,
+    "lon": 8.5432112
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738223,
+  "center": {
+    "lat": 11.8920362,
+    "lon": 8.5426902
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738224,
+  "center": {
+    "lat": 11.8914633,
+    "lon": 8.5427029
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738227,
+  "center": {
+    "lat": 11.9475081,
+    "lon": 8.4874508
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738228,
+  "center": {
+    "lat": 11.9435694,
+    "lon": 8.4908357
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738229,
+  "center": {
+    "lat": 11.9475817,
+    "lon": 8.4909121
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738230,
+  "center": {
+    "lat": 11.9477975,
+    "lon": 8.4940235
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738231,
+  "center": {
+    "lat": 11.9582977,
+    "lon": 8.5003079
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738232,
+  "center": {
+    "lat": 11.9584813,
+    "lon": 8.5008122
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738233,
+  "center": {
+    "lat": 9.0879300,
+    "lon": 7.5208591
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738234,
+  "center": {
+    "lat": 9.0872626,
+    "lon": 7.5202704
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738235,
+  "center": {
+    "lat": 9.0565487,
+    "lon": 7.5161008
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738236,
+  "center": {
+    "lat": 9.0572599,
+    "lon": 7.5169779
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738237,
+  "center": {
+    "lat": 9.0627852,
+    "lon": 7.5224041
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738243,
+  "center": {
+    "lat": 9.0774986,
+    "lon": 7.4939867
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738246,
+  "center": {
+    "lat": 9.0476964,
+    "lon": 7.4870941
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738247,
+  "center": {
+    "lat": 9.0538118,
+    "lon": 7.4983929
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738252,
+  "center": {
+    "lat": 9.0581608,
+    "lon": 7.5008276
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738253,
+  "center": {
+    "lat": 6.3631018,
+    "lon": 5.6917616
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738254,
+  "center": {
+    "lat": 6.3797581,
+    "lon": 5.7112853
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738255,
+  "center": {
+    "lat": 6.3866020,
+    "lon": 5.6975055
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738488,
+  "center": {
+    "lat": 6.4676640,
+    "lon": 3.3302649
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561738489,
+  "center": {
+    "lat": 6.4677246,
+    "lon": 3.3307323
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761168,
+  "center": {
+    "lat": 7.4098499,
+    "lon": 3.8689000
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761169,
+  "center": {
+    "lat": 7.4100202,
+    "lon": 3.8695901
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761171,
+  "center": {
+    "lat": 7.3780528,
+    "lon": 3.8652543
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761172,
+  "center": {
+    "lat": 7.3689029,
+    "lon": 3.8611304
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761173,
+  "center": {
+    "lat": 7.3078956,
+    "lon": 3.8713543
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761174,
+  "center": {
+    "lat": 7.3979112,
+    "lon": 3.9694273
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761175,
+  "center": {
+    "lat": 7.3987597,
+    "lon": 3.9730838
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761176,
+  "center": {
+    "lat": 7.4121520,
+    "lon": 3.9107734
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761177,
+  "center": {
+    "lat": 7.4124685,
+    "lon": 3.9105320
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761178,
+  "center": {
+    "lat": 7.4136734,
+    "lon": 3.9096710
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761179,
+  "center": {
+    "lat": 12.0131177,
+    "lon": 8.6045192
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761180,
+  "center": {
+    "lat": 12.0137109,
+    "lon": 8.6023150
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761181,
+  "center": {
+    "lat": 12.0160930,
+    "lon": 8.6028086
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561761209,
+  "center": {
+    "lat": 9.9061640,
+    "lon": 4.5046433
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561791387,
+  "center": {
+    "lat": 6.5294527,
+    "lon": 3.3076117
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1561928640,
+  "center": {
+    "lat": 9.0351493,
+    "lon": 7.4078396
+  },
+  "tags": {
+    "plant:source": "solar",
+    "power": "plant"
+  }
+},
+{
+  "type": "way",
+  "id": 1574935278,
+  "center": {
+    "lat": 6.4214340,
+    "lon": 3.4387056
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Eko Atlantic Power Station",
+    "power": "plant"
+  }
+},
+{
+  "type": "relation",
+  "id": 11774525,
+  "center": {
+    "lat": 4.8519737,
+    "lon": 7.2534428
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Afam I-V Power Plant",
+    "operator": "Afam Power PLC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "776 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://afampowerplc.com/",
+    "type": "multipolygon",
+    "website": "https://afampowerplc.com/",
+    "wikidata": "Q56372724"
+  }
+},
+{
+  "type": "relation",
+  "id": 12352721,
+  "center": {
+    "lat": 5.0306404,
+    "lon": 6.3017344
+  },
+  "tags": {
+    "alt_name": "Gbarain NIPP",
+    "landuse": "industrial",
+    "name": "Gbarain Power Plant",
+    "operator": "NDPHC",
+    "plant:method": "combustion",
+    "plant:output:electricity": "225 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://www.ndphc.net/gbarain",
+    "type": "multipolygon",
+    "wikidata": "Q56372712"
+  }
+},
+{
+  "type": "relation",
+  "id": 13641739,
+  "center": {
+    "lat": 5.5409618,
+    "lon": 5.9150602
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Ughelli Power Plant",
+    "old_name": "Delta Power Station",
+    "operator": "Transcorp Power Limited",
+    "plant:method": "combustion",
+    "plant:output:electricity": "900 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://transcorppower.com/operations/",
+    "type": "multipolygon",
+    "website": "https://transcorppower.com",
+    "wikidata": "Q25047484"
+  }
+},
+{
+  "type": "relation",
+  "id": 14256555,
+  "center": {
+    "lat": 4.8161157,
+    "lon": 7.0316070
+  },
+  "tags": {
+    "landuse": "industrial",
+    "name": "Trans Amadi Power Plant",
+    "operator": "FIPL",
+    "plant:method": "combustion",
+    "plant:output:electricity": "136 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "https://fipl-ng.com/plants/",
+    "type": "multipolygon",
+    "wikidata": "Q56372841"
+  }
+},
+{
+  "type": "relation",
+  "id": 18172083,
+  "center": {
+    "lat": 5.9256243,
+    "lon": 5.6456177
+  },
+  "tags": {
+    "name": "Sapele I Power Plant",
+    "plant:method": "combustion",
+    "plant:output:electricity": "1020 MW",
+    "plant:source": "gas",
+    "power": "plant",
+    "source": "http://sapelepower.com",
+    "type": "multipolygon",
+    "wikidata": "Q56372970"
+  }
+}
+
+  ]
+}

@@ -1,0 +1,65 @@
+{
+ "pulled": "2026-11-23",
+ "source": "https://data.nigeriase4all.gov.ng/geoserver/ows",
+ "clusters": 454267,
+ "buildings": 23052816,
+ "offgrid_clusters": 17532,
+ "offgrid_buildings": 3689103,
+ "mv_km": 98517.0,
+ "hv_km": 17043.0,
+ "substations": 458,
+ "thermal_plants": 60,
+ "hydro_plants": 8,
+ "minigrids": 66,
+ "minigrid_kw": 3016.0,
+ "minigrid_connections": 19472,
+ "surveyed": 769,
+ "markets": 11129,
+ "bands": [
+  {
+   "lo": 0,
+   "hi": 1,
+   "clusters": 203225,
+   "buildings": 16511489
+  },
+  {
+   "lo": 1,
+   "hi": 5,
+   "clusters": 140490,
+   "buildings": 3400332
+  },
+  {
+   "lo": 5,
+   "hi": 10,
+   "clusters": 61275,
+   "buildings": 1639826
+  },
+  {
+   "lo": 10,
+   "hi": 20,
+   "clusters": 33988,
+   "buildings": 956947
+  },
+  {
+   "lo": 20,
+   "hi": null,
+   "clusters": 15289,
+   "buildings": 544222
+  }
+ ],
+ "unassigned": {
+  "clusters_no_state": 390,
+  "minigrids_no_state": 1
+ },
+ "distance_check": {
+  "settlements": 454267,
+  "median_recorded_km": 1.48067361,
+  "median_recalculated_km": 1.392,
+  "over5_recorded": 111949,
+  "over5_recalculated": 110533,
+  "moved_closer": 10983,
+  "moved_further": 9567,
+  "degenerate_mv_parts": 0,
+  "settlements_without_location": 0
+ }
+}

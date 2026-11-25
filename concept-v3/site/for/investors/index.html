@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Investor workspace | Nigeria Electrification Atlas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../assets/img/rea-mark.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<link rel="stylesheet" href="../../assets/css/v9.css">
+    <style>
+
+        .hero-c .wrap { grid-template-columns: minmax(380px, 540px) 1fr; gap: 56px; min-height: 560px }
+        .hero-c .hero-copy { padding: 40px 0 130px }
+        .collage { position: relative; padding: 46px 0 104px; margin-bottom: 40px; opacity: 0; animation: fade 1s .4s forwards }
+        .vid { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden;
+               background: url(https://i.ytimg.com/vi/uDzljpYAuu4/maxresdefault.jpg) center/cover, url(https://i.ytimg.com/vi/uDzljpYAuu4/hqdefault.jpg) center/cover, #032A20 url(assets/img/blog-mobile-mapping.jpg) center/cover; box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.1) }
+        .vid iframe { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%) scale(1.02); border: 0; pointer-events: none }
+        .vid-sound { position: absolute; left: 16px; top: 16px; z-index: 2; display: inline-flex; gap: 8px; align-items: center; padding: 8px 14px; border-radius: 999px;
+                     background: rgba(4,61,46,.78); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 13px; font-weight: 600; transition: background .2s }
+        .vid-sound:hover { background: var(--green) }
+        .ph { position: absolute; margin: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.4); z-index: 3 }
+        .ph img { width: 100%; height: 100%; object-fit: cover; display: block }
+        /* photos hang off the video's bottom edge: left overlaps more, right overlaps less */
+        .ph2 { right: -18px; bottom: 30px; width: 36%; height: 150px; border: 5px solid #053E2E }
+        .ph2 img { object-position: 40% 30% }
+        .fc { z-index: 4; position: absolute; background: #fff; color: var(--ink); border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,.3) }
+        .fc1 { left: -28px; bottom: 22px; padding: 16px 20px; max-width: 220px }
+        .fc1 b { display: block; font-size: 30px; line-height: 1.05; color: var(--green); letter-spacing: -.02em }
+        .fc1 span { font-size: 13px; color: var(--ink-2); line-height: 1.35; display: block; margin-top: 4px }
+        .fc2 { right: -10px; top: 0; display: flex; gap: 10px; align-items: center; padding: 12px 14px; font-size: 13px; transition: transform .2s }
+        .fc2:hover { transform: translateY(-3px) }
+        .fc2 i { width: 10px; height: 10px; border-radius: 50%; background: var(--leaf); box-shadow: 0 0 0 4px rgba(163,211,118,.35); animation: pulse 2s infinite }
+        .fc2 b { display: block; font-size: 14px } .fc2 small { color: var(--ink-2) } .fc2 svg { color: var(--green) }
+        @media (max-width:1100px) { .hero-c .wrap { grid-template-columns: 1fr } .hero-c .hero-copy { padding-bottom: 10px } .collage { margin-bottom: 110px } .ph2 { right: 0 } .fc2 { right: 0 } }
+        @media (max-width:640px) { .collage { padding: 0; margin-bottom: 100px } .ph2, .fc2 { display: none } .fc1 { position: relative; left: 0; bottom: 0; margin: -28px 0 0 14px; display: inline-block; padding: 12px 16px } .fc1 b { font-size: 24px } .vid-sound { left: 10px; top: 10px; font-size: 12px; padding: 6px 11px } }
+        /* video: only embed when served over http(s) — YouTube blocks embeds on file:// pages (Error 153) */
+        .vid iframe { opacity: 0; transition: opacity .6s }
+        .vid.playing iframe { opacity: 1 }
+        .vid-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 76px; height: 76px; border-radius: 50%;
+                    display: grid; place-items: center; background: var(--leaf); color: var(--night); box-shadow: 0 12px 34px rgba(0,0,0,.4), 0 0 0 10px rgba(163,211,118,.25); transition: transform .2s }
+        .vid-play:hover { transform: translate(-50%, -50%) scale(1.06) }
+        .vid-play svg { margin-left: 4px }
+        .vid.playing .vid-play { display: none }
+        .vid:not(.playing) .vid-sound { display: none }
+        .ph3 { left: -28px; bottom: 74px; width: 34%; height: 150px; border: 5px solid #053E2E }
+        @media (max-width:1100px) { .ph3 { left: 0 } }
+        @media (max-width:640px) { .ph3 { display: none } }
+    </style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+        <div class="wrap">
+            <a class="brand" href="../../index.html" aria-label="Nigeria Electrification Atlas home">
+                <div class="mark"><img
+                        src="../../assets/img/rea-mark.png"
+                        alt="Rural Electrification Agency"></div>
+                <div class="div"></div>
+                <div>
+                    <div class="brand-name">Nigeria Electrification Atlas</div>
+                    <div class="brand-sub">Rural Electrification Agency</div>
+                </div>
+            </a>
+            <nav class="main" aria-label="Main">
+                <div class="dd" id="dd">
+                    <button class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd-menu">Who are you?
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></button>
+                    <div class="dd-menu" id="dd-menu" role="menu"><a role="menuitem" href="../../for/developers/index.html"><span class="dd-ic a-ic-developer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14l2.5-8h13L21 14z"/><path d="M4.4 10h15.2M9 6l-1 8M15 6l1 8"/><path d="M12 14v3M8 21h8M12 17l-1.5 2.2h3L12 21.4"/></svg></span><span><b>Mini-grid developers</b><small>Build-ready communities and site criteria</small></span></a><a role="menuitem" href="../../for/investors/index.html"><span class="dd-ic a-ic-investor"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M5 16l4-4 3 3 6-7"/><path d="M14 8h4v4"/><circle cx="6.5" cy="6.5" r="2.5"/></svg></span><span><b>Investors and financiers</b><small>Market by state, recorded fleet, grid backbone</small></span></a><a role="menuitem" href="../../states/index.html"><span class="dd-ic a-ic-state"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 21h18M4 18h16"/></svg></span><span><b>State governments</b><small>Profiles for the 36 states and the FCT</small></span></a><a role="menuitem" href="../../for/researchers/index.html"><span class="dd-ic a-ic-researcher"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="10" cy="5.5" rx="6.5" ry="2.5"/><path d="M3.5 5.5v9c0 1.4 2.9 2.5 6.5 2.5"/><path d="M16.5 5.5V10"/><path d="M3.5 10c0 1.4 2.9 2.5 6.5 2.5"/><circle cx="17" cy="16" r="3"/><path d="M19.2 18.2L21.5 20.5"/></svg></span><span><b>Researchers and data users</b><small>Catalogue, downloads, WMS/WFS and data notes</small></span></a><a role="menuitem" href="../../for/learners/index.html"><span class="dd-ic a-ic-learner"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V11"/><path d="M22 9v5"/></svg></span><span><b>Students and GIS careers</b><small>Free courses, mapathons and a learning path</small></span></a><a class="dd-foot" href="../../index.html#briefings">See every briefing <svg width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-6-6 6 6-6 6" />
+                            </svg></a>
+                    </div>
+                </div>
+                <a href="../../minigrids/index.html">Mini-grids</a><a href="../../projects/index.html">Projects</a><a href="../../communities/index.html">Field survey</a><a href="../../index.html#data">Data</a><a href="https://nigeriase4all.gov.ng/about">About</a>
+            </nav>
+            <div class="hdr-right">
+                <a class="partner" href="https://power.gov.ng" target="_blank" rel="noopener" aria-label="Federal Ministry of Power">
+                    <span class="pmark"><img src="../../assets/img/fmp-mark.png" alt="" width="36" height="36"></span>
+                    <span class="ptxt"><b>Federal Ministry</b><small>of Power</small></span>
+                </a>
+                <div class="dd a-dd2" id="dd2"><button class="btn btn-primary a-dd2-btn" aria-haspopup="true" aria-expanded="false" aria-controls="dd2-menu">Explore webmaps <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="dd-menu" id="dd2-menu" role="menu"><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid?buildings_max=2000&buildings_min=100&grid_dist_max=40&grid_dist_min=5" target="_blank" rel="noopener"><span class="dd-ic a-ic-offgrid"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17.5" cy="6" r="2.5"/><path d="M17.5 1.5v.8M21.7 6h-.8M14.1 6h-.8M20.5 3l-.6.6"/><path d="M3 12l6-5 6 5"/><path d="M5 11v9h8v-9"/><path d="M8 20v-4h2v4"/></svg></span><span><b>Off-grid mini-grids <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>Unelectrified settlements far from the grid</small></span></a><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/minigrid-interconnected?buildings_max=2000&buildings_min=100&grid_dist_max=5&grid_dist_min=0" target="_blank" rel="noopener"><span class="dd-ic a-ic-interconnected"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 6h9M6.3 8.2l4.4 7.6M17.7 8.2l-4.4 7.6"/></svg></span><span><b>Interconnected mini-grids <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>Grid-connected communities with weak supply</small></span></a><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/power-sector?grid_buffer=3" target="_blank" rel="noopener"><span class="dd-ic a-ic-power"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l-5 20M12 2l5 20"/><path d="M6 8h12M5 13h14"/><path d="M8.3 8l7.6 5M15.7 8L8.1 13"/><path d="M9.5 18h5"/></svg></span><span><b>Power sector <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>DisCo areas, substations, MV and HV grid</small></span></a><a role="menuitem" href="https://apps.nigeriase4all.gov.ng/shs?market_dist=10&grid_dist_max=40&grid_dist_min=0" target="_blank" rel="noopener"><span class="dd-ic a-ic-shs"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 13h6l1 4H8z"/><path d="M11 13l-.5 4M13 13l.5 4"/></svg></span><span><b>Solar home systems <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></b><small>Markets and the customer base around them</small></span></a><a class="dd-foot" href="../../index.html#tools">About the webmaps</a></div></div>
+                <button class="icon-btn burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 7h16M4 12h16M4 17h16" />
+                    </svg></button>
+            </div>
+        </div>
+    </header>
+    <div class="mnav" id="mnav" hidden>
+        <div class="mnav-group">
+            <div class="mnav-h">Who are you?</div>
+            <a href="../../for/developers/index.html">Mini-grid developers</a><a href="../../for/investors/index.html">Investors and financiers</a><a href="../../states/index.html">State governments</a><a href="../../for/researchers/index.html">Researchers and data users</a><a href="../../for/learners/index.html">Students and GIS careers</a>
+        </div>
+        <a href="../../minigrids/index.html">Mini-grids</a><a href="../../projects/index.html">Projects</a><a href="../../communities/index.html">Field survey</a><a href="../../index.html#data">Data</a><a href="https://nigeriase4all.gov.ng/about">About</a>
+        <div class="mnav-group"><div class="mnav-h">Explore webmaps</div><a href="https://apps.nigeriase4all.gov.ng/minigrid-offgrid?buildings_max=2000&buildings_min=100&grid_dist_max=40&grid_dist_min=5" target="_blank" rel="noopener">Off-grid mini-grids</a><a href="https://apps.nigeriase4all.gov.ng/minigrid-interconnected?buildings_max=2000&buildings_min=100&grid_dist_max=5&grid_dist_min=0" target="_blank" rel="noopener">Interconnected mini-grids</a><a href="https://apps.nigeriase4all.gov.ng/power-sector?grid_buffer=3" target="_blank" rel="noopener">Power sector</a><a href="https://apps.nigeriase4all.gov.ng/shs?market_dist=10&grid_dist_max=40&grid_dist_min=0" target="_blank" rel="noopener">Solar home systems</a></div>
+    </div>
+<main id="main"><section class="w-head"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../../index.html">Home</a> <span>/</span> <span>Investors</span></nav><div class="w-headrow"><div><span class="a-kick">Workspace for investors and financiers</span><h1>Size an opportunity in a few clicks</h1><p>Pick an area on the map. The workspace counts the off-grid sites without a mini-grid, sorts them into bands and works out an indicative portfolio.</p></div>
+<div class="w-strip" aria-live="polite"><div><b id="w-n1">—</b><span id="w-l1"></span></div><div><b id="w-n2">—</b><span id="w-l2"></span></div><div><b id="w-n3">—</b><span id="w-l3"></span></div></div></div></div></section>
+<section class="w-sec"><div class="wrap-wide"><div class="w-grid">
+<form class="w-filters" id="i-f" onsubmit="return false"><h3>Your area</h3>
+<div class="w-modes" role="radiogroup" aria-label="Area"><label><input type="radio" name="area" value="state" checked><span>A state</span></label><label><input type="radio" name="area" value="circle"><span>A radius</span></label></div>
+<div id="i-state-box"><label for="is">State</label><select id="is" name="state"><option value="">Choose a state…</option><option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option><option>Anambra</option><option>Bauchi</option><option>Bayelsa</option><option>Benue</option><option>Borno</option><option>Cross River</option><option>Delta</option><option>Ebonyi</option><option>Edo</option><option>Ekiti</option><option>Enugu</option><option>Federal Capital Territory</option><option>Gombe</option><option>Imo</option><option>Jigawa</option><option>Kaduna</option><option>Kano</option><option>Katsina</option><option>Kebbi</option><option>Kogi</option><option>Kwara</option><option>Lagos</option><option>Nasarawa</option><option>Niger</option><option>Ogun</option><option>Ondo</option><option>Osun</option><option>Oyo</option><option>Plateau</option><option>Rivers</option><option>Sokoto</option><option>Taraba</option><option>Yobe</option><option>Zamfara</option></select><p class="w-hint">Or click a state on the map.</p></div>
+<div id="i-circle-box" hidden><label for="ir">Radius around the point you click</label><select id="ir" name="radius"><option>10</option><option selected>25</option><option>50</option><option>100</option></select><p class="w-hint">Click anywhere on the map to set the centre.</p></div>
+<label for="ib">Smallest site to include</label><select id="ib" name="bmin"><option value="100">100+ buildings</option><option value="300" selected>300+ buildings</option><option value="500">500+ buildings</option><option value="1000">1,000+ buildings</option></select>
+<label for="im">Treat as already served if a mini-grid is within</label><select id="im" name="served"><option value="2">2 km</option><option value="5" selected>5 km</option><option value="10">10 km</option></select>
+<label for="ic">Colour states by</label><select id="ic" name="colour"><option value="gap">Off-grid buildings per recorded kW</option><option value="sites">Unserved off-grid sites</option></select>
+<div class="w-dl"><b>Download</b><button type="button" class="btn btn-primary" data-dl="csv">Portfolio sites (CSV)</button><button type="button" class="btn btn-outline" data-dl="geojson">Portfolio sites (GeoJSON)</button><a href="../../minigrids/index.html">All mini-grids</a></div></form>
+<div class="w-mapwrap"><div class="w-map" id="i-map"></div><div class="w-legend" id="i-legend"></div></div>
+<aside class="w-detail" id="i-detail" aria-live="polite"><p class="a-muted">Choose a state or click the map to build an indicative portfolio.</p></aside>
+</div></div></section>
+<section class="sec field" style="padding-top:48px"><div class="wrap"><div class="sec-head"><div><span class="a-kick">Investment bands</span><h2>How sites are banded</h2><p class="sub">Physical indicators from the platform's data; the money figures in the portfolio come from the demo assumptions below.</p></div></div>
+<div class="w-bands">
+<div><b class="b-a">A · Field-verified</b><span>More than 5 km from the grid, not served, and a NESP field survey within 2 km.</span></div>
+<div><b class="b-b">B · Large off-grid</b><span>More than 5 km from the grid, not served, 1,000+ buildings.</span></div>
+<div><b class="b-c">C · Mid-size off-grid</b><span>More than 5 km from the grid, not served, below 1,000 buildings.</span></div>
+<div><b class="b-d">D · Near grid</b><span>Within 5 km of the MV grid: interconnected mini-grid or grid extension, with the DisCo.</span></div>
+<div><b class="b-s">Served</b><span>A recorded mini-grid already lies within the distance you choose.</span></div></div>
+<details class="w-assume" id="w-assume"><summary>Indicative figures: demo assumptions <span class="a-pill mid">Demo only</span></summary>
+<p class="sm">Sizing and cost figures on this page are worked out in your browser from the assumptions below. They show the logic only; they are not REA or programme figures. Change any value and every figure updates.</p>
+<label class="chk" style="font-weight:600;margin:6px 0 10px"><input type="checkbox" data-k="use_wb" checked> Use World Bank DRE Atlas demand and connections where a settlement matched (15,041 of 17,574 sites)</label>
+<div class="w-agrid">
+<label>Connections per building<input type="number" step="0.05" min="0" data-k="conn_per_bld" value="0.7"></label>
+<label>Demand per connection (kWh/day)<input type="number" step="0.1" min="0" data-k="kwh_day" value="0.6"></label>
+<label>Solar yield (kWh per kWp per day)<input type="number" step="0.1" min="0" data-k="yield_" value="4.5"></label>
+<label>Performance ratio<input type="number" step="0.05" min="0" max="1" data-k="pr" value="0.75"></label>
+<label>Capital cost (US$ per kWp)<input type="number" step="50" min="0" data-k="capex_kwp" value="4000"></label>
+<label>Grant per connection (US$)<input type="number" step="10" min="0" data-k="grant_conn" value="150"></label>
+</div>
+<p class="w-logic">connections = buildings × connections per building · daily demand = connections × demand per connection · PV size (kWp) = daily demand ÷ (yield × performance ratio) · capital cost = kWp × cost per kWp · grant = connections × grant per connection, capped at the capital cost</p></details></div></section>
+<section class="sec"><div class="wrap"><div class="sec-head"><div><span class="a-kick">All states</span><h2>Where the unserved off-grid sites are</h2><p class="sub">Using your current filters. Click a column to re-sort or a state to load it.</p></div></div>
+<div class="a-tbl"><table class="a-t" id="i-t"><thead><tr><th>State</th><th class="n">Unserved off-grid sites</th><th class="n">Buildings in them</th><th class="n">Recorded mini-grids</th><th class="n">Recorded kW</th><th class="n">Pipeline (evaluation or construction)</th><th class="n">Indicative capex (US$ m, demo)</th></tr></thead><tbody></tbody></table></div></div></section>
+<section class="sec field" id="notes"><div class="wrap"><h2 style="margin-bottom:14px">How this workspace is made</h2><ul class="a-notes">
+<li>Sites: SE4ALL off-grid settlements with distances recalculated against the field-mapped MV grid on 24 November 2026. Mini-grids: the combined list of 312 sites from three public sources; see the <a class="a-go" href="../../minigrids/index.html">mini-grid map</a> for sources and terms.</li>
+<li>"Off-grid buildings per recorded kW" compares the buildings in off-grid settlements with recorded mini-grid capacity in the state. Higher means more unmet demand per kW already built. Recorded capacity is incomplete, so treat it as a first screen.</li>
+<li>For context, DARES targets 1,225 new mini-grids and $750 million of finance (<a class="a-go" href="https://nep.rea.gov.ng/dares.html">REA</a>).</li>
+<li>Settlement names, population and estimated demand come from the World Bank's <a class="a-go" href="https://energydata.info/dataset/nigeria-distributed-renewable-energy-dre">Distributed Renewable Energy Atlas for Nigeria</a> (VIDA; CC BY 4.0), matched to the nearest DRE settlement within 1 km (15,041 of 17,574 sites). Where there is no match, demand comes from the demo assumptions.</li>
+<li>All money and kWp figures are demo calculations from the assumptions above. They show the method; they are not REA estimates.</li></ul></div></section><script src="../../data/mg-data.js"></script></main>
+<footer>
+        
+        <svg class="ghost-arms" viewBox="0 0 200 220" aria-hidden="true" fill="none" stroke="#D3DED6" stroke-width="2.5"
+            stroke-linejoin="round">
+            <path d="M100 40c-18 0-32 10-40 26l-6 42c-2 26 18 48 46 60 28-12 48-34 46-60l-6-42c-8-16-22-26-40-26z" />
+            <path d="M100 48l-22 40 22 22 22-22z" stroke-width="2" />
+            <path d="M100 110v48" stroke-width="2" />
+            <path d="M100 8c-10 6-16 14-14 24 6-2 10-6 14-12 4 6 8 10 14 12 2-10-4-18-14-24z" />
+            <path d="M52 100c-14-2-24 6-30 20 8-4 14-2 20 2-6 8-6 18 0 26 8-6 10-16 8-26 6 0 10-6 2-22z" />
+            <path d="M148 100c14-2 24 6 30 20-8-4-14-2-20 2 6 8 6 18 0 26-8-6-10-16-8-26-6 0-10-6-2-22z" />
+            <path d="M30 188c20-8 40 4 70 4s50-12 70-4" stroke-width="2" />
+        </svg>
+        <div class="wrap">
+            <div class="ftop">
+                <div class="fcontact">
+                    <img class="flogo"
+                        src="../../assets/img/rea-logo.png"
+                        alt="Rural Electrification Agency — Energy, Empowerment, Efficiency">
+                    <div style="font-weight:700;margin-top:18px">Nigeria Electrification Atlas</div><div class="formerly">Formerly Nigeria SE4ALL</div>
+                    <p>Rural Electrification Agency<br>Abuja, Nigeria<br><a href="mailto:contact.nigeriase4all@gmail.com">contact.nigeriase4all@gmail.com</a></p>
+                    <div class="sm"><a href="https://rea.gov.ng/" style="color:var(--green);font-weight:600">rea.gov.ng</a> &nbsp;·&nbsp;
+                        <a href="https://www.power.gov.ng/" style="color:var(--green);font-weight:600">power.gov.ng</a>
+                    </div>
+                </div>
+                <div class="fcol"><h4>Briefings</h4><a href="../../for/developers/index.html">Mini-grid developers</a><a href="../../for/investors/index.html">Investors</a><a href="../../states/index.html">State governments</a></div><div class="fcol"><h4>Platform</h4><a href="../../minigrids/index.html">Mini-grid map</a><a href="../../for/developers/index.html">Site finder</a><a href="../../for/developers/world-bank/index.html">Site finder (World Bank DRE data)</a><a href="../../for/developers/compare/index.html">Compare the site finders</a><a href="../../projects/index.html">Electrification projects</a><a href="../../communities/index.html">Field survey explorer</a><a href="../../data-health/index.html">Data health</a><a href="../../index.html#explore">Map by state</a><a href="../../for/developers/index.html">Site-finder</a><a href="../../index.html#tools">Webmaps</a><a href="../../index.html#data">Data downloads</a></div><div class="fcol"><h4>Resources</h4><a href="https://learning.nigeriase4all.gov.ng/" target="_blank" rel="noopener">Learning platform</a><a href="https://nigeriase4all.gov.ng/blog">Blog</a><a href="https://data.nigeriase4all.gov.ng/documents/29/download">How to download data</a><a href="https://data.nigeriase4all.gov.ng/documents/28/download">How to use WMS/WFS</a></div><div class="fcol"><h4>About</h4><a href="https://nigeriase4all.gov.ng/about">About the platform</a><a href="mailto:contact.nigeriase4all@gmail.com?subject=Data%20request">Request or share data</a><a href="https://rea.gov.ng/">Rural Electrification Agency</a><a href="https://www.power.gov.ng/">Federal Ministry of Power</a><a href="https://nigeriase4all.gov.ng/accreditation">Accreditation</a><a href="mailto:contact.nigeriase4all@gmail.com">Contact</a></div>
+            </div>
+            <div class="fbot">
+                <span>© <span id="yr"></span> Rural Electrification Agency. All rights reserved.</span>
+                <span><a href="https://nigeriase4all.gov.ng/accreditation">Accreditation</a><a href="https://nigeriase4all.gov.ng/terms-of-service">Terms of service</a><a href="https://nigeriase4all.gov.ng/privacy-policy">Privacy</a></span></div>
+        </div>
+    </footer>
+<script>window.PAGE={"root": "../../", "kind": "inv8", "stats": {"Abia": {"off": 13154}, "Adamawa": {"off": 105758}, "Akwa Ibom": {"off": 38881}, "Anambra": {"off": 3488}, "Bauchi": {"off": 156203}, "Bayelsa": {"off": 40148}, "Benue": {"off": 107897}, "Borno": {"off": 168823}, "Cross River": {"off": 40993}, "Delta": {"off": 23063}, "Ebonyi": {"off": 18008}, "Edo": {"off": 22804}, "Ekiti": {"off": 890}, "Enugu": {"off": 10784}, "Federal Capital Territory": {"off": 57594}, "Gombe": {"off": 78222}, "Imo": {"off": 45005}, "Jigawa": {"off": 107480}, "Kaduna": {"off": 113439}, "Kano": {"off": 159507}, "Katsina": {"off": 213463}, "Kebbi": {"off": 156462}, "Kogi": {"off": 126843}, "Kwara": {"off": 71426}, "Lagos": {"off": 12847}, "Nasarawa": {"off": 114248}, "Niger": {"off": 476858}, "Ogun": {"off": 18724}, "Ondo": {"off": 44107}, "Osun": {"off": 6032}, "Oyo": {"off": 36162}, "Plateau": {"off": 101673}, "Rivers": {"off": 61959}, "Sokoto": {"off": 254090}, "Taraba": {"off": 119358}, "Yobe": {"off": 155776}, "Zamfara": {"off": 406934}}};</script><script src="../../data/atlas-data.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><script src="../../assets/js/v9.js"></script>
+</body></html>
